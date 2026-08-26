@@ -1,1 +1,1 @@
-# Lunaria - a reading app
+# Lunaria - A Demo Reading App
