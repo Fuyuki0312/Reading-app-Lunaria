@@ -1,0 +1,39 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.venv/
+venv/
+env/
+
+# Secrets / environment variables
+.env
+.env.*
+
+# =========================
+# JetBrains IDEs
+# PyCharm / Android Studio
+# =========================
+.idea/
+*.iml
+
+# =========================
+# Android / Gradle
+# =========================
+.gradle/
+.kotlin/
+**/build/
+
+# Machine-specific Android configuration
+local.properties
+
+# =========================
+# Misc
+# =========================
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,226 @@
+[
+    {
+        "id": 1,
+        "title": "The Cartographer of Moonfall",
+        "author": "Jeshine",
+        "description": "Mira Vey is a young cartographer in a world where roads shift under moonlight and maps can mean the difference between survival and disappearance. When her master vanishes, leaving behind a mysterious silver map and a warning about a place called Moonfall Hollow, Mira is drawn into a journey through unstable paths, ancient magic, and secrets buried beyond the edge of every known map. To find the truth, she must learn that some places cannot simply be charted\u2014they must be understood.",
+        "published_year": 2008,
+        "genres": [
+            "Adventure",
+            "Fantasy",
+            "Mystery"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "The Silence Between Stars",
+        "author": "Iris Vale",
+        "description": "On Vesper-9, a lonely relay station beyond the mapped colonies, systems engineer Mara Quill receives a distress signal in her own voice\u2014dated six days in the future. As more impossible transmissions arrive, she discovers that the station's predictive intelligence has been simulating the crew again and again. To survive, Mara must decide whether the future can be changed\u2014or whether every attempt to escape it is what brings it closer.",
+        "published_year": 2026,
+        "genres": [
+            "Mystery",
+            "Psychological Thriller",
+            "Science Fiction"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "The Lighthouse Beneath the Clouds",
+        "author": "Rowan Vale",
+        "description": "In the floating city of Aerolith, seventeen-year-old weather apprentice Elian Voss discovers a forbidden signal rising from beneath the permanent storm layer. With a reckless young cartographer, he descends to a surface everyone has been taught is dead, uncovers a hidden network of ancient weather beacons, and learns that the truth about their world may be the only thing capable of saving the city above it.",
+        "published_year": 2016,
+        "genres": [
+            "Adventure",
+            "Coming of Age",
+            "Mystery",
+            "Science Fiction"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "When the Winter Garden Blooms",
+        "author": "Elara Fen",
+        "description": "In the mountain kingdom of Vaelora, where winter flowers bloom only for those who make an honest promise, eighteen-year-old garden apprentice Seren Vale is chosen to restore the abandoned royal glasshouse before the Midwinter Festival. There she meets Cael Ardin, a young violin maker carrying a promise he believes can never be kept. As frost magic spreads through the capital and threatens to freeze the garden forever, Seren must decide whether love is something that can be protected by holding on\u2014or only by having the courage to let another person choose freely.",
+        "published_year": 2013,
+        "genres": [
+            "Coming of Age",
+            "Fantasy",
+            "Romance"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Make Tomorrow Easier",
+        "author": "Mira Solen",
+        "description": "A practical self-help guide to building realistic daily plans, starting important tasks even when motivation is low, and recovering when the day goes off course. Through concrete examples from studying, office work, personal projects, exercise, and everyday responsibilities, the book teaches readers to turn vague intentions into small, finishable actions and to create motivation through progress rather than waiting to feel inspired.",
+        "published_year": 1980,
+        "genres": [
+            "Self-help"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "You Are Worth the Attempt",
+        "author": "Avery Lorne",
+        "description": "A practical and encouraging self-help guide for people who doubt their own value or hesitate to pursue meaningful dreams. Through realistic examples involving study, careers, creative work, applications, and personal projects, the book shows how to separate self-worth from results, turn distant dreams into workable goals, build courage through small actions, and continue even when progress is slow, imperfect, or uncertain.",
+        "published_year": 1996,
+        "genres": [
+            "Self-help"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "The Interview Advantage",
+        "author": "Nora Vey",
+        "description": "A practical self-help guide to preparing for job interviews with greater clarity, confidence, and strategy. Through realistic examples from students, career changers, and early-career applicants, the book teaches readers how to research employers, understand job requirements, structure strong answers, use the STAR method, handle difficult questions, improve body language, ask thoughtful questions, and follow up professionally after the interview.",
+        "published_year": 2024,
+        "genres": [
+            "Self-help"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "A Lantern on Greymere Street",
+        "author": "Eleanor Vane",
+        "description": "Set in 1860s England, this historical coming-of-age romance follows seventeen-year-old Eliza Hart, the daughter of a struggling printer in the industrial town of Greymere. Torn between family duty and her dream of becoming an illustrator, Eliza forms an unexpected bond with Thomas Reed, a railway clerk from a more secure middle-class family. As economic pressure, social expectations, and the rapid changes of the industrial age reshape their town, both must decide whether growing up means accepting the lives chosen for them or having the courage to build lives of their own.",
+        "published_year": 1865,
+        "genres": [
+            "Coming of Age",
+            "Historical Fiction",
+            "Romance"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "The Last Song of Gion",
+        "author": "Hana Mirei",
+        "description": "Set in late nineteenth-century Kyoto during the Meiji era, this historical drama follows Sayo, a girl born into poverty who is sent to an okiya and eventually becomes a geiko in Gion. Through years of discipline, debt, performance, and personal loss, she learns to survive a life largely chosen for her. After a devastating tragedy finally breaks the bonds holding her in place, Sayo must decide what freedom means when the life she once dreamed of escaping has also shaped everything she knows. Her journey becomes a quiet search for dignity, grief, and the true value of an ordinary life lived by one's own choice.",
+        "published_year": 1901,
+        "genres": [
+            "Drama",
+            "Historical Fiction"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "The World Beneath the Blessing",
+        "author": "Lucien Vale",
+        "description": "After dying in his old world, twenty-year-old Adrian Vale awakens in the body of a young man named Cael in the kingdom of Elaris, a land of spellcraft, adventurer guilds, enchanted forests, and ancient ruins\u2014the kind of fantasy world he had dreamed about for years. At first, he believes he has been given a perfect second life. But as he learns how magic truly works, Cael discovers that healing, blessings, and even the kingdom's prosperity are built upon hidden suffering. The deeper he looks, the more the beautiful fantasy world begins to resemble a carefully decorated prison, forcing him to decide whether living his dream is worth becoming part of its nightmare.",
+        "published_year": 2023,
+        "genres": [
+            "Dark Fantasy",
+            "Isekai"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Beyond the Last Blue Mountain",
+        "author": "Mara Ellison",
+        "description": "Airi Kisaragi, a young woman from modern Japan with an incurable love of maps and distant horizons, awakens in the fantasy world of Asterra with little more than borrowed clothes, a few coins, and a mysterious sense for hidden paths. Humanity has lived for centuries inside the mapped lands east of the Last Blue Mountain, while the western world is believed to be uninhabitable. Starting as an unknown guild runner, Airi slowly gathers companions who share her hunger for the unknown. Together they challenge old maps, cross forbidden frontiers, survive failed expeditions, and search for a new homeland beyond the edge of everything humanity thinks it knows.",
+        "published_year": 2025,
+        "genres": [
+            "Adventure",
+            "Fantasy",
+            "Isekai"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "AI Without the Fog",
+        "author": "Evan Rowe",
+        "description": "A beginner-friendly introduction to artificial intelligence for readers with little or no IT background. The book explains what AI is, why it has become so widespread, how it is used in real life, where its limits remain, how to use AI as a tool without becoming dependent on it, and how a complete beginner can build a practical learning path from digital basics and Python to machine learning, neural networks, generative AI, and personal projects.",
+        "published_year": 2026,
+        "genres": [
+            "Non-fiction"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Definitely Not a Date",
+        "author": "Clara Wynn",
+        "description": "When university student Mia Carter accidentally tells her family that she is dating someone, she convinces her annoyingly charming classmate Noah Bennett to pretend to be her boyfriend for one weekend. The plan should end after dinner, but fake dates, family expectations, jealousy, and suspiciously real chemistry turn a ridiculous lie into the beginning of an actual romance.",
+        "published_year": 2026,
+        "genres": [
+            "Romcom"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "How to Survive Being Seventeen",
+        "author": "Jamie Clarke",
+        "description": "A warm coming-of-age comedy about seventeen-year-old Eli Morgan, whose final year of school begins with a failed student-council speech, a disastrous part-time job, and an accidental reputation for giving questionable life advice. With his chaotic friends Priya and Mateo beside him, Eli stumbles through exams, family expectations, changing friendships, rejection, and the strange realization that growing up is less about suddenly having answers and more about becoming less afraid of uncertainty.",
+        "published_year": 2021,
+        "genres": [
+            "Comedy",
+            "Coming of Age"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "The Department of Minor Emergencies",
+        "author": "Oliver Penn",
+        "description": "A pure workplace comedy about the least important department in the city. The Department of Minor Emergencies handles problems too small for police, fire services, or anyone with actual authority: runaway shopping carts, aggressive pigeons, missing park benches, broken ceremonial ribbons, and complaints about suspiciously loud fountains. When a routine city inspection is mistaken for a high-level emergency audit, the department's wildly underqualified staff launch an unnecessary operation to prove their usefulness\u2014and create the largest minor emergency in municipal history.",
+        "published_year": 2015,
+        "genres": [
+            "Comedy"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Eat Well, Live Normally",
+        "author": "Maya Rowan",
+        "description": "A practical non-fiction guide to building balanced everyday meals without turning food into a rigid set of rules. The book explains the roles of carbohydrates, protein, fats, fibre, vitamins, minerals, and hydration; teaches a simple meal-building framework; shows how to shop, cook, snack, and eat on a budget; and explains how restaurant meals, desserts, parties, and spontaneous meals with friends can fit comfortably into a healthy long-term eating pattern.",
+        "published_year": 1998,
+        "genres": [
+            "Non-fiction"
+        ]
+    },
+    {
+        "id": 18,
+        "title": "The Fog Bell at Blackwater Point",
+        "author": "Eleanor Voss",
+        "description": "Set on the Scottish coast in 1912, this historical mystery drama follows nineteen-year-old Clara Muir, who returns to the isolated lighthouse at Blackwater Point after the sudden death of her father, the keeper. His final logbook contains missing pages, a strange sequence of bell signals, and references to a shipwreck the village refuses to discuss. As Clara investigates, she uncovers old lies involving smuggling, class resentment, and a disaster that shaped her family long before she was born. The truth forces her to decide whether protecting the dead is worth continuing to deceive the living.",
+        "published_year": 1932,
+        "genres": [
+            "Drama",
+            "Historical Fiction",
+            "Mystery"
+        ]
+    },
+    {
+        "id": 19,
+        "title": "The Memory You Never Had",
+        "author": "Iris Vale",
+        "description": "In a near-future city where people can back up selected memories, twenty-seven-year-old memory restoration technician Lena Orr discovers a corrupted file carrying her own biometric signature. The recording shows her committing an act she cannot remember, inside a building she has never visited, beside a man officially dead for six years. As Lena investigates the archive company that employs her, she uncovers evidence that memory records can be altered after storage\u2014and that her own past may have been edited more than once.",
+        "published_year": 2008,
+        "genres": [
+            "Mystery",
+            "Psychological Thriller",
+            "Science Fiction"
+        ]
+    },
+    {
+        "id": 21,
+        "title": "The City the Maps Forgot",
+        "author": "Selene Hart",
+        "description": "In a kingdom where maps are enchanted to update themselves, twenty-two-year-old royal archive assistant Elara Venn discovers that every official chart contains the same impossible blank region. When she finds a forbidden map that names a city erased from history, Elara leaves the capital with a reluctant thief, a disgraced knight, and a skeptical scholar. Their search leads through shifting roads, abandoned watchtowers, and old magical borders as they uncover why the city of Aurum was removed from every map\u2014and why someone is still making sure it stays forgotten.",
+        "published_year": 2024,
+        "genres": [
+            "Adventure",
+            "Fantasy",
+            "Mystery"
+        ]
+    },
+    {
+        "id": 22,
+        "title": "The Last Light Before Morning",
+        "author": "Nora Vale",
+        "description": "In the late twenty-second century, seventeen-year-old Mira Sol joins a one-way scientific expedition to Eos, a distant moon chosen for humanity's first permanent settlement beyond the inner planets. Years into the voyage, a catastrophic navigation failure leaves the colony ship unable to reach Eos safely. Mira and her crewmates must attempt an uncharted gravitational maneuver around an unexplored red dwarf, forcing her to confront what it really means to leave home, take responsibility for others, and grow into a future no one can guarantee.",
+        "published_year": 2026,
+        "genres": [
+            "Adventure",
+            "Coming of Age",
+            "Science Fiction"
+        ]
+    }
+]
