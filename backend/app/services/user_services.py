@@ -8,6 +8,9 @@ cursor = get_cursor_from_database()
 
 class UserService:
 
+
+    # Registeration ----------------------------------------
+
     def register_user_account_to_database(
             self,
             username: str,
@@ -24,6 +27,7 @@ class UserService:
         ))
 
         database.commit()
+
 
     def register_genre_preferences_to_database(
             self,
@@ -42,6 +46,26 @@ class UserService:
         database.commit()
 
 
+    def register_preference_description_to_database(
+            self,
+            username,
+            description
+    ):
+
+        cursor.execute(f"""
+            UPDATE users
+            SET preference_description = %s
+            WHERE username = %s
+        """, (
+            description,
+            username
+        ))
+
+        database.commit()
+
+
+    # Getter from database ----------------------------------
+
     def get_genre_preferences_from_username(self, username):
 
         cursor.execute(f"""
@@ -53,6 +77,19 @@ class UserService:
 
         result_from_database = cursor.fetchone()
         return result_from_database["genre_preferences"]
+
+    def get_preference_description_from_username(self, username):
+
+        cursor.execute(f"""
+            SELECT preference_description FROM users
+            WHERE username = %s;
+        """, (
+            username,
+        ))
+
+        result_from_database = cursor.fetchone()
+
+        return result_from_database["preference_description"]
 
 
 user_services = UserService()

@@ -6,7 +6,8 @@ import com.example.lunaria.ui.screens.mainInterface.ExploreScreen
 import com.example.lunaria.ui.screens.mainInterface.SettingsScreen
 import com.example.lunaria.ui.screens.login.LoginScreen
 import com.example.lunaria.ui.screens.login.RegisterScreen
-import com.example.lunaria.ui.screens.login.ReadingPreferenceSurveyScreen
+import com.example.lunaria.ui.screens.login.GenrePreferenceSurveyScreen
+import com.example.lunaria.ui.screens.login.PreferenceDescriptionSurveyScreen
 import com.example.lunaria.data.model.book.Book
 import com.example.lunaria.data.model.book.BookID
 import com.example.lunaria.data.api.RetrofitClient
@@ -55,7 +56,9 @@ data object Login
 
 data object Register
 
-data object ReadingPreferenceSurvey
+data object GenrePreferenceSurvey
+
+data object PreferenceDescriptionSurvey
 
 
 // ---------- App navigation ----------
@@ -88,9 +91,18 @@ fun AppNavigation() {
         mutableStateOf<String?>(null)
     }
 
-    if (userIsAtMainInterface) {
-        LaunchedEffect(Unit) {
+    var preferenceDescription by remember {
+        mutableStateOf("")
+    }
 
+    var shouldRecommend by remember {
+        mutableStateOf(false)
+    } // This is to prevent the LLM from backend to be requested unnecessarily many times
+    // Adjust this to true to request the LLM to recommend books
+
+    LaunchedEffect(shouldRecommend) {
+
+        if (shouldRecommend) {
             try {
                 val usernameSentToBackend =
                     Username(username = username!!)
@@ -102,8 +114,11 @@ fun AppNavigation() {
                 errorMessage = e.stackTraceToString()
                 e.printStackTrace()
             }
+
+            shouldRecommend = false
         }
     }
+
 
     var allBooks by remember {
         mutableStateOf<List<Book>>(emptyList())
@@ -259,6 +274,8 @@ fun AppNavigation() {
 
                                 // PLACEHOLDER LOGIN // TODO
 // Hiện tại, khi bấm login là sẽ nhảy thẳng vào Home chứ không có tài khoản nào
+                                shouldRecommend = true
+
                                 backStack.clear()
                                 backStack.add(Home)
                             },
@@ -274,7 +291,7 @@ fun AppNavigation() {
                         RegisterScreen(
                             onRegister = { usernameToRegisterGenrePreference ->
                                 username = usernameToRegisterGenrePreference
-                                backStack.add(ReadingPreferenceSurvey)
+                                backStack.add(GenrePreferenceSurvey)
                             },
                             onBack = {
 
@@ -283,14 +300,32 @@ fun AppNavigation() {
                         )
                     }
 
-                    entry<ReadingPreferenceSurvey> {
+                    entry<GenrePreferenceSurvey> {
 
-                        ReadingPreferenceSurveyScreen(
+                        GenrePreferenceSurveyScreen(
                             username = username!!,
                             onFinish = {
                                 backStack.clear()
-                                backStack.add(Home)
+                                backStack.add(PreferenceDescriptionSurvey)
                             }
+                        )
+                    }
+
+                    entry<PreferenceDescriptionSurvey> {
+
+                        PreferenceDescriptionSurveyScreen(
+
+                            onFinish = { description ->
+
+                                preferenceDescription = description
+
+                                shouldRecommend = true
+
+                                backStack.clear()
+                                backStack.add(Home)
+                            },
+
+                            username = username!!
                         )
                     }
                 }

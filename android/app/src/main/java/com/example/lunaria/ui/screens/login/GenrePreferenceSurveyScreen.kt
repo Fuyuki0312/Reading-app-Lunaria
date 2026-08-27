@@ -31,7 +31,7 @@ import kotlinx.coroutines.launch
 
 
 @Composable
-fun ReadingPreferenceSurveyScreen(
+fun GenrePreferenceSurveyScreen(
     username: String,
     onFinish: () -> Unit
 ) {

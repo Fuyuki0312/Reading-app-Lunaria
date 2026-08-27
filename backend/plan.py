@@ -17,7 +17,7 @@
 #  7. Style: Decorate app with Lunaria style
 
 # TODO first:
-#  1. Truyền genre_preferences từ database sang prompt của Qwen
+#  1. (DONE) Truyền genre_preferences từ database sang prompt của Qwen
 #  2. (DONE but not tested yet) Prompt Engineering: Let Qwen knows it can encounter user's genre preferences that do not exist in all available books
 #  3. Thêm điều kiện để Register Account (không được trùng username với user khác)
 #  4. Complete login process
