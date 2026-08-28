@@ -28,7 +28,7 @@ from app.database.database import database
 
 cursor = database.cursor(dictionary=True)
 cursor.execute(f"""
-    SELECT username FROM users
+    SELECT genre_preferences FROM users
 """)
 
 output = cursor.fetchall()

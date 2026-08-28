@@ -39,6 +39,7 @@ import androidx.navigation3.ui.NavDisplay
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import com.example.lunaria.data.model.user.Username
 
@@ -81,8 +82,14 @@ fun AppNavigation() {
     }
 
     // | Screens |
+    var isLoggedIn by rememberSaveable {
+        mutableStateOf(false)
+    }
+
     val backStack = remember {
-        mutableStateListOf<Any>(Login)
+        mutableStateListOf<Any>(
+            if (isLoggedIn) Home else Login
+        )
     }
 
     val currentScreen = backStack.last()
@@ -295,6 +302,7 @@ fun AppNavigation() {
                             onLogin = { usernameToSendToRecommendation ->
                                 shouldRecommend = true
                                 username = usernameToSendToRecommendation
+                                isLoggedIn = true
                                 backStack.clear()
                                 backStack.add(Home)
                             },
@@ -310,6 +318,7 @@ fun AppNavigation() {
                         RegisterScreen(
                             onRegister = { usernameToRegisterGenrePreference ->
                                 username = usernameToRegisterGenrePreference
+                                isLoggedIn = true
                                 backStack.add(GenrePreferenceSurvey)
                             },
                             onBack = {
@@ -339,7 +348,6 @@ fun AppNavigation() {
                                 preferenceDescription = description
 
                                 shouldRecommend = true
-
                                 backStack.clear()
                                 backStack.add(Home)
                             },
