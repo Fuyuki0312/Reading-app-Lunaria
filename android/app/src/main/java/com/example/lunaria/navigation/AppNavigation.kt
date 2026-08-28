@@ -292,19 +292,16 @@ fun AppNavigation() {
 
                     entry<Login> {
                         LoginScreen(
-                            onLogin = {
-
-                                // PLACEHOLDER LOGIN // TODO
-// Hiện tại, khi bấm login là sẽ nhảy thẳng vào Home chứ không có tài khoản nào
+                            onLogin = { usernameToSendToRecommendation ->
                                 shouldRecommend = true
-
+                                username = usernameToSendToRecommendation
                                 backStack.clear()
                                 backStack.add(Home)
                             },
                             onRegister = {
-
                                 backStack.add(Register)
-                            }
+                            },
+                            allUsername = allUsernameFromDatabase
                         )
                     }
 

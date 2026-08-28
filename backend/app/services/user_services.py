@@ -102,6 +102,19 @@ class UserService:
         return username_list
 
 
+    def get_password_by_username_from_database(self, username):
+
+        cursor.execute(f"""
+            SELECT insecured_password FROM users
+            WHERE username = %s;
+        """, (
+            username,
+        ))
+
+        result_from_database = cursor.fetchone()
+        return result_from_database["insecured_password"]
+
+
 user_services = UserService()
 
 def get_user_services():

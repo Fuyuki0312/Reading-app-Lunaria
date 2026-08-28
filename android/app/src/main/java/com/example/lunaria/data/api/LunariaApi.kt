@@ -42,4 +42,9 @@ interface LunariaApi {
 
     @GET("get-all-username")
     suspend fun getAllUsernameFromDatabase(): List<Username>
+
+    @POST("get-password-by-username")
+    suspend fun getPasswordFromDatabaseByUsername(
+        @Body username: Username
+    ): UserAccount
 }

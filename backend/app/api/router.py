@@ -81,3 +81,18 @@ def add_preference_description_to_database(preference_description: PreferenceDes
 def get_all_username_from_database():
 
     return user_services.get_all_username_from_database()
+
+
+@router.post("/get-password-by-username")
+
+def get_password_from_database_by_username(username: Username):
+
+    password = user_services.get_password_by_username_from_database(
+        username=username.username
+    )
+    account = UserAccount(
+        username=username.username,
+        password=password
+    )
+
+    return account
