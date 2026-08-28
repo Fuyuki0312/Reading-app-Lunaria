@@ -92,6 +92,16 @@ class UserService:
         return result_from_database["preference_description"]
 
 
+    def get_all_username_from_database(self):
+
+        cursor.execute(f"""
+            SELECT username FROM users;
+        """)
+
+        username_list = cursor.fetchall()
+        return username_list
+
+
 user_services = UserService()
 
 def get_user_services():

@@ -24,13 +24,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.lunaria.data.model.user.UserAccount
 import androidx.compose.runtime.rememberCoroutineScope
+import com.example.lunaria.data.model.user.Username
 import kotlinx.coroutines.launch
 
 
 @Composable
 fun RegisterScreen(
     onRegister: (String) -> Unit,
-    onBack: () -> Unit
+    onBack: () -> Unit,
+    allUsername: List<Username>
 ) {
 
     var username by rememberSaveable {
@@ -121,21 +123,32 @@ fun RegisterScreen(
 
                 } else {
 
-                    errorMessage = null
+                    var usernameIsAvailable = true
+                    for (usernameFromList in allUsername) {
+                        if (username == usernameFromList.username)
+                            usernameIsAvailable = false
+                    } // this for loop checks if the current username is already taken in database
 
-                    coroutineScope.launch {
-                        try {
-                            val account = UserAccount(username = username, password = password)
-                            RetrofitClient.api.registerUserAccount(account = account)
+                    if (usernameIsAvailable) {
+                        errorMessage = null
 
-                            onRegister(username)
-                        } catch (e: Exception) {
+                        coroutineScope.launch {
+                            try {
+                                val account = UserAccount(username = username, password = password)
+                                RetrofitClient.api.registerUserAccount(account = account)
 
-                            errorMessage = e.message
-                            e.printStackTrace()
+                                onRegister(username)
+                            } catch (e: Exception) {
+
+                                errorMessage = e.message
+                                e.printStackTrace()
+                            }
                         }
                     }
 
+                    else {
+                        errorMessage = "This username is already taken."
+                    }
                 }
 
             },

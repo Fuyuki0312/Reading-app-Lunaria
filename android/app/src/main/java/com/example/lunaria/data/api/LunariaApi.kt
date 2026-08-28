@@ -39,4 +39,7 @@ interface LunariaApi {
     suspend fun registerPreferenceDescription(
         @Body description: PreferenceDescription
     )
+
+    @GET("get-all-username")
+    suspend fun getAllUsernameFromDatabase(): List<Username>
 }

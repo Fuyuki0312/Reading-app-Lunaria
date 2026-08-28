@@ -9,12 +9,12 @@ class BookServices:
 
         # Create a list of books' id with their genres ---------
         cursor.execute("""
-        SELECT b.id, g.name
-        FROM books b
-        JOIN book_genres bg
-            ON bg.book_id = b.id
-        JOIN genres g
-            ON bg.genre_id = g.id;
+            SELECT b.id, g.name
+            FROM books b
+            JOIN book_genres bg
+                ON bg.book_id = b.id
+            JOIN genres g
+                ON bg.genre_id = g.id;
         """)
 
         self.books_id_with_genres = cursor.fetchall()

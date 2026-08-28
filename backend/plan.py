@@ -23,3 +23,14 @@
 #  4. Complete login process
 
 
+from app.database.database import database
+
+
+cursor = database.cursor(dictionary=True)
+cursor.execute(f"""
+    SELECT username FROM users
+""")
+
+output = cursor.fetchall()
+
+print(output)

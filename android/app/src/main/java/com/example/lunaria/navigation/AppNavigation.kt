@@ -40,7 +40,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import com.example.lunaria.data.model.user.UsernameAndPreferences
 import com.example.lunaria.data.model.user.Username
 
 
@@ -66,14 +65,22 @@ data object PreferenceDescriptionSurvey
 @Composable
 fun AppNavigation() {
 
+    // | Book recommendation |
     var recommendedBooks by remember {
         mutableStateOf<List<Book>>(emptyList())
     }
+
+    var shouldRecommend by remember {
+        mutableStateOf(false)
+    } // This is to prevent the LLM from backend to be requested unnecessarily many times
+    // Adjust this to true to request the LLM to recommend books
+
 
     var errorMessage by remember {
         mutableStateOf<String?>(null)
     }
 
+    // | Screens |
     val backStack = remember {
         mutableStateListOf<Any>(Login)
     }
@@ -87,18 +94,30 @@ fun AppNavigation() {
         currentScreen == Explore ||
         currentScreen == Settings
 
-    var username by remember {
-        mutableStateOf<String?>(null)
+
+    // | From database |
+    var allUsernameFromDatabase by remember {
+        mutableStateOf<List<Username>>(emptyList())
     }
 
+    var allBooks by remember {
+        mutableStateOf<List<Book>>(emptyList())
+    }
+
+    var shouldSearchAllUsername by remember {
+        mutableStateOf(true)
+    } // search all username at the very moment when users open Lunaria
+
+
+    // | Login and survey |
     var preferenceDescription by remember {
         mutableStateOf("")
     }
 
-    var shouldRecommend by remember {
-        mutableStateOf(false)
-    } // This is to prevent the LLM from backend to be requested unnecessarily many times
-    // Adjust this to true to request the LLM to recommend books
+
+    var username by remember {
+        mutableStateOf<String?>(null)
+    }
 
     LaunchedEffect(shouldRecommend) {
 
@@ -120,13 +139,16 @@ fun AppNavigation() {
     }
 
 
-    var allBooks by remember {
-        mutableStateOf<List<Book>>(emptyList())
+    LaunchedEffect(Unit) {
+        allBooks = RetrofitClient.api.getAllBooksFromDatabase()
     }
 
 
-    LaunchedEffect(Unit) {
-        allBooks = RetrofitClient.api.getAllBooksFromDatabase()
+    LaunchedEffect(shouldSearchAllUsername) {
+        if (shouldSearchAllUsername){
+            allUsernameFromDatabase = RetrofitClient.api.getAllUsernameFromDatabase()
+            shouldSearchAllUsername = false
+        }
     }
 
 
@@ -294,9 +316,9 @@ fun AppNavigation() {
                                 backStack.add(GenrePreferenceSurvey)
                             },
                             onBack = {
-
                                 backStack.removeLastOrNull()
-                            }
+                            },
+                            allUsername = allUsernameFromDatabase
                         )
                     }
 

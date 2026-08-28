@@ -75,3 +75,9 @@ def add_preference_description_to_database(preference_description: PreferenceDes
         username=preference_description.username,
         description=preference_description.description
     )
+
+
+@router.get("/get-all-username")
+def get_all_username_from_database():
+
+    return user_services.get_all_username_from_database()
