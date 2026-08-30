@@ -5,6 +5,8 @@ import com.example.lunaria.data.model.book.Book
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 
@@ -25,25 +27,39 @@ fun BookDetailScreen(
 ) {
 
     Column(
-        modifier = Modifier.padding(24.dp),
+        modifier = Modifier
+            .padding(24.dp)
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
 
+        // Title
         Text(
             text = book.title,
             fontSize = 28.sp
         )
 
+        // Author
         Text(
             text = "Author: ${book.author}",
-            fontSize = 18.sp
+            fontSize = 16.sp
         )
 
+        // Genres
+        val genres = book.genres.joinToString(", ")
+        
+        Text(
+            text = "Genres: $genres",
+            fontSize = 16.sp
+        )
+
+        // Published year
         Text(
             text = "Published: ${book.publishedYear}",
             fontSize = 16.sp
         )
 
+        // Description
         Text(
             text = "Description",
             fontSize = 20.sp
@@ -54,6 +70,7 @@ fun BookDetailScreen(
             fontSize = 16.sp
         )
 
+        // Back button
         Button(
             onClick = onBack,
             modifier = Modifier.fillMaxWidth()
