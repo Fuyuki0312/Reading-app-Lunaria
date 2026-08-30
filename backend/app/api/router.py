@@ -84,7 +84,6 @@ def get_all_username_from_database():
 
 
 @router.post("/get-password-by-username")
-
 def get_password_from_database_by_username(username: Username):
 
     password = user_services.get_password_by_username_from_database(
@@ -96,3 +95,29 @@ def get_password_from_database_by_username(username: Username):
     )
 
     return account
+
+
+@router.post("/get-genre-preferences-by-username")
+def get_genre_preferences_by_username(username: Username):
+
+    genres = user_services.get_genre_preferences_from_username(
+        username=username.username
+    )
+
+    return UsernameAndPreferences(
+        username=username.username,
+        genres=genres
+    )
+
+
+@router.post("/get-preference-description-by-username")
+def get_preference_description_by_username(username: Username):
+
+    description = user_services.get_preference_description_from_username(
+        username=username.username
+    )
+
+    return PreferenceDescription(
+        username=username.username,
+        description=description
+    )

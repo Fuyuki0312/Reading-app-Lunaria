@@ -46,12 +46,16 @@ import com.example.lunaria.data.model.user.Username
 
 // ---------- Navigation destinations ----------
 
+
+// Main interface
 data object Home
 
 data object Explore
 
 data object Settings
 
+
+// Login and registeration
 data object Login
 
 data object Register
@@ -59,6 +63,12 @@ data object Register
 data object GenrePreferenceSurvey
 
 data object PreferenceDescriptionSurvey
+
+
+// Reading preference adjustment
+data object EditGenrePreferences
+
+data object EditPreferenceDescription
 
 
 // ---------- App navigation ----------
@@ -121,11 +131,17 @@ fun AppNavigation() {
         mutableStateOf("")
     }
 
+    var genrePreferences by remember {
+        mutableStateOf<List<String>>(emptyList())
+    }
 
-    var username by remember {
+
+    var username by rememberSaveable {
         mutableStateOf<String?>(null)
     }
 
+
+    // Request book recommendation when shouldRecommend
     LaunchedEffect(shouldRecommend) {
 
         if (shouldRecommend) {
@@ -146,6 +162,42 @@ fun AppNavigation() {
     }
 
 
+    // Get genrePreferences and preferenceDescription when a user logins
+    LaunchedEffect(username, isLoggedIn) {
+
+        if (isLoggedIn && username != null) {
+
+            try {
+
+                val usernameRequest =
+                    Username(username = username!!)
+
+                val genreResponse =
+                    RetrofitClient.api
+                        .getGenrePreferencesByUsername(
+                            usernameRequest
+                        )
+
+                val descriptionResponse =
+                    RetrofitClient.api
+                        .getPreferenceDescriptionByUsername(
+                            usernameRequest
+                        )
+
+                genrePreferences =
+                    genreResponse.genres
+
+                preferenceDescription =
+                    descriptionResponse.description
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+
+    // Get all books from database
     LaunchedEffect(Unit) {
         allBooks = RetrofitClient.api.getAllBooksFromDatabase()
     }
@@ -248,7 +300,7 @@ fun AppNavigation() {
                     entry<Home> {
                         HomeScreen(
                             books = recommendedBooks,
-                            username = username!!, // TODO: Hãy lấy username từ login
+                            username = username!!,
                             onBookClick = { book ->
 
                                 backStack.add(
@@ -294,7 +346,15 @@ fun AppNavigation() {
                     }
 
                     entry<Settings> {
-                        SettingsScreen()
+
+                        SettingsScreen(
+                            onAdjustReadingPreferences = {
+
+                                backStack.add(
+                                    EditGenrePreferences
+                                )
+                            }
+                        )
                     }
 
                     entry<Login> {
@@ -332,7 +392,10 @@ fun AppNavigation() {
 
                         GenrePreferenceSurveyScreen(
                             username = username!!,
-                            onFinish = {
+                            onFinish = { surveyedGenrePreferences ->
+
+                                genrePreferences = surveyedGenrePreferences
+
                                 backStack.clear()
                                 backStack.add(PreferenceDescriptionSurvey)
                             }
@@ -353,6 +416,47 @@ fun AppNavigation() {
                             },
 
                             username = username!!
+                        )
+                    }
+
+                    entry<EditGenrePreferences> {
+
+                        GenrePreferenceSurveyScreen(
+                            username = username!!,
+
+                            initialSelectedGenres =
+                                genrePreferences,
+
+                            onFinish = { newGenres ->
+
+                                genrePreferences = newGenres
+
+                                backStack.add(
+                                    EditPreferenceDescription
+                                )
+                            }
+                        )
+                    }
+
+                    entry<EditPreferenceDescription> {
+
+                        PreferenceDescriptionSurveyScreen(
+                            username = username!!,
+
+                            initialPreferenceDescription =
+                                preferenceDescription,
+
+                            onFinish = { newDescription ->
+
+                                preferenceDescription =
+                                    newDescription
+
+                                // Preferences changed, recommendation should refresh
+                                shouldRecommend = true
+
+                                backStack.clear()
+                                backStack.add(Settings)
+                            }
                         )
                     }
                 }

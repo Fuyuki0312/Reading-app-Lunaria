@@ -31,11 +31,16 @@ import kotlinx.coroutines.launch
 @Composable
 fun PreferenceDescriptionSurveyScreen(
     onFinish: (String) -> Unit,
-    username: String
+    username: String,
+    initialPreferenceDescription: String = ""
 ) {
 
-    var preferenceDescription by rememberSaveable {
-        mutableStateOf("")
+    var preferenceDescription by rememberSaveable(
+        initialPreferenceDescription
+    ) {
+        mutableStateOf(
+            initialPreferenceDescription
+        )
     }
 
     val coroutineScope = rememberCoroutineScope()

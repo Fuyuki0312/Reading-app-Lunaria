@@ -47,4 +47,14 @@ interface LunariaApi {
     suspend fun getPasswordFromDatabaseByUsername(
         @Body username: Username
     ): UserAccount
+
+    @POST("get-genre-preferences-by-username")
+    suspend fun getGenrePreferencesByUsername(
+        @Body username: Username
+    ): UsernameAndPreferences
+
+    @POST("get-preference-description-by-username")
+    suspend fun getPreferenceDescriptionByUsername(
+        @Body username: Username
+    ): PreferenceDescription
 }

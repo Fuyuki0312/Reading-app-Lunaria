@@ -76,7 +76,8 @@ class UserService:
         ))
 
         result_from_database = cursor.fetchone()
-        return result_from_database["genre_preferences"]
+        genre_preferences = json.loads(result_from_database["genre_preferences"])
+        return genre_preferences
 
     def get_preference_description_from_username(self, username):
 

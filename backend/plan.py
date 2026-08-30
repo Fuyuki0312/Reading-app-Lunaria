@@ -22,15 +22,3 @@
 #  3. Thêm điều kiện để Register Account (không được trùng username với user khác)
 #  4. Complete login process
 
-
-from app.database.database import database
-
-
-cursor = database.cursor(dictionary=True)
-cursor.execute(f"""
-    SELECT genre_preferences FROM users
-""")
-
-output = cursor.fetchall()
-
-print(output)

@@ -30,13 +30,19 @@ import com.example.lunaria.data.model.user.UsernameAndPreferences
 import kotlinx.coroutines.launch
 
 
+
+/*
+    Note: This screen is built not only to conduct a survey, but also to
+          enable users to adjust their surveyed reading preferences.
+*/
 @Composable
 fun GenrePreferenceSurveyScreen(
     username: String,
-    onFinish: () -> Unit
+    initialSelectedGenres: List<String> = emptyList(),
+    onFinish: (MutableList<String>) -> Unit
 ) {
 
-    val genres = listOf(
+    val predefinedGenres = listOf(
         "Fantasy",
         "Science Fiction",
         "Mystery",
@@ -44,16 +50,38 @@ fun GenrePreferenceSurveyScreen(
         "Romance",
         "Horror",
         "Historical Fiction",
-        "Self-help",
-        "Others"
+        "Self-help"
     )
 
-    val selectedGenres = remember {
-        mutableStateListOf<String>()
+    val genres = predefinedGenres + "Others"
+
+    val oldOtherGenre =
+        initialSelectedGenres.firstOrNull {
+            it !in predefinedGenres
+        }
+
+    val selectedGenres = remember(initialSelectedGenres) {
+
+        mutableStateListOf<String>().apply {
+
+            addAll(
+                initialSelectedGenres.filter {
+                    it in predefinedGenres
+                }
+            )
+
+            if (oldOtherGenre != null) {
+                add("Others")
+            }
+        }
     }
 
-    var otherGenre by rememberSaveable {
-        mutableStateOf("")
+    var otherGenre by rememberSaveable(
+        initialSelectedGenres
+    ) {
+        mutableStateOf(
+            oldOtherGenre ?: ""
+        )
     }
 
     var errorMessage by rememberSaveable {
@@ -172,7 +200,7 @@ fun GenrePreferenceSurveyScreen(
                             )
 
                             RetrofitClient.api.registerGenrePreferences(genrePreferenceToRegister)
-                            onFinish()
+                            onFinish(finalGenres)
                         } catch (e: Exception) {
                             errorMessage = e.message
                             e.printStackTrace()
