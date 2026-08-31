@@ -47,7 +47,7 @@ fun BookDetailScreen(
 
         // Genres
         val genres = book.genres.joinToString(", ")
-        
+
         Text(
             text = "Genres: $genres",
             fontSize = 16.sp
