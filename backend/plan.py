@@ -8,7 +8,7 @@
 #  6. Make Qwen become an agent (before that, figure out if this is actually useful)
 
 # TODO frontend:
-#  1. Make Lunaria functionable: enable users to scroll, choose a book and read it (make a searching algorithm)
+#  1. Make Lunaria functionable: enable users to scroll, choose a book and read it
 #  2. (DONE) Display the recommendation on the app
 #  3. (DONE) Learn how to get users' inputs from the app
 #  3.1. (DONE) Create a search bar to search book title
@@ -17,4 +17,27 @@
 #  6. Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 #  7. Style: Decorate app with Lunaria style
 
+# TODO model evaluation:
+#  metrics: Precision@K, NDCG@K, Diversity, Coverage, Constraint Violation Rate
+#  Note: hãy lưu lại những cuốn sách khác nhau mà system đã recommend để tính Coverage
 
+class Solution:
+    def uniformArray(self, nums1: list[int]) -> bool:
+
+        num_of_odds = 0
+        num_of_evens = 0
+
+        for num in nums1:
+
+            if num % 2 == 1: # if num is odds
+                num_of_odds += 1
+            else:
+                num_of_evens += 1
+
+        if (num_of_odds >= 2) or num_of_odds == 0:
+            return True
+        else:
+            return False
+
+sol = Solution()
+print(sol.uniformArray(nums1=[2,3]))

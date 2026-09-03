@@ -43,12 +43,13 @@ fun GenrePreferenceSurveyScreen(
 ) {
 
     val predefinedGenres = listOf(
+        "Adventure",
+        "Comedy",
         "Fantasy",
         "Science Fiction",
         "Mystery",
-        "Adventure",
         "Romance",
-        "Horror",
+        "Romcom",
         "Historical Fiction",
         "Self-help"
     )

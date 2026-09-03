@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "type": "simple",
+        "genre_preferences": ["Fantasy", "Mystery"],
+        "genre_description": ""
+    },
+    {
+        "id": 2,
+        "type": "simple",
+        "genre_preferences": ["Romance", "Coming of Age"],
+        "genre_description": ""
+    },
+    {
+        "id": 3,
+        "type": "simple",
+        "genre_preferences": ["Comedy", "Romcom"],
+        "genre_description": ""
+    },
+    {
+        "id": 4,
+        "type": "simple",
+        "genre_preferences": ["Non-fiction", "Self-help"],
+        "genre_description": ""
+    },
+    {
+        "id": 5,
+        "type": "simple",
+        "genre_preferences": ["Science Fiction", "Adventure"],
+        "genre_description": ""
+    },
+    {
+        "id": 6,
+        "type": "simple",
+        "genre_preferences": ["Dark Fantasy", "Isekai"],
+        "genre_description": ""
+    },
+    {
+        "id": 7,
+        "type": "constraints",
+        "genre_preferences": ["Fantasy", "Adventure"],
+        "genre_description": "I don't really like Dark Fantasy and Isekai"
+    },
+    {
+        "id": 8,
+        "type": "constraints",
+        "genre_preferences": ["Mystery", "Drama"],
+        "genre_description": "I don't want to read Science Fiction or Psychological Thriller"
+    },
+    {
+        "id": 9,
+        "type": "constraints",
+        "genre_preferences": ["Science Fiction", "Coming of Age"],
+        "genre_description": "I hate Psychological Thriller and Mystery"
+    },
+    {
+        "id": 10,
+        "type": "constraints",
+        "genre_preferences": ["Historical Fiction", "Drama", "Romance"],
+        "genre_description": "I like stories about people trying to choose their own lives while family, money, or social expectations pull them another way. Sad events are okay; I don't need a cheerful read. I'm not keen on Mystery"
+    },
+    {
+        "id": 11,
+        "type": "constraints",
+        "genre_preferences": ["Comedy", "Coming of Age"],
+        "genre_description": "Something light for the end of the day. Awkward mistakes, everyday problems, and people muddling through are more my thing than grand, world-saving stakes. Don't recommend me Romance or Romcom"
+    },
+    {
+        "id": 12,
+        "type": "constraints",
+        "genre_preferences": ["Fantasy", "Mystery"],
+        "genre_description": "I enjoy uncovering how an unfamiliar world works. Give me questions that make me want to keep exploring, with discoveries that change what the characters believe. Magic is welcome, but a list of impressive spells would not be enough to keep me interested. On the other hand, I don't really like Dark Fantasy and Science Fiction"
+    },
+    {
+        "id": 13,
+        "type": "semantic",
+        "genre_preferences": ["Self-help"],
+        "genre_description": "I'm trying to get moving on a personal project, but I keep putting it off and then feeling that I'm not good enough to do it. Small practical steps and a way to keep going after a bad week would help more than a dramatic change-your-whole-life message."
+    },
+    {
+        "id": 14,
+        "type": "semantic",
+        "genre_preferences": ["Non-fiction"],
+        "genre_description": "I keep seeing AI tools used in classes and everyday apps, but I don't really understand what they can and cannot do. I'd like an explanation I can follow without a technical background, plus an idea of what to learn first if I want to try building something myself."
+    },
+    {
+        "id": 15,
+        "type": "semantic",
+        "genre_preferences": ["Science Fiction", "Adventure", "Coming of Age"],
+        "genre_description": "I like younger characters having to make decisions that affect more than just themselves. Discovering an unfamiliar place and working with other people matter more to me than chasing a villain. I'm happy with either a journey outward or a discovery that changes how the characters understand home."
+    },
+    {
+        "id": 16,
+        "type": "semantic",
+        "genre_preferences": ["Romance", "Coming of Age"],
+        "genre_description": "The relationship between two people is what keeps me reading. I like it when choosing a future of their own comes into conflict with expectations or promises. A historical setting or some magic is fine; I don't need the characters' lives to look like mine."
+    },
+    {
+        "id": 17,
+        "type": "semantic",
+        "genre_preferences": ["Comedy", "Romcom"],
+        "genre_description": "I just want a fun read to unwind with: awkward conversations, a simple plan going wrong, or ridiculous situations that keep getting worse. School, work, and family settings all sound fine."
+    },
+    {
+        "id": 18,
+        "type": "semantic",
+        "genre_preferences": ["Fantasy", "Mystery", "Adventure"],
+        "genre_description": "I like fantasy stories where exploring the world and uncovering its secrets are closely connected. Hidden histories, forgotten places, old records, strange rules of magic, or clues left behind by earlier generations all sound interesting to me. I'd rather follow characters gradually discovering what really happened than read a story focused mostly on battles or becoming stronger."
+    },
+    {
+        "id": 19,
+        "type": "author_fan",
+        "genre_preferences": ["Science Fiction", "Adventure", "Coming of Age"],
+        "genre_description": "I've really enjoyed Nora Vale's books, so I'd be especially interested in reading something else by her. I tend to like her stories about young characters facing unfamiliar situations, making difficult choices, and figuring out who they want to become. I'm still open to books by other authors if they have a similar feeling."
+    },
+    {
+        "id": 20,
+        "type": "author_fan",
+        "genre_preferences": ["Mystery", "Science Fiction"],
+        "genre_description": "Iris Vale is a favorite author of mine, so I'd give her books priority when choosing my next read. Within the genres I selected, I'm open to other authors too, but a book by her would get my attention first."
+    }
+]
