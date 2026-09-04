@@ -6,6 +6,7 @@ class Config:
 
         # Model
         self.MODEL_NAME = "Qwen/Qwen3.5-2B"
+        self.NUM_OF_RECOMMENDED_BOOK = 5
 
 
     def get_system_prompt_for_model(
@@ -34,7 +35,7 @@ class Config:
             
             
             Output's format rules:
-            - Recommend at most 3 books.
+            - Recommend exactly {self.NUM_OF_RECOMMENDED_BOOK} books.
             - Only recommend books that exist in the provided book list.
             - book_id must exactly match the provided ID.
             - Keep each reason short.

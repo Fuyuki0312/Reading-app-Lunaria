@@ -21,23 +21,8 @@
 #  metrics: Precision@K, NDCG@K, Diversity, Coverage, Constraint Violation Rate
 #  Note: hãy lưu lại những cuốn sách khác nhau mà system đã recommend để tính Coverage
 
-class Solution:
-    def uniformArray(self, nums1: list[int]) -> bool:
+import random
 
-        num_of_odds = 0
-        num_of_evens = 0
-
-        for num in nums1:
-
-            if num % 2 == 1: # if num is odds
-                num_of_odds += 1
-            else:
-                num_of_evens += 1
-
-        if (num_of_odds >= 2) or num_of_odds == 0:
-            return True
-        else:
-            return False
-
-sol = Solution()
-print(sol.uniformArray(nums1=[2,3]))
+a = [1, 2, 3, 4]
+random.shuffle(a)
+print(a)
