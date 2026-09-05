@@ -6,7 +6,10 @@ class Config:
 
         # Model
         self.MODEL_NAME = "Qwen/Qwen3.5-2B"
-        self.NUM_OF_RECOMMENDED_BOOK = 5
+        self.NUM_OF_RECOMMENDED_BOOK = 5 # the K number
+
+        # Evaluation
+        self.RELEVANCE_THRESHOLD = 2 # if a book's relevance score is higher than this value, the book will be seen as relevant to be recommended to the related user
 
 
     def get_system_prompt_for_model(

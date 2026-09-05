@@ -11,7 +11,7 @@ book_services = get_book_services()
 def recommend_books(
         user_genre_preference=[],
         user_preference_description=None
-):
+) -> list[dict]:
 
     model, processor = get_model_and_processor()
     books = book_services.get_books_with_genres()
@@ -51,7 +51,7 @@ def recommend_books(
 
 
     with torch.inference_mode():
-        raw_outputs = model.generate(**inputs, max_new_tokens=400)
+        raw_outputs = model.generate(**inputs, max_new_tokens=500)
     decoded_outputs = processor.decode(raw_outputs[0][inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
     json_outputs = json.loads(decoded_outputs)
 

@@ -1,4 +1,5 @@
-from baseline import Baseline #.
+from baseline import Baseline
+from metric_calculator import normalized_dcg
 from app.ai.recommendation import recommend_books
 
 import json
@@ -9,6 +10,10 @@ import json
 
 with open("eval_dataset\\eval_users.json") as f:
     eval_users = json.load(f)
+
+with open("eval_dataset\\relevance_labels.json") as f:
+    eval_relevance = json.load(f)
+
 
 # Baseline initialization -----------------------------------
 
