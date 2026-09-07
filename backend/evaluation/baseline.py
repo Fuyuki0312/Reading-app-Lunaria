@@ -48,7 +48,7 @@ class Baseline:
             user_genre_preferences_set.add(genre)
 
         for book in self.all_book_genres:
-
+            book["score"] = 0
             for genre in book["genres"]:
 
                 if genre in user_genre_preferences_set:
