@@ -56,3 +56,25 @@ def normalized_dcg(
     assert not only_zeros_or_any_negative, "ideal_rel_in_order MUST NOT be a list of ONLY ZEROs or ANY NEGATIVE NUMBERS"
 
     return dcg(relevance_in_order) / ideal_dcg(ideal_rel_in_order)
+
+
+def normalized_precision(
+        relevance_in_order: list[int],
+        rel_threshold: int,
+        k: int
+) -> float:
+
+    if len(relevance_in_order) == 0:
+        return 0.0
+
+    num_of_suitable_book = 0
+    for rel in relevance_in_order:
+        if rel >= rel_threshold:
+            num_of_suitable_book += 1
+
+    return num_of_suitable_book / k
+
+
+def violation_rate(num_of_violation: int, total_k: int) -> float:
+
+    return num_of_violation / total_k

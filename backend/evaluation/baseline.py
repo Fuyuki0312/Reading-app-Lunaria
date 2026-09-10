@@ -27,6 +27,7 @@ import random
 
 
 config = Config()
+random.seed(config.RANDOM_SEED)
 book_services = get_book_services()
 
 class Baseline:

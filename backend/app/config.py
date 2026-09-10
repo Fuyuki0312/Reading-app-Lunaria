@@ -10,7 +10,8 @@ class Config:
 
         # Evaluation
         self.RELEVANCE_THRESHOLD = 2 # if a book's relevance score is higher than this value, the book will be seen as relevant to be recommended to the related user
-
+        self.NUM_DIGITS_ROUNDED_FOR_METRICS = 4
+        self.RANDOM_SEED = 123456789
 
     def get_system_prompt_for_model(
             self,
@@ -38,31 +39,36 @@ class Config:
             
             
             Output's format rules:
-            - Recommend exactly {self.NUM_OF_RECOMMENDED_BOOK} books.
+            - Recommend exactly {self.NUM_OF_RECOMMENDED_BOOK} books. If there is no relevant book left, you have to recommend other irrelevant books to reach this number.
             - Only recommend books that exist in the provided book list.
             - book_id must exactly match the provided ID.
             - Keep each reason short.
             - Do not output Markdown.
             - Do not output any text before or after the JSON.
             
-            HARD EXCLUSION RULES:
+            HARD EXCLUSION RULE — HIGHEST PRIORITY:
 
-                Before ranking books, eliminate all invalid books.
+                1. Identify any genre that the user explicitly says they dislike,
+                   hate, do not want, or are not interested in.
                 
-                A book is invalid if ANY of its genres appears in the user's
-                disliked genres.
+                2. NEVER recommend a book if ANY of that book's genres matches
+                   one of those disliked genres.
                 
-                Invalid books MUST NEVER appear in the recommendations.
+                3. This rule has higher priority than all relevance and ranking rules.
                 
-                Disliked genres have higher priority than liked genres.
+                4. If necessary, recommend a completely irrelevant but non-violating
+                   book rather than a relevant book that violates this rule.
                 
+                5. Before returning the final JSON, verify that every recommended book
+                   satisfies this exclusion rule.
+
                 Example:
                 User likes: ["Fantasy"]
                 User dislikes: ["Dark Fantasy"]
                 
                 Book genres: ["Fantasy", "Dark Fantasy"]
                 
-                Result: INVALID BOOK. DO NOT RECOMMEND IT.
+                -> Do not recommend this book, because user will not like it even when the book may have genres the user like. Instead, recommend other books even when other books seem irrelevant.
                 
             Other rules:
             
