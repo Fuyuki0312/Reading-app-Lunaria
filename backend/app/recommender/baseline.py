@@ -57,7 +57,7 @@ class Baseline:
 
         self.all_book_genres.sort(key=lambda x: x["score"], reverse=True)
 
-        return self.recommend_book_id()
+        return self.recommend_book_id() # return example: [{'id': 21}, {'id': 12}, {'id': 1}, {'id': 4}, {'id': 18}]
 
 
     def recommend_book_id(self) -> list[dict[str, int]]:
@@ -67,7 +67,7 @@ class Baseline:
         for i in range(config.NUM_OF_RECOMMENDED_BOOK):
 
             recommended_id_list.append(
-                {"id": self.all_book_genres[i]["id"]}
+                {"book_id": self.all_book_genres[i]["id"]}
             )
 
         return recommended_id_list

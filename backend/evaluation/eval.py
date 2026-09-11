@@ -160,7 +160,7 @@ for user in eval_users:
     baseline_rel_in_order = []
     baseline_violation_counter = 0
     for book in baseline_recommended_books:
-        book_id = book["id"]
+        book_id = book["book_id"]
         rel = book_id_with_relevance_score[book_id]["rel_score"]
 
         if book_id_with_relevance_score[book_id]["violation"]:

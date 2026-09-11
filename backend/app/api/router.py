@@ -1,3 +1,4 @@
+from app.config import Config
 from app.services.book_services import get_book_services
 from app.services.user_services import get_user_services
 from .model.user_account import UserAccount
@@ -5,6 +6,7 @@ from .model.username_and_genre_preference import UsernameAndPreferences
 from .model.username import Username
 from .model.preference_description import PreferenceDescription
 from app.recommender.recommendation import recommend_books
+from app.recommender.baseline import Baseline
 
 
 from fastapi import APIRouter
@@ -14,9 +16,12 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
+config = Config()
+
 book_services = get_book_services()
 user_services = get_user_services()
 
+baseline = Baseline()
 
 # Router for books -----------------------------------------------------
 
@@ -37,10 +42,16 @@ def recommend(username: Username):
         username=username.username
     )
 
-    json_book_id_list = recommend_books(
-        user_genre_preference=genre_preferences,
-        user_preference_description=preference_description
-    )
+    if preference_description == "":
+        # Baseline's recommendations
+        json_book_id_list = baseline.score_books(user_genre_preferences=genre_preferences)
+
+    else:
+        # LLM's recommendations
+        json_book_id_list = recommend_books(
+            user_genre_preference=genre_preferences,
+            user_preference_description=preference_description
+        )
 
     recommended_books = book_services.index_books_with_id_list(json_book_id_list)
 
@@ -116,6 +127,9 @@ def get_preference_description_by_username(username: Username):
     description = user_services.get_preference_description_from_username(
         username=username.username
     )
+    
+    if description is None:
+        description = ""
 
     return PreferenceDescription(
         username=username.username,
