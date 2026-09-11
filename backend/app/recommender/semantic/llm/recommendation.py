@@ -1,4 +1,4 @@
-from .model import get_model_and_processor
+from app.recommender.semantic.llm.model import get_llm_and_processor
 from app.config import Config
 from app.services.book_services import get_book_services
 
@@ -13,7 +13,7 @@ def recommend_books(
         user_preference_description=None
 ) -> list[dict]:
 
-    model, processor = get_model_and_processor()
+    model, processor = get_llm_and_processor()
     books = book_services.get_books_with_genres()
 
     if user_genre_preference == []:

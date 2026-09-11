@@ -5,7 +5,7 @@ from .model.user_account import UserAccount
 from .model.username_and_genre_preference import UsernameAndPreferences
 from .model.username import Username
 from .model.preference_description import PreferenceDescription
-from app.recommender.recommendation import recommend_books
+from app.recommender.semantic.llm.recommendation import recommend_books
 from app.recommender.baseline import Baseline
 
 
@@ -40,7 +40,7 @@ def recommend(username: Username):
 
     preference_description = user_services.get_preference_description_from_username(
         username=username.username
-    )
+    ).strip()
 
     if preference_description == "":
         # Baseline's recommendations

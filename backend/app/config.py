@@ -8,6 +8,11 @@ class Config:
         self.MODEL_NAME = "Qwen/Qwen3.5-2B"
         self.NUM_OF_RECOMMENDED_BOOK = 5 # the K number
 
+        # RAG
+        self.NUM_OF_BOOKS_RETURNED_FROM_RAG = 10
+
+        assert self.NUM_OF_BOOKS_RETURNED_FROM_RAG > self.NUM_OF_RECOMMENDED_BOOK, "RAG must return more books than the number of books that the LLM would recommend."
+
         # Evaluation
         self.RELEVANCE_THRESHOLD = 2 # if a book's relevance score is higher than this value, the book will be seen as relevant to be recommended to the related user
         self.NUM_DIGITS_ROUNDED_FOR_METRICS = 4

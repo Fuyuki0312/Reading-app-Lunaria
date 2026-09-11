@@ -9,6 +9,6 @@ processor = AutoProcessor.from_pretrained(MODEL_NAME)
 model = AutoModelForMultimodalLM.from_pretrained(MODEL_NAME, device_map="auto")
 
 
-def get_model_and_processor():
+def get_llm_and_processor():
 
     return model, processor
