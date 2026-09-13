@@ -10,6 +10,9 @@ __pycache__/
 venv/
 env/
 
+# Vector database
+chroma_db/
+
 # Secrets / environment variables
 .env
 .env.*

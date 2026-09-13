@@ -1,3 +1,4 @@
+from pathlib import Path
 
 
 class Config:
@@ -5,11 +6,14 @@ class Config:
     def __init__(self):
 
         # Model
-        self.MODEL_NAME = "Qwen/Qwen3.5-2B"
+        self.LLM = "Qwen/Qwen3.5-2B"
+        self.EMBEDDING_MODEL = "intfloat/multilingual-e5-small"
         self.NUM_OF_RECOMMENDED_BOOK = 5 # the K number
 
         # RAG
         self.NUM_OF_BOOKS_RETURNED_FROM_RAG = 10
+        BASE_DIR = Path(__file__).resolve().parent.parent
+        self.CHROMA_DB_PATH = BASE_DIR / "chroma_db"
 
         assert self.NUM_OF_BOOKS_RETURNED_FROM_RAG > self.NUM_OF_RECOMMENDED_BOOK, "RAG must return more books than the number of books that the LLM would recommend."
 

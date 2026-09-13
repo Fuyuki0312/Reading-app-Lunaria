@@ -3,7 +3,7 @@ from app.config import Config
 
 config = Config()
 
-MODEL_NAME = config.MODEL_NAME
+MODEL_NAME = config.LLM
 
 processor = AutoProcessor.from_pretrained(MODEL_NAME)
 model = AutoModelForMultimodalLM.from_pretrained(MODEL_NAME, device_map="auto")

@@ -1,4 +1,4 @@
-from app.recommender.semantic.llm.model import get_llm_and_processor
+from app.recommender.rag.llm.model import get_llm_and_processor
 from app.config import Config
 from app.services.book_services import get_book_services
 

@@ -16,3 +16,97 @@
 #  5. (DONE) Collect user preferences: Create a test to get users' preferences in their first log-in
 #  6. Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 #  7. Style: Decorate app with Lunaria style
+
+import chromadb
+from sentence_transformers import SentenceTransformer
+
+client = chromadb.PersistentClient(
+    path="./chroma_db"
+)
+
+collection = client.get_or_create_collection(
+    name="books",
+    configuration={
+        "hnsw": {
+            "space": "cosine"
+        }
+    }
+)
+
+model = SentenceTransformer(
+    "intfloat/multilingual-e5-small"
+)
+
+books = [
+    {
+        "id": 1,
+        "title": "Lost Kingdom",
+        "description":
+            "A young wizard explores the ruins of an ancient magical civilization."
+    },
+    {
+        "id": 2,
+        "title": "Midnight Murder",
+        "description":
+            "A detective investigates a murder in modern London."
+    },
+    {
+        "id": 3,
+        "title": "Italian Kitchen",
+        "description":
+            "A practical guide to cooking Italian pasta."
+    }
+]
+
+book_texts = [
+    f"passage: {book['description']}"
+    for book in books
+]
+
+book_embeddings = model.encode(
+    book_texts,
+    normalize_embeddings=True
+)
+
+print(book_embeddings.shape)
+
+collection.upsert(
+    ids=[
+        f"book_{book['id']}"
+        for book in books
+    ],
+
+    embeddings=book_embeddings.tolist(),
+
+    metadatas=[
+        {
+            "book_id": book["id"],
+            "title": book["title"]
+        }
+        for book in books
+    ]
+)
+
+user_description = (
+    "I want a fantasy story involving "
+    "ancient magic and a lost civilization."
+)
+
+query_text = f"query: {user_description}"
+
+query_embedding = model.encode(
+    query_text,
+    normalize_embeddings=True
+)
+
+print(query_embedding.shape)
+
+
+results = collection.query(
+    query_embeddings=[
+        query_embedding.tolist()
+    ],
+    n_results=3
+)
+
+print(results)

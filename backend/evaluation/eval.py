@@ -1,6 +1,6 @@
-from app.recommender.baseline import Baseline
+from app.recommender.baseline.baseline import Baseline
 from metric_calculator import normalized_dcg, normalized_precision, violation_rate
-from app.recommender.semantic.llm.recommendation import recommend_books
+from app.recommender.rag.llm.recommendation import recommend_books
 from app.config import Config
 
 import json

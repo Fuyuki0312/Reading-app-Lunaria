@@ -5,8 +5,8 @@ from .model.user_account import UserAccount
 from .model.username_and_genre_preference import UsernameAndPreferences
 from .model.username import Username
 from .model.preference_description import PreferenceDescription
-from app.recommender.semantic.llm.recommendation import recommend_books
-from app.recommender.baseline import Baseline
+from app.recommender.rag.llm.recommendation import recommend_books
+from app.recommender.baseline.baseline import Baseline
 
 
 from fastapi import APIRouter
