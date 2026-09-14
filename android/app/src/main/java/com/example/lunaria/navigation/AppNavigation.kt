@@ -199,7 +199,12 @@ fun AppNavigation() {
 
     // Get all books from database
     LaunchedEffect(Unit) {
-        allBooks = RetrofitClient.api.getAllBooksFromDatabase()
+        try {
+            allBooks = RetrofitClient.api.getAllBooksFromDatabase()
+        } catch (e: Exception) {
+            errorMessage = e.message
+            e.printStackTrace()
+        }
     }
 
 

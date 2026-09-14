@@ -7,7 +7,7 @@ config = Config()
 model = SentenceTransformer(config.EMBEDDING_MODEL)
 
 
-def embed_query(user_description: str, preferred_genres: list[str]):
+def embed_query(preferred_genres: list[str], user_description: str):
 
     genres = ", ".join(preferred_genres)
     query_text = (

@@ -17,3 +17,6 @@ collection = client.get_or_create_collection(
         }
     }
 )
+
+def get_chroma_collection():
+    return collection

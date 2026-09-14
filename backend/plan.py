@@ -1,11 +1,10 @@
 # TODO backend:
 #  1. (DONE) Ask ChatGPT to write more books and add them to my database
 #  2. (DONE) Send the books and user's preferences (make them up by hard-coding at first) to Qwen and ask for json-formated recommendation (prompt engineering)
-#  3. (DONE-HALF (metrics not included)) Do Machine-Learning-Engineer stuff to improve model (prompt engineering, fine-tune if needed, calculate metrics). Note: read Designing Machine Learning Systems
+#  3. (DONE-HALF (RAG's metrics not included)) Do Machine-Learning-Engineer stuff to improve model (prompt engineering, fine-tune if needed, calculate metrics). Note: read Designing Machine Learning Systems
 #  3.1. (DONE BUT FAIL) Create a baseline for the recommendation system and prove a LLM is better than the baseline
 #  4. Use another LLM to do Semantic Search
 #  5. Add RAG to search a larger number of books
-#  6. Make Qwen become an agent (before that, figure out if this is actually useful)
 
 # TODO frontend:
 #  1. Make Lunaria functionable: enable users to scroll, choose a book and read it
@@ -17,96 +16,3 @@
 #  6. Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 #  7. Style: Decorate app with Lunaria style
 
-import chromadb
-from sentence_transformers import SentenceTransformer
-
-client = chromadb.PersistentClient(
-    path="./chroma_db"
-)
-
-collection = client.get_or_create_collection(
-    name="books",
-    configuration={
-        "hnsw": {
-            "space": "cosine"
-        }
-    }
-)
-
-model = SentenceTransformer(
-    "intfloat/multilingual-e5-small"
-)
-
-books = [
-    {
-        "id": 1,
-        "title": "Lost Kingdom",
-        "description":
-            "A young wizard explores the ruins of an ancient magical civilization."
-    },
-    {
-        "id": 2,
-        "title": "Midnight Murder",
-        "description":
-            "A detective investigates a murder in modern London."
-    },
-    {
-        "id": 3,
-        "title": "Italian Kitchen",
-        "description":
-            "A practical guide to cooking Italian pasta."
-    }
-]
-
-book_texts = [
-    f"passage: {book['description']}"
-    for book in books
-]
-
-book_embeddings = model.encode(
-    book_texts,
-    normalize_embeddings=True
-)
-
-print(book_embeddings.shape)
-
-collection.upsert(
-    ids=[
-        f"book_{book['id']}"
-        for book in books
-    ],
-
-    embeddings=book_embeddings.tolist(),
-
-    metadatas=[
-        {
-            "book_id": book["id"],
-            "title": book["title"]
-        }
-        for book in books
-    ]
-)
-
-user_description = (
-    "I want a fantasy story involving "
-    "ancient magic and a lost civilization."
-)
-
-query_text = f"query: {user_description}"
-
-query_embedding = model.encode(
-    query_text,
-    normalize_embeddings=True
-)
-
-print(query_embedding.shape)
-
-
-results = collection.query(
-    query_embeddings=[
-        query_embedding.tolist()
-    ],
-    n_results=3
-)
-
-print(results)

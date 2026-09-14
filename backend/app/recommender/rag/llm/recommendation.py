@@ -1,22 +1,20 @@
 from app.recommender.rag.llm.model import get_llm_and_processor
 from app.config import Config
-from app.services.book_services import get_book_services
 
 import torch
 import json
 
 config = Config()
-book_services = get_book_services()
 
 def recommend_books(
-        user_genre_preference=[],
-        user_preference_description=None
+        user_genre_preference: list[str],
+        user_preference_description: str,
+        books: list[dict]
 ) -> list[dict]:
 
     model, processor = get_llm_and_processor()
-    books = book_services.get_books_with_genres()
 
-    if user_genre_preference == []:
+    if not user_genre_preference: # if user_genre_preference == []:
         user_genre_preference = "Any"
 
     messages = [

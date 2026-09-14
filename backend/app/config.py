@@ -24,7 +24,7 @@ class Config:
 
     def get_system_prompt_for_model(
             self,
-            books: list,
+            books: list
         ):
 
         system_prompt = f"""You are the book recommendation AI of Lunaria, an e-book application on mobile devices.

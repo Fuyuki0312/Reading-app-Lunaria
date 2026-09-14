@@ -52,7 +52,7 @@ class BookServices:
         return self.books
 
 
-    def index_books_with_id_list(self, list_of_book_id):
+    def index_books_with_id_list(self, list_of_book_id: list[dict]) -> list:
 
         indexed_books = []
 

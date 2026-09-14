@@ -6,6 +6,7 @@ from .model.username_and_genre_preference import UsernameAndPreferences
 from .model.username import Username
 from .model.preference_description import PreferenceDescription
 from app.recommender.rag.llm.recommendation import recommend_books
+from app.recommender.rag.retrieval import retrieve_books
 from app.recommender.baseline.baseline import Baseline
 
 
@@ -38,19 +39,33 @@ def recommend(username: Username):
         username=username.username
     )
 
-    preference_description = user_services.get_preference_description_from_username(
-        username=username.username
+    preference_description = (
+        user_services.get_preference_description_from_username(
+            username=username.username
+        ) or ""
     ).strip()
 
+    # If there is no text-free description from users, baseline will recommend books
     if preference_description == "":
         # Baseline's recommendations
         json_book_id_list = baseline.score_books(user_genre_preferences=genre_preferences)
 
+    # Otherwise, RAG will come in
     else:
+        retrieved_books = retrieve_books(
+            genre_preferences,
+            preference_description
+        )
+
+        books_for_llm = book_services.index_books_with_id_list(
+            retrieved_books
+        )
+
         # LLM's recommendations
         json_book_id_list = recommend_books(
             user_genre_preference=genre_preferences,
-            user_preference_description=preference_description
+            user_preference_description=preference_description,
+            books=books_for_llm
         )
 
     recommended_books = book_services.index_books_with_id_list(json_book_id_list)
