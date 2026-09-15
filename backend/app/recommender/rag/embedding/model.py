@@ -22,7 +22,9 @@ def embed_books(all_books: list[dict]):
     book_texts = [
         (
             f"passage: "
+            f"Title: {book['title']}. "
             f"Genres: {', '.join(book['genres'])}. "
+            f"Author: {book['author']}. "
             f"{book['description'] or ''}"
         )
         for book in all_books

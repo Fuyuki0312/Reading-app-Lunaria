@@ -11,8 +11,6 @@ if __name__ == "__main__":
 
 
     embedded_books = embed_books(all_books)
-    print("Books:", len(all_books))
-    print("Embeddings shape:", embedded_books.shape)
 
     collection.upsert(
         ids=[
@@ -30,3 +28,6 @@ if __name__ == "__main__":
             for book in all_books
         ]
     )
+
+    print("Books:", len(all_books))
+    print("Embeddings shape:", embedded_books.shape)

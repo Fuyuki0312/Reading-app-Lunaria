@@ -1,6 +1,8 @@
 from app.database.database import get_cursor_from_database
 
 
+import copy
+
 cursor = get_cursor_from_database()
 
 class BookServices:
@@ -47,9 +49,9 @@ class BookServices:
             self.books[pos_of_book_in_database]["genres"].append(book_id_with_genre["name"])
 
 
-    def get_books_with_genres(self):
+    def get_books_with_genres(self) -> list:
 
-        return self.books
+        return copy.deepcopy(self.books)
 
 
     def index_books_with_id_list(self, list_of_book_id: list[dict]) -> list:
