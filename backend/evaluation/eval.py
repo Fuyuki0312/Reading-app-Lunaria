@@ -15,7 +15,7 @@ book_services = get_book_services()
 def save_metrics_per_user_to_csv(one_user_metric_results: list[dict]):
     df = pd.DataFrame(one_user_metric_results)
     df.to_csv(
-        "eval_results/per_user_metrics.csv",
+        "eval_results/text_description_priority/per_user_metrics.csv",
         index=False
     )
 
@@ -77,7 +77,7 @@ def save_mean_metrics_to_csv(one_user_metric_results: list[dict]):
 
     df = pd.DataFrame(table)
     df.to_csv(
-        "eval_results/mean_metrics.csv",
+        "eval_results/text_description_priority/mean_metrics.csv",
         index=False
     )
 
@@ -88,7 +88,7 @@ def save_mean_metrics_to_csv(one_user_metric_results: list[dict]):
 with open("eval_dataset\\eval_users.json") as f:
     eval_users = json.load(f)
 
-with open("eval_dataset\\relevance_labels.json") as f:
+with open("eval_dataset\\text_description_priority_relevance\\relevance_labels.json") as f:
     eval_relevance = json.load(f)
 
 
