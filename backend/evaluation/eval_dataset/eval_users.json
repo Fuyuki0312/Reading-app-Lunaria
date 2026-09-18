@@ -69,7 +69,7 @@
         "id": 12,
         "type": "constraints",
         "genre_preferences": ["Fantasy", "Mystery"],
-        "genre_description": "I enjoy uncovering how an unfamiliar world works. Give me questions that make me want to keep exploring, with discoveries that change what the characters believe. Magic is welcome, but a list of impressive spells would not be enough to keep me interested. On the other hand, I don't really like Dark Fantasy and Science Fiction"
+          "genre_description": "I enjoy uncovering how an unfamiliar world works. Give me questions that make me want to keep exploring, with discoveries that change what the characters believe. Magic is welcome, but a list of impressive spells would not be enough to keep me interested. On the other hand, I don't really like Dark Fantasy and Science Fiction"
     },
     {
         "id": 13,
