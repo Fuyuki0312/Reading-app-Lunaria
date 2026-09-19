@@ -16,3 +16,6 @@
 #  6. Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 #  7. Style: Decorate app with Lunaria style
 
+print(sum([1, 2, 3]))
+
+raise Exception("RAG must return more books than the number of books that the LLM would recommend.")

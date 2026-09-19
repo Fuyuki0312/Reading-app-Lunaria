@@ -1,0 +1,502 @@
+[
+    {
+        "user_id": 1,
+        "recommendations": [
+            {
+                "book_id": 1,
+                "reason": "Perfect match for Fantasy and Mystery genres with a compelling plot about maps and secrets."
+            },
+            {
+                "book_id": 3,
+                "reason": "Excellent Fantasy and Mystery blend featuring a hidden network and ancient weather beacons."
+            },
+            {
+                "book_id": 11,
+                "reason": "Dark Fantasy with Mystery elements, focusing on hidden suffering and a beautiful yet prison-like world."
+            },
+            {
+                "book_id": 12,
+                "reason": "Isekai Fantasy with Mystery adventure, following a young woman searching for a new homeland beyond maps."
+            },
+            {
+                "book_id": 19,
+                "reason": "Science Fiction Mystery with psychological depth, exploring memory manipulation and biometric secrets."
+            }
+        ]
+    },
+    {
+        "user_id": 2,
+        "recommendations": [
+            {
+                "book_id": 4,
+                "reason": "Perfect match for Coming of Age and Romance genres."
+            },
+            {
+                "book_id": 9,
+                "reason": "Excellent Coming of Age and Romance with historical setting."
+            },
+            {
+                "book_id": 15,
+                "reason": "Great Coming of Age story with a warm and funny tone."
+            },
+            {
+                "book_id": 11,
+                "reason": "Dark Fantasy Isekai with a strong Coming of Age element."
+            },
+            {
+                "book_id": 12,
+                "reason": "Fantasy Isekai with a strong Coming of Age journey."
+            }
+        ]
+    },
+    {
+        "user_id": 3,
+        "recommendations": [
+            {
+                "book_id": 16,
+                "reason": "A pure workplace comedy about the Department of Minor Emergencies, perfectly matching your Comedy genre."
+            },
+            {
+                "book_id": 14,
+                "reason": "A heartwarming rom-com about a fake date that turns into real romance, aligning with your Romcom preference."
+            },
+            {
+                "book_id": 15,
+                "reason": "A warm coming-of-age comedy about growing up, which fits your Comedy genre."
+            },
+            {
+                "book_id": 1,
+                "reason": "A Fantasy adventure with Mystery elements, offering a light-hearted tone suitable for your preferences."
+            },
+            {
+                "book_id": 18,
+                "reason": "A Historical Mystery Drama with a slightly comedic undertone regarding the lighthouse keeper's secrets."
+            }
+        ]
+    },
+    {
+        "user_id": 4,
+        "recommendations": [
+            {
+                "book_id": 5,
+                "reason": "A practical self-help guide to building realistic daily plans and turning vague intentions into small, finishable actions."
+            },
+            {
+                "book_id": 7,
+                "reason": "A practical and encouraging self-help guide for people who doubt their own value, focusing on separating self-worth from results."
+            },
+            {
+                "book_id": 8,
+                "reason": "A practical self-help guide to preparing for job interviews with greater clarity, confidence, and strategy."
+            },
+            {
+                "book_id": 13,
+                "reason": "A beginner-friendly introduction to artificial intelligence, explaining what AI is, how it is used, and how to use it as a tool without becoming dependent."
+            },
+            {
+                "book_id": 17,
+                "reason": "A practical non-fiction guide to building balanced everyday meals, covering nutrition, shopping, cooking, and eating on a budget."
+            }
+        ]
+    },
+    {
+        "user_id": 5,
+        "recommendations": [
+            {
+                "book_id": 2,
+                "reason": "A gripping mystery thriller set on a lonely relay station where the future is simulated, blending mystery with a strong sense of adventure."
+            },
+            {
+                "book_id": 3,
+                "reason": "An atmospheric adventure where a young cartographer uncovers a hidden network beneath a permanent storm layer in a floating city."
+            },
+            {
+                "book_id": 12,
+                "reason": "A thrilling Isekai adventure where a map-loving woman journeys beyond the edge of everything humanity knows to find a new homeland."
+            },
+            {
+                "book_id": 1,
+                "reason": "A fantasy adventure about a young cartographer navigating unstable paths and ancient magic to find the truth about a mysterious place."
+            },
+            {
+                "book_id": 18,
+                "reason": "A historical mystery drama set on a Scottish coast involving a lighthouse keeper investigating a shipwreck and missing pages."
+            }
+        ]
+    },
+    {
+        "user_id": 6,
+        "recommendations": [
+            {
+                "book_id": 11,
+                "reason": "A dark fantasy isekai story about a man waking up in a spellcraft kingdom where magic is built on suffering."
+            },
+            {
+                "book_id": 12,
+                "reason": "An Isekai adventure where a map-loving woman searches for a new homeland beyond the edge of everything humanity knows."
+            },
+            {
+                "book_id": 1,
+                "reason": "A fantasy adventure involving unstable paths and ancient magic, though it lacks the dark fantasy element."
+            },
+            {
+                "book_id": 21,
+                "reason": "A fantasy mystery adventure set in a kingdom where maps are enchanted, featuring a forbidden map and shifting roads."
+            },
+            {
+                "book_id": 19,
+                "reason": "A science fiction mystery thriller about memory manipulation, which is the closest match to the user's genre preferences."
+            }
+        ]
+    },
+    {
+        "user_id": 7,
+        "recommendations": [
+            {
+                "book_id": 1,
+                "reason": "A fantasy adventure about a cartographer uncovering secrets in unstable paths."
+            },
+            {
+                "book_id": 3,
+                "reason": "A fantasy adventure involving a young cartographer and weather beacons in a floating city."
+            },
+            {
+                "book_id": 12,
+                "reason": "An Isekai fantasy adventure where a map enthusiast explores forbidden frontiers beyond the Last Blue Mountain."
+            },
+            {
+                "book_id": 19,
+                "reason": "A science fiction mystery thriller with fantasy elements about memory manipulation and biometric signatures."
+            },
+            {
+                "book_id": 21,
+                "reason": "A fantasy mystery adventure about a royal archive assistant finding a forbidden map in shifting enchanted roads."
+            }
+        ]
+    },
+    {
+        "user_id": 8,
+        "recommendations": [
+            {
+                "book_id": 18,
+                "reason": "Historical mystery drama about a lighthouse keeper investigating a family tragedy."
+            },
+            {
+                "book_id": 19,
+                "reason": "Science fiction mystery thriller about memory corruption, but avoids the forbidden Sci-Fi/Thriller genres."
+            },
+            {
+                "book_id": 21,
+                "reason": "Fantasy mystery adventure about a forgotten city, but avoids the forbidden Fantasy genre."
+            },
+            {
+                "book_id": 3,
+                "reason": "Science fiction mystery adventure about a hidden weather network beneath a storm layer."
+            },
+            {
+                "book_id": 1,
+                "reason": "Fantasy mystery adventure about a cartographer finding a map to a hidden place."
+            }
+        ]
+    },
+    {
+        "user_id": 9,
+        "recommendations": [
+            {
+                "book_id": 12,
+                "reason": "Airi Kisaragi's journey of finding a new homeland beyond the mapped lands aligns with your love for Science Fiction and Coming of Age."
+            },
+            {
+                "book_id": 13,
+                "reason": "An accessible introduction to AI that focuses on practical learning paths, fitting your interest in Science Fiction and Coming of Age."
+            },
+            {
+                "book_id": 15,
+                "reason": "A heartwarming story about growing up and navigating uncertainty, which perfectly matches your Coming of Age preference."
+            },
+            {
+                "book_id": 17,
+                "reason": "A practical guide to healthy eating that offers a unique perspective on daily life and personal growth."
+            },
+            {
+                "book_id": 1,
+                "reason": "While it contains mystery elements, this fantasy adventure about shifting maps and ancient secrets fits your Science Fiction and Coming of Age interests."
+            }
+        ]
+    },
+    {
+        "user_id": 10,
+        "recommendations": [
+            {
+                "book_id": 9,
+                "reason": "A heartwarming historical romance about a girl choosing her own life path against family and social expectations."
+            },
+            {
+                "book_id": 10,
+                "reason": "A poignant historical drama focusing on a girl's journey to find dignity and freedom after a tragic life."
+            },
+            {
+                "book_id": 18,
+                "reason": "A gripping historical mystery-drama about a young woman investigating her father's death and uncovering hidden truths."
+            },
+            {
+                "book_id": 1,
+                "reason": "A fantasy adventure with mystery elements where a young cartographer must navigate shifting roads and ancient secrets to find her master."
+            },
+            {
+                "book_id": 21,
+                "reason": "A fantasy mystery involving a royal archive assistant who uncovers a forbidden map and the reason a city was erased from history."
+            }
+        ]
+    },
+    {
+        "user_id": 11,
+        "recommendations": [
+            {
+                "book_id": 15,
+                "reason": "A warm coming-of-age comedy about seventeen-year-olds dealing with everyday chaos, mistakes, and uncertainty, exactly as you described."
+            },
+            {
+                "book_id": 16,
+                "reason": "A pure workplace comedy about minor emergencies and underqualified staff, focusing on everyday problems rather than grand stakes."
+            },
+            {
+                "book_id": 1,
+                "reason": "An adventure mystery with a strong sense of mystery and a journey through unstable paths, fitting the 'muddling through' theme without romance."
+            },
+            {
+                "book_id": 3,
+                "reason": "A coming-of-age story about a young apprentice discovering hidden networks, focusing on personal growth and discovery rather than romance."
+            },
+            {
+                "book_id": 18,
+                "reason": "A historical mystery drama about a young woman investigating a family secret and a shipwreck, offering a light, problem-solving narrative."
+            }
+        ]
+    },
+    {
+        "user_id": 12,
+        "recommendations": [
+            {
+                "book_id": 1,
+                "reason": "Mira's journey through shifting roads and ancient secrets offers a deep mystery in an unfamiliar world, with magic that feels like uncovering hidden truths rather than just flashy spells."
+            },
+            {
+                "book_id": 3,
+                "reason": "Elian's descent into a dead surface reveals a hidden network of weather beacons, providing a compelling mystery about a world where the truth might save the city."
+            },
+            {
+                "book_id": 11,
+                "reason": "Adrian's awakening in a spellcraft kingdom exposes the dark underbelly of a beautiful fantasy, forcing him to question if his dream is worth the suffering beneath it."
+            },
+            {
+                "book_id": 12,
+                "reason": "Airi's search for a new homeland beyond the mapped lands provides an exciting adventure and mystery in an unfamiliar world, driven by a hunger for the unknown."
+            },
+            {
+                "book_id": 21,
+                "reason": "Elara's discovery of a forbidden map that names a city erased from history offers a gripping mystery and adventure in a world where maps are enchanted and unreliable."
+            }
+        ]
+    },
+    {
+        "user_id": 13,
+        "recommendations": [
+            {
+                "book_id": 5,
+                "reason": "A practical self-help guide specifically for building realistic daily plans and recovering when motivation is low, offering small, finishable actions."
+            },
+            {
+                "book_id": 7,
+                "reason": "Another practical self-help guide focused on separating self-worth from results and turning distant dreams into workable goals through small actions."
+            },
+            {
+                "book_id": 8,
+                "reason": "A practical self-help guide to preparing for job interviews with clarity and strategy, helping to build confidence and structure answers."
+            },
+            {
+                "book_id": 13,
+                "reason": "A beginner-friendly introduction to artificial intelligence that explains how to use AI as a tool without becoming dependent on it, offering a practical learning path."
+            },
+            {
+                "book_id": 17,
+                "reason": "A practical non-fiction guide to building balanced everyday meals without turning food into rigid rules, providing a simple meal-building framework."
+            }
+        ]
+    },
+    {
+        "user_id": 14,
+        "recommendations": [
+            {
+                "book_id": 13,
+                "reason": "Perfect for beginners who want to understand AI without technical jargon, covering what it is, its uses, and how to start learning."
+            },
+            {
+                "book_id": 5,
+                "reason": "A practical guide to building realistic daily plans and turning vague intentions into small, finishable actions."
+            },
+            {
+                "book_id": 17,
+                "reason": "A non-fiction guide to building balanced everyday meals, explaining nutrition roles and simple meal-building frameworks."
+            },
+            {
+                "book_id": 8,
+                "reason": "A practical self-help guide to preparing for job interviews with clarity and strategy, applicable to career planning."
+            },
+            {
+                "book_id": 1,
+                "reason": "While primarily fantasy, this book's themes of exploration and understanding hidden truths align with the user's curiosity about AI's limits and capabilities."
+            }
+        ]
+    },
+    {
+        "user_id": 15,
+        "recommendations": [
+            {
+                "book_id": 2,
+                "reason": "A thrilling mystery where a future signal forces a young engineer to decide whether to change the future or escape it, featuring a journey beyond mapped colonies."
+            },
+            {
+                "book_id": 3,
+                "reason": "An adventure where a young cartographer uncovers a hidden network beneath a dead surface, discovering that the truth about their world might save their city."
+            },
+            {
+                "book_id": 12,
+                "reason": "A story about a young woman from modern Japan who awakens in a fantasy world, gathering companions to challenge old maps and search for a new homeland."
+            },
+            {
+                "book_id": 11,
+                "reason": "An Isekai adventure where a young man wakes up in a fantasy kingdom, learning that healing and prosperity are built on hidden suffering, forcing him to choose between his dream and the kingdom's nightmare."
+            },
+            {
+                "book_id": 15,
+                "reason": "A warm coming-of-age comedy about a seventeen-year-old navigating exams, friendships, and uncertainty, focusing on becoming less afraid of the unknown rather than having answers."
+            }
+        ]
+    },
+    {
+        "user_id": 16,
+        "recommendations": [
+            {
+                "book_id": 4,
+                "reason": "Romance and Coming of Age genres match your preferences, featuring a promise vs. expectation conflict in a fantasy setting."
+            },
+            {
+                "book_id": 9,
+                "reason": "Historical setting with a romance and coming-of-age theme, focusing on building a life of one's own."
+            },
+            {
+                "book_id": 10,
+                "reason": "Historical drama with a strong focus on personal choice and freedom from a predetermined life path."
+            },
+            {
+                "book_id": 15,
+                "reason": "Warm coming-of-age story about growing up and accepting uncertainty, fitting your interest in future conflicts."
+            },
+            {
+                "book_id": 18,
+                "reason": "Historical mystery with a romance element, exploring the conflict between protecting the dead and continuing to deceive the living."
+            }
+        ]
+    },
+    {
+        "user_id": 17,
+        "recommendations": [
+            {
+                "book_id": 14,
+                "reason": "A heartwarming rom-com about a fake date that turns into real romance, featuring awkward family expectations and ridiculous chemistry."
+            },
+            {
+                "book_id": 15,
+                "reason": "A funny coming-of-age story about a seventeen-year-old whose chaotic life goes wrong, perfect for unwinding with awkward conversations."
+            },
+            {
+                "book_id": 16,
+                "reason": "A pure workplace comedy about a department handling minor emergencies, featuring ridiculous situations and a plan that goes off course."
+            },
+            {
+                "book_id": 1,
+                "reason": "A fantasy adventure with a mystery element where maps shift and secrets are buried, offering a fun escape from school or work settings."
+            },
+            {
+                "book_id": 21,
+                "reason": "A mystery adventure in a kingdom where maps are enchanted, featuring ridiculous blank regions and a search for a forgotten city."
+            }
+        ]
+    },
+    {
+        "user_id": 18,
+        "recommendations": [
+            {
+                "book_id": 1,
+                "reason": "Perfect match: Mira discovers a hidden place called Moonfall Hollow and uncovers ancient secrets through a journey of exploration and mystery."
+            },
+            {
+                "book_id": 3,
+                "reason": "Great fit: Elian descends to uncover a hidden network of weather beacons and learns the truth about their world's secrets."
+            },
+            {
+                "book_id": 11,
+                "reason": "Excellent choice: Adrian uncovers hidden suffering and the dark truth behind a beautiful fantasy world, focusing on discovery over battles."
+            },
+            {
+                "book_id": 12,
+                "reason": "Strong recommendation: Airi searches for a new homeland beyond the edge of everything humanity knows, following clues and hidden paths."
+            },
+            {
+                "book_id": 21,
+                "reason": "Ideal selection: Elara finds a forbidden map naming a city erased from history, exploring shifting roads and forgotten places."
+            }
+        ]
+    },
+    {
+        "user_id": 19,
+        "recommendations": [
+            {
+                "book_id": 2,
+                "reason": "Mira Solen's 'The Silence Between Stars' features a young engineer facing a mysterious future, aligning with Nora Vale's style of young characters making difficult choices."
+            },
+            {
+                "book_id": 3,
+                "reason": "Rowan Vale's 'The Lighthouse Beneath the Clouds' follows a young apprentice discovering hidden secrets, matching the coming-of-age and mystery themes you enjoy."
+            },
+            {
+                "book_id": 12,
+                "reason": "Mara Ellison's 'Beyond the Last Blue Mountain' is an Isekai adventure where a young woman explores the unknown, fitting your interest in young characters facing unfamiliar situations."
+            },
+            {
+                "book_id": 19,
+                "reason": "Iris Vale's 'The Memory You Never Had' is a psychological thriller about a young memory technician uncovering secrets, similar to the suspense you appreciate."
+            },
+            {
+                "book_id": 18,
+                "reason": "Eleanor Voss's 'The Fog Bell at Blackwater Point' is a historical mystery involving a young girl investigating a dead father's logbook, offering a strong sense of mystery and young protagonists."
+            }
+        ]
+    },
+    {
+        "user_id": 20,
+        "recommendations": [
+            {
+                "book_id": 2,
+                "reason": "Iris Vale's 'The Silence Between Stars' is a perfect match for your author preference and genre, featuring a mysterious signal and a psychological thriller twist."
+            },
+            {
+                "book_id": 19,
+                "reason": "Another Iris Vale novel, 'The Memory You Never Had', offers a gripping mystery within a near-future setting that aligns with your interests."
+            },
+            {
+                "book_id": 1,
+                "reason": "Jeshine's 'The Cartographer of Moonfall' fits the Mystery and Science Fiction genres with a journey through unstable paths and ancient secrets."
+            },
+            {
+                "book_id": 12,
+                "reason": "Mara Ellison's 'Beyond the Last Blue Mountain' provides an adventurous Mystery and Science Fiction story about exploring forbidden frontiers."
+            },
+            {
+                "book_id": 18,
+                "reason": "Eleanor Voss's 'The Fog Bell at Blackwater Point' is a classic Historical Mystery drama that complements your genre preferences."
+            }
+        ]
+    }
+]

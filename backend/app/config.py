@@ -15,12 +15,17 @@ class Config:
         BASE_DIR = Path(__file__).resolve().parent.parent
         self.CHROMA_DB_PATH = BASE_DIR / "chroma_db"
 
-        assert self.NUM_OF_BOOKS_RETURNED_FROM_RAG > self.NUM_OF_RECOMMENDED_BOOK, "RAG must return more books than the number of books that the LLM would recommend."
+        if not self.NUM_OF_BOOKS_RETURNED_FROM_RAG > self.NUM_OF_RECOMMENDED_BOOK:
+            raise Exception("RAG must return more books than the number of books that the LLM would recommend.")
+
+        # Seed
+        self.RANDOM_SEED = 123456789
+        self.TORCH_SEED = 42
 
         # Evaluation
         self.RELEVANCE_THRESHOLD = 2 # if a book's relevance score is higher than this value, the book will be seen as relevant to be recommended to the related user
         self.NUM_DIGITS_ROUNDED_FOR_METRICS = 4
-        self.RANDOM_SEED = 123456789
+
 
     def get_system_prompt_for_model(
             self,

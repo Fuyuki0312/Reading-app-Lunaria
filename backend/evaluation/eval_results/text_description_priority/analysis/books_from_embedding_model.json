@@ -1,0 +1,1102 @@
+[
+    {
+        "user_id": 1,
+        "recommendations": [
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.8181030750274658
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.8047817349433899
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.8007951974868774
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.7996788620948792
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.7979888319969177
+            },
+            {
+                "book_id": 18,
+                "title": "The Fog Bell at Blackwater Point",
+                "similarity": 0.7929638028144836
+            },
+            {
+                "book_id": 1,
+                "title": "The Cartographer of Moonfall",
+                "similarity": 0.7928078770637512
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.7914225459098816
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7898575067520142
+            },
+            {
+                "book_id": 4,
+                "title": "When the Winter Garden Blooms",
+                "similarity": 0.78899085521698
+            }
+        ]
+    },
+    {
+        "user_id": 2,
+        "recommendations": [
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.8323445320129395
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.8303669691085815
+            },
+            {
+                "book_id": 4,
+                "title": "When the Winter Garden Blooms",
+                "similarity": 0.8048542737960815
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.8017673492431641
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.7937515377998352
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.7916837930679321
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.791252613067627
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.7888020277023315
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.7872542142868042
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7834229469299316
+            }
+        ]
+    },
+    {
+        "user_id": 3,
+        "recommendations": [
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.8193519115447998
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.8127824068069458
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.7937020063400269
+            },
+            {
+                "book_id": 16,
+                "title": "The Department of Minor Emergencies",
+                "similarity": 0.7919347882270813
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.7835826873779297
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.7752963304519653
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.7737321257591248
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.7736408710479736
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.7722495794296265
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7704660296440125
+            }
+        ]
+    },
+    {
+        "user_id": 4,
+        "recommendations": [
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8394031524658203
+            },
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.8287697434425354
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.828256368637085
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.8247547149658203
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.8235743641853333
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.7947819828987122
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.7904645204544067
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7868636250495911
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.7817932367324829
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.7809004187583923
+            }
+        ]
+    },
+    {
+        "user_id": 5,
+        "recommendations": [
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8184401988983154
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8141852617263794
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.8138530850410461
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.8056045174598694
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.8043407201766968
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.8039586544036865
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.8015038371086121
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.8004611730575562
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.7955490350723267
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.794498085975647
+            }
+        ]
+    },
+    {
+        "user_id": 6,
+        "recommendations": [
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.8453403115272522
+            },
+            {
+                "book_id": 12,
+                "title": "Beyond the Last Blue Mountain",
+                "similarity": 0.8200739622116089
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.811534583568573
+            },
+            {
+                "book_id": 10,
+                "title": "The Last Song of Gion",
+                "similarity": 0.8025477528572083
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.7991718649864197
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.7974912524223328
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7929683923721313
+            },
+            {
+                "book_id": 18,
+                "title": "The Fog Bell at Blackwater Point",
+                "similarity": 0.7913562655448914
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.7903996706008911
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.7900843620300293
+            }
+        ]
+    },
+    {
+        "user_id": 7,
+        "recommendations": [
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.8290868997573853
+            },
+            {
+                "book_id": 12,
+                "title": "Beyond the Last Blue Mountain",
+                "similarity": 0.803253173828125
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.8012276887893677
+            },
+            {
+                "book_id": 10,
+                "title": "The Last Song of Gion",
+                "similarity": 0.7833570241928101
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.7825535535812378
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7817562818527222
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.7808013558387756
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.7803872227668762
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7795994877815247
+            },
+            {
+                "book_id": 4,
+                "title": "When the Winter Garden Blooms",
+                "similarity": 0.7791969776153564
+            }
+        ]
+    },
+    {
+        "user_id": 8,
+        "recommendations": [
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.8144099712371826
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8139192461967468
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.8107473254203796
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.8056017160415649
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.8005280494689941
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8001223206520081
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.800071656703949
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.7991809844970703
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7980518341064453
+            },
+            {
+                "book_id": 18,
+                "title": "The Fog Bell at Blackwater Point",
+                "similarity": 0.7968031764030457
+            }
+        ]
+    },
+    {
+        "user_id": 9,
+        "recommendations": [
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.8257640600204468
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.8020588159561157
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.8020488023757935
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.7969289422035217
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.7951881885528564
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.794330358505249
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.790302038192749
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.7881213426589966
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7870687246322632
+            },
+            {
+                "book_id": 16,
+                "title": "The Department of Minor Emergencies",
+                "similarity": 0.7849252223968506
+            }
+        ]
+    },
+    {
+        "user_id": 10,
+        "recommendations": [
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8129994869232178
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8030100464820862
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.7977208495140076
+            },
+            {
+                "book_id": 18,
+                "title": "The Fog Bell at Blackwater Point",
+                "similarity": 0.795903205871582
+            },
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.7953975200653076
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7931069135665894
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7924886345863342
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.7912602424621582
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.7898781299591064
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.7871367335319519
+            }
+        ]
+    },
+    {
+        "user_id": 11,
+        "recommendations": [
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.835318386554718
+            },
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.810477614402771
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8096814155578613
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.806492269039154
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.8063613176345825
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.8026376962661743
+            },
+            {
+                "book_id": 16,
+                "title": "The Department of Minor Emergencies",
+                "similarity": 0.8008106350898743
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.7999569773674011
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.7974197864532471
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.7950350642204285
+            }
+        ]
+    },
+    {
+        "user_id": 12,
+        "recommendations": [
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.8229622840881348
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.8217214345932007
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.8075718879699707
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.8062436580657959
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.8044440150260925
+            },
+            {
+                "book_id": 1,
+                "title": "The Cartographer of Moonfall",
+                "similarity": 0.8019281625747681
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.8015127182006836
+            },
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.7966035008430481
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.796358048915863
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.7962932586669922
+            }
+        ]
+    },
+    {
+        "user_id": 13,
+        "recommendations": [
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.8434531092643738
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8324828743934631
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8173130750656128
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.8020151853561401
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7898708581924438
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7816542983055115
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.7694156169891357
+            },
+            {
+                "book_id": 16,
+                "title": "The Department of Minor Emergencies",
+                "similarity": 0.767875075340271
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.7665597796440125
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.7661643624305725
+            }
+        ]
+    },
+    {
+        "user_id": 14,
+        "recommendations": [
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.8788982629776001
+            },
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.8331106901168823
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.830482006072998
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8296613097190857
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8242874145507812
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.8050844669342041
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.8026614189147949
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.7958979606628418
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.7925894260406494
+            },
+            {
+                "book_id": 1,
+                "title": "The Cartographer of Moonfall",
+                "similarity": 0.789946436882019
+            }
+        ]
+    },
+    {
+        "user_id": 15,
+        "recommendations": [
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.8108095526695251
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.8093421459197998
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8029115796089172
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.8007200956344604
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.798591136932373
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.798295259475708
+            },
+            {
+                "book_id": 1,
+                "title": "The Cartographer of Moonfall",
+                "similarity": 0.7967386841773987
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.7940301895141602
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.792014479637146
+            },
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.7911362051963806
+            }
+        ]
+    },
+    {
+        "user_id": 16,
+        "recommendations": [
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.8197019696235657
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.818450927734375
+            },
+            {
+                "book_id": 4,
+                "title": "When the Winter Garden Blooms",
+                "similarity": 0.8070271015167236
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.8063329458236694
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.8039344549179077
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.8007495999336243
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.7962977886199951
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.793603777885437
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7920384407043457
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.7912305593490601
+            }
+        ]
+    },
+    {
+        "user_id": 17,
+        "recommendations": [
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.8262925744056702
+            },
+            {
+                "book_id": 14,
+                "title": "Definitely Not a Date",
+                "similarity": 0.814394474029541
+            },
+            {
+                "book_id": 16,
+                "title": "The Department of Minor Emergencies",
+                "similarity": 0.8127093315124512
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.8048089742660522
+            },
+            {
+                "book_id": 5,
+                "title": "Make Tomorrow Easier",
+                "similarity": 0.801188051700592
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8002774715423584
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7986405491828918
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.7974717617034912
+            },
+            {
+                "book_id": 18,
+                "title": "The Fog Bell at Blackwater Point",
+                "similarity": 0.7938740253448486
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.7911642789840698
+            }
+        ]
+    },
+    {
+        "user_id": 18,
+        "recommendations": [
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.815500795841217
+            },
+            {
+                "book_id": 11,
+                "title": "The World Beneath the Blessing",
+                "similarity": 0.795585572719574
+            },
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.7897568345069885
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.7897196412086487
+            },
+            {
+                "book_id": 12,
+                "title": "Beyond the Last Blue Mountain",
+                "similarity": 0.788962721824646
+            },
+            {
+                "book_id": 18,
+                "title": "The Fog Bell at Blackwater Point",
+                "similarity": 0.7881942391395569
+            },
+            {
+                "book_id": 1,
+                "title": "The Cartographer of Moonfall",
+                "similarity": 0.7847934365272522
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.7827157974243164
+            },
+            {
+                "book_id": 10,
+                "title": "The Last Song of Gion",
+                "similarity": 0.781954824924469
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.78094482421875
+            }
+        ]
+    },
+    {
+        "user_id": 19,
+        "recommendations": [
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.839144766330719
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8294425010681152
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.8235899209976196
+            },
+            {
+                "book_id": 15,
+                "title": "How to Survive Being Seventeen",
+                "similarity": 0.8231658935546875
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.8156113624572754
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.8116687536239624
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.8098918199539185
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.8050076365470886
+            },
+            {
+                "book_id": 17,
+                "title": "Eat Well, Live Normally",
+                "similarity": 0.8045423626899719
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.8027451038360596
+            }
+        ]
+    },
+    {
+        "user_id": 20,
+        "recommendations": [
+            {
+                "book_id": 22,
+                "title": "The Last Light Before Morning",
+                "similarity": 0.8217669725418091
+            },
+            {
+                "book_id": 19,
+                "title": "The Memory You Never Had",
+                "similarity": 0.8182971477508545
+            },
+            {
+                "book_id": 8,
+                "title": "The Interview Advantage",
+                "similarity": 0.8061121702194214
+            },
+            {
+                "book_id": 9,
+                "title": "A Lantern on Greymere Street",
+                "similarity": 0.8008775115013123
+            },
+            {
+                "book_id": 1,
+                "title": "The Cartographer of Moonfall",
+                "similarity": 0.7996354699134827
+            },
+            {
+                "book_id": 2,
+                "title": "The Silence Between Stars",
+                "similarity": 0.796413779258728
+            },
+            {
+                "book_id": 21,
+                "title": "The City the Maps Forgot",
+                "similarity": 0.7961100935935974
+            },
+            {
+                "book_id": 13,
+                "title": "AI Without the Fog",
+                "similarity": 0.7959516644477844
+            },
+            {
+                "book_id": 7,
+                "title": "You Are Worth the Attempt",
+                "similarity": 0.7948135733604431
+            },
+            {
+                "book_id": 3,
+                "title": "The Lighthouse Beneath the Clouds",
+                "similarity": 0.7945878505706787
+            }
+        ]
+    }
+]

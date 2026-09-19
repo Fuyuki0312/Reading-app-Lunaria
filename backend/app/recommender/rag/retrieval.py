@@ -9,7 +9,7 @@ def retrieve_books(
     preferred_genres: list[str],
     user_description: str,
     top_k: int = config.NUM_OF_BOOKS_RETURNED_FROM_RAG
-):
+) -> list[dict]:
     query_embedding = embed_query(
         preferred_genres,
         user_description

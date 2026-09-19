@@ -8,6 +8,7 @@ MODEL_NAME = config.LLM
 processor = AutoProcessor.from_pretrained(MODEL_NAME)
 model = AutoModelForMultimodalLM.from_pretrained(MODEL_NAME, device_map="auto")
 
+model.eval()
 
 def get_llm_and_processor():
 
