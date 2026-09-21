@@ -50,23 +50,36 @@ def recommend(username: Username):
         # Baseline's recommendations
         json_book_id_list = baseline.score_books(user_genre_preferences=genre_preferences)
 
-    # Otherwise, RAG will come in
+    # Otherwise,
     else:
-        retrieved_books = retrieve_books(
-            genre_preferences,
-            preference_description
-        )
 
-        books_for_llm = book_services.index_books_with_id_list(
-            retrieved_books
-        )
+        # if there are more than a certain number of books in database, RAG comes in
+        if book_services.get_the_number_of_books_in_database() >= config.NUM_OF_BOOKS_THRESHOLD_TO_TRIGGER_RAG:
 
-        # LLM's recommendations
-        json_book_id_list = recommend_books(
-            user_genre_preference=genre_preferences,
-            user_preference_description=preference_description,
-            books=books_for_llm
-        )
+            retrieved_books = retrieve_books(
+                genre_preferences,
+                preference_description
+            )
+
+            books_for_llm = book_services.index_books_with_id_list(
+                retrieved_books
+            )
+
+            # LLM's recommendations at the end of RAG
+            json_book_id_list = recommend_books(
+                user_genre_preference=genre_preferences,
+                user_preference_description=preference_description,
+                books=books_for_llm
+            )
+
+        # Otherwise, give LLM all books in database without any retriever (LLM-only recommendation)
+        else:
+
+            json_book_id_list = recommend_books(
+                user_genre_preference=genre_preferences,
+                user_preference_description=preference_description,
+                books=book_services.get_books_with_genres()
+            )
 
     recommended_books = book_services.index_books_with_id_list(json_book_id_list)
 

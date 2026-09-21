@@ -15,12 +15,14 @@ book_services = get_book_services()
 torch.manual_seed(config.TORCH_SEED)
 
 
+
+
 # Save functions
 
 def save_metrics_per_user_to_csv(one_user_metric_results: list[dict]):
     df = pd.DataFrame(one_user_metric_results)
     df.to_csv(
-        "eval_results/text_description_priority/per_user_metrics.csv",
+        "eval_results/genre_match_priority/per_user_metrics.csv",
         index=False
     )
 
@@ -82,26 +84,26 @@ def save_mean_metrics_to_csv(one_user_metric_results: list[dict]):
 
     df = pd.DataFrame(table)
     df.to_csv(
-        "eval_results/text_description_priority/mean_metrics.csv",
+        "eval_results/genre_match_priority/mean_metrics.csv",
         index=False
     )
 
 
 def save_books_recommeded_by_llm(recommendations_from_llm):
 
-    with open("eval_results\\text_description_priority\\analysis\\books_from_llm.json", "w") as file:
+    with open("eval_results\\genre_match_priority\\analysis\\books_from_llm.json", "w") as file:
         json.dump(recommendations_from_llm, file, indent=4)
 
 
 def save_books_recommeded_by_rag(recommendations_from_rag):
 
-    with open("eval_results\\text_description_priority\\analysis\\books_from_rag.json", "w") as file:
+    with open("eval_results\\genre_match_priority\\analysis\\books_from_rag.json", "w") as file:
         json.dump(recommendations_from_rag, file, indent=4)
 
 
 def save_books_recommeded_by_embedding_model(recommendations_from_embedding_model):
 
-    with open("eval_results\\text_description_priority\\analysis\\books_from_embedding_model.json", "w") as file:
+    with open("eval_results\\genre_match_priority\\analysis\\books_from_embedding_model.json", "w") as file:
         json.dump(recommendations_from_embedding_model, file, indent=4)
 
 
@@ -111,7 +113,7 @@ def save_books_recommeded_by_embedding_model(recommendations_from_embedding_mode
 with open("eval_dataset\\eval_users.json", "r") as f:
     eval_users = json.load(f)
 
-with open("eval_dataset\\text_description_priority_relevance\\relevance_labels.json", "r") as f:
+with open("eval_dataset\\genre_match_priority_relevance\\relevance_labels.json", "r") as f:
     eval_relevance = json.load(f)
 
 

@@ -69,6 +69,11 @@ class BookServices:
         return indexed_books
 
 
+    def get_the_number_of_books_in_database(self) -> int:
+
+        return len(self.books)
+
+
 book_services = BookServices()
 
 def get_book_services():

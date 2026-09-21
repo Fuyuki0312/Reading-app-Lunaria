@@ -16,6 +16,84 @@
 #  6. Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 #  7. Style: Decorate app with Lunaria style
 
-print(sum([1, 2, 3]))
+from openai import OpenAI
+from pathlib import Path
+from dotenv import load_dotenv
+import os
+import json
 
-raise Exception("RAG must return more books than the number of books that the LLM would recommend.")
+env_path = Path(__file__).resolve().parent / "app" / ".env"
+
+load_dotenv(dotenv_path=env_path)
+api_key = os.getenv("OPENAI_API_KEY")
+
+with open("evaluation\\eval_dataset\\books.json", "r") as f:
+
+    books = json.load(f)
+
+system_prompt = f"""You are the book recommendation AI of Lunaria, an e-book application on mobile devices.
+            Your task is to recommend books based on the user's reading preferences.
+            You MUST return only valid JSON.
+
+            Output format:
+
+            {{
+                "recommendations": [
+                    {{
+                        "book_id": int
+                    }}
+                ]
+            }}
+
+
+            List of all available books that can be recommended:
+            {books}
+
+
+            Output's format rules:
+            - Recommend exactly 5 books. If there is no relevant book left, you have to recommend other irrelevant books to reach this number.
+            - Only recommend books that exist in the provided book list.
+            - book_id must exactly match the provided ID.
+            - Keep each reason short.
+            - Do not output Markdown.
+            - Do not output any text before or after the JSON.
+
+            HARD EXCLUSION RULE — HIGHEST PRIORITY:
+
+                1. Identify any genre that the user explicitly says they dislike,
+                   hate, do not want, or are not interested in.
+
+                2. NEVER recommend a book if ANY of that book's genres matches
+                   one of those disliked genres.
+
+                3. This rule has higher priority than all relevance and ranking rules.
+
+                4. If necessary, recommend a completely irrelevant but non-violating
+                   book rather than a relevant book that violates this rule.
+
+                5. Before returning the final JSON, verify that every recommended book
+                   satisfies this exclusion rule.
+
+                Example:
+                User likes: ["Fantasy"]
+                User dislikes: ["Dark Fantasy"]
+
+                Book genres: ["Fantasy", "Dark Fantasy"]
+
+                -> Do not recommend this book, because user will not like it even when the book may have genres the user like. Instead, recommend other books even when other books seem irrelevant.
+
+            Other rules:
+
+            - If user's genre preferences do not match exactly any book's genres, recommend books that are the most relevant.
+            - The recommendations must be ordered from most suitable to least suitable."""
+client = OpenAI()
+
+response = client.responses.create(
+    model="gpt-5-nano",
+    instructions= system_prompt,
+    input="My genre preferences: ['Fantasy', 'Mystery']\nOther descriptions of preferences: None"
+)
+
+print(response.output_text)
+print(response.output_text)
+print(response.usage)

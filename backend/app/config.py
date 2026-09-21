@@ -6,11 +6,12 @@ class Config:
     def __init__(self):
 
         # Model
-        self.LLM = "Qwen/Qwen3.5-2B"
+        self.LLM = "gpt-5-nano"
         self.EMBEDDING_MODEL = "intfloat/multilingual-e5-small"
         self.NUM_OF_RECOMMENDED_BOOK = 5 # the K number
 
         # RAG
+        self.NUM_OF_BOOKS_THRESHOLD_TO_TRIGGER_RAG = 31
         self.NUM_OF_BOOKS_RETURNED_FROM_RAG = 10
         BASE_DIR = Path(__file__).resolve().parent.parent
         self.CHROMA_DB_PATH = BASE_DIR / "chroma_db"
@@ -55,7 +56,7 @@ class Config:
             Output's format rules:
             - Recommend exactly {self.NUM_OF_RECOMMENDED_BOOK} books. If there is no relevant book left, you have to recommend other irrelevant books to reach this number.
             - Only recommend books that exist in the provided book list.
-            - book_id must exactly match the provided ID.
+            - book_id must exactly match the provided ID. Caution: book_id is discontinuous in order (e.g. book_id 6 does NOT exist)
             - Keep each reason short.
             - Do not output Markdown.
             - Do not output any text before or after the JSON.
