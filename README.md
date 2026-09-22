@@ -6,9 +6,9 @@
 Lunaria is an AI-powered Android reading application that explores the use of large language models and retrieval-based techniques for personalized book recommendation. The system combines structured genre preferences and free-form user descriptions to generate recommendations, while comparing LLM-based, retrieval-augmented, and heuristic baseline approaches through ranking-based evaluation. The project is designed as an end-to-end AI engineering system, integrating mobile development, backend services, data storage, retrieval, model inference, and recommender evaluation.
 
 
-## System Overview
+## 1. System Overview
 
-### User Flow
+### 1.1. User Flow
 
 After logging in, users complete a short reading-preference survey by selecting their favorite genres and optionally providing a free-text description of what they enjoy reading. These preferences are stored in the database alongside the application's book catalog. The backend then uses the stored user and book data to generate personalized recommendations, either by sending the catalog directly to the LLM or by using RAG to retrieve relevant candidate books before LLM-based ranking.
 
@@ -31,7 +31,7 @@ G --> I[Recommended Books]
 H --> I
 ```
 
-### Recommendation Pipeline
+### 1.2. Recommendation Pipeline
 
 When RAG is used, the user's reading preferences are converted into an embedding and compared with precomputed book embeddings stored in the vector database. Cosine similarity is used to retrieve the top-k most relevant books, which are then passed to the LLM. The LLM analyzes these candidates together with the user's preferences and produces the final ranked recommendations.
 
@@ -55,7 +55,9 @@ A --> G
 G --> H[Ranked Recommendations]
 ```
 
-## Recommendation Method Evaluation
+**Note:** Since the current catalog contains only 20 books, Lunaria sends the user query and the full catalog directly to the LLM instead of using RAG. This avoids unnecessary retrieval overhead at the current scale. See Recommendation Method Evaluation for further discussion.
+
+## 2. Recommendation Method Evaluation
 
 To evaluate Lunaria's recommendation pipeline, three approaches were compared on a custom human-labeled benchmark:
 
@@ -63,13 +65,13 @@ To evaluate Lunaria's recommendation pipeline, three approaches were compared on
 - **LLM-only**: `GPT-5 nano` receives the user's genre preferences, free-text preference description, and the full book catalog.
 - **RAG + LLM**: `intfloat/multilingual-e5-small` retrieves the top 10 candidate books, which are then reranked by GPT-5 nano.
 
-### Benchmark Setup
+### 2.1. Benchmark Setup
 
 The benchmark contains 20 simulated users divided into four categories: **simple**, **constraint**, **semantic**, and **author-fan**. Two relevance-labeling policies were evaluated to reduce dependence on a single subjective definition of relevance. The first gives more importance to the user's free-text description, while the second prioritizes direct genre matching.
 
-### Overall Results
+### 2.2. Overall Results
 
-#### Free-text-priority labels
+#### 2.2.1. Free-text-priority labels
 
 | Method | Mean nDCG | Mean Normalized Precision | Mean Violation Rate |
 | --- | ---: | ---: | ---: |
@@ -77,7 +79,7 @@ The benchmark contains 20 simulated users divided into four categories: **simple
 | RAG + LLM | 0.8783 | 0.8317 | **0.0000** |
 | Baseline | 0.8509 | 0.8425 | 0.1100 |
 
-#### Genre-priority labels
+#### 2.2.2. Genre-priority labels
 
 | Method | Mean nDCG | Mean Normalized Precision | Mean Violation Rate |
 | --- | ---: | ---: | ---: |
@@ -87,7 +89,7 @@ The benchmark contains 20 simulated users divided into four categories: **simple
 
 Changing the labeling policy affected the scores as expected: the baseline improved when genre matching received more importance, while the LLM-based approaches decreased slightly. However, the overall result remained similar, with the LLM-only method achieving the strongest ranking performance across both labeling policies.
 
-### Results by User Type
+### 2.3. Results by User Type
 
 For **simple users**, whose preferences contain only favorite genres, all three methods performed similarly. The baseline is already highly effective in this case because counting genre matches provides most of the information needed for a good recommendation. Using an LLM therefore provides relatively little additional value while requiring more computation and cost.
 
@@ -97,7 +99,7 @@ For **semantic users**, the LLM-only approach performed especially well when the
 
 For **author-fan users**, the LLM and RAG methods could use author preferences expressed in free text, while the baseline could not. RAG also benefited from author information being included in the embedded book representation, but its retrieval stage relies on cosine similarity rather than exact author matching. As a result, books from the preferred author could occasionally be ranked lower or excluded from the retrieved candidate set, which introduced some fluctuation in RAG performance for this user type. However, this group contains only two users, so the result should be treated as an observation rather than a general conclusion.
 
-### Interpretation
+### 2.4. Interpretation
 
 The evaluation suggests that no single recommendation method is necessary for every user.
 
@@ -107,7 +109,7 @@ For the current small catalog, the **LLM-only approach performs better overall t
 
 RAG may become more useful as the catalog grows and providing every book to the LLM becomes inefficient or exceeds the available context window. Scalability was not evaluated in the current benchmark, so this remains an architectural motivation rather than a result demonstrated by this experiment.
 
-### Applying the results to Lunaria
+### 2.5. Applying the results to Lunaria
 
 Based on the current evaluation, Lunaria uses a hybrid strategy:
 
