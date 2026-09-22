@@ -67,6 +67,37 @@ To evaluate Lunaria's recommendation pipeline, three approaches were compared on
 
 ### 2.1. Benchmark Setup
 
+<table>
+  <tr>
+    <td align="center">
+      <strong>Simple user</strong><br>
+      <img src="assets/user_type/simple_user.jpg"
+           alt="A simple user"
+           width="100%">
+    </td>
+    <td align="center">
+      <strong>Constraint user</strong><br>
+      <img src="assets/user_type/constraint_user.jpg"
+           alt="A constraint user"
+           width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Semantic user</strong><br>
+      <img src="assets/user_type/semantic_user.jpg"
+           alt="A semantic user"
+           width="100%">
+    </td>
+    <td align="center">
+      <strong>Author-fan user</strong><br>
+      <img src="assets/user_type/author_fan_user.jpg"
+           alt="An author-fan user"
+           width="100%">
+    </td>
+  </tr>
+</table>
+
 The benchmark contains 20 simulated users divided into four categories: **simple**, **constraint**, **semantic**, and **author-fan**. Two relevance-labeling policies were evaluated to reduce dependence on a single subjective definition of relevance. The first gives more importance to the user's free-text description, while the second prioritizes direct genre matching.
 
 ### 2.2. Overall Results
