@@ -6,6 +6,34 @@
 Lunaria is an AI-powered Android reading application that explores the use of large language models and retrieval-based techniques for personalized book recommendation. The system combines structured genre preferences and free-form user descriptions to generate recommendations, while comparing LLM-based, retrieval-augmented, and heuristic baseline approaches through ranking-based evaluation. The project is designed as an end-to-end AI engineering system, integrating mobile development, backend services, data storage, retrieval, model inference, and recommender evaluation.
 
 
+## System Overview
+
+### User Flow
+
+After logging in, users complete a short reading-preference survey by selecting their favorite genres and optionally providing a free-text description of what they enjoy reading. These preferences are stored in the database alongside the application's book catalog. The backend then uses the stored user and book data to generate personalized recommendations, either by sending the catalog directly to the LLM or by using RAG to retrieve relevant candidate books before LLM-based ranking.
+
+```mermaid
+flowchart LR
+
+A[Login / Register] --> B[Reading Preference Survey]
+
+B --> C[Favorite Genres]
+B --> D[Free-text Description]
+
+C --> E[(MySQL Database)]
+D --> E
+
+E --> F[Recommendation Backend]
+F --> G[LLM-only]
+F --> H[RAG + LLM]
+
+G --> I[Recommended Books]
+H --> I
+```
+
+### Recommendation Pipeline
+
+
 ## Recommendation Method Evaluation
 
 To evaluate Lunaria's recommendation pipeline, three approaches were compared on a custom human-labeled benchmark:
@@ -13,6 +41,8 @@ To evaluate Lunaria's recommendation pipeline, three approaches were compared on
 - **Baseline**: a lightweight heuristic that ranks books by the number of matching favorite genres.
 - **LLM-only**: `GPT-5 nano` receives the user's genre preferences, free-text preference description, and the full book catalog.
 - **RAG + LLM**: `intfloat/multilingual-e5-small` retrieves the top 10 candidate books, which are then reranked by GPT-5 nano.
+
+### Benchmark Setup
 
 The benchmark contains 20 simulated users divided into four categories: **simple**, **constraint**, **semantic**, and **author-fan**. Two relevance-labeling policies were evaluated to reduce dependence on a single subjective definition of relevance. The first gives more importance to the user's free-text description, while the second prioritizes direct genre matching.
 
@@ -56,7 +86,7 @@ For the current small catalog, the **LLM-only approach performs better overall t
 
 RAG may become more useful as the catalog grows and providing every book to the LLM becomes inefficient or exceeds the available context window. Scalability was not evaluated in the current benchmark, so this remains an architectural motivation rather than a result demonstrated by this experiment.
 
-### Conclusion
+### Applying the results to Lunaria
 
 Based on the current evaluation, Lunaria uses a hybrid strategy:
 
