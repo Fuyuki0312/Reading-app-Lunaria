@@ -33,6 +33,27 @@ H --> I
 
 ### Recommendation Pipeline
 
+When RAG is used, the user's reading preferences are converted into an embedding and compared with precomputed book embeddings stored in the vector database. Cosine similarity is used to retrieve the top-k most relevant books, which are then passed to the LLM. The LLM analyzes these candidates together with the user's preferences and produces the final ranked recommendations.
+
+```mermaid
+flowchart LR
+
+A[User Query] --> B[Embedding Model]
+
+B --> C[Query Embedding]
+
+C --> D[Cosine Similarity]
+
+E[(Vector Database<br/>Book Embeddings)] --> D
+
+D --> F[Top-k Candidate Books]
+
+F --> G[LLM]
+
+A --> G
+
+G --> H[Ranked Recommendations]
+```
 
 ## Recommendation Method Evaluation
 
