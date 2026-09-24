@@ -10,6 +10,53 @@ Lunaria is an AI-powered Android reading application that explores the use of la
 
 ### 1.1. User Flow
 
+<table>
+  <tr>
+    <td width="20%">
+      <a href="assets/user_flow/login.jpg">
+        <img src="assets/user_flow/login.jpg"
+             alt="Login screen"
+             width="100%">
+      </a>
+    </td>
+    <td width="20%">
+      <a href="assets/user_flow/survey.jpg">
+        <img src="assets/user_flow/survey.jpg"
+             alt="Genre preference survey"
+             width="100%">
+      </a>
+    </td>
+    <td width="20%">
+      <a href="assets/user_flow/free_text_description.jpg">
+        <img src="assets/user_flow/free_text_description.jpg"
+             alt="Free-text preference description"
+             width="100%">
+      </a>
+    </td>
+    <td width="20%">
+      <a href="assets/user_flow/recommendations.jpg">
+        <img src="assets/user_flow/recommendations.jpg"
+             alt="Personalized book recommendations"
+             width="100%">
+      </a>
+    </td>
+    <td width="20%">
+      <a href="assets/user_flow/book_brief_info.jpg">
+        <img src="assets/user_flow/book_brief_info.jpg"
+             alt="Book information screen"
+             width="100%">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><sub>1. Login</sub></td>
+    <td><sub>2. Genre Survey</sub></td>
+    <td><sub>3. Free-text Preference</sub></td>
+    <td><sub>4. Recommendations</sub></td>
+    <td><sub>5. Book Details</sub></td>
+  </tr>
+</table>
+
 After logging in, users complete a short reading-preference survey by selecting their favorite genres and optionally providing a free-text description of what they enjoy reading. These preferences are stored in the database alongside the application's book catalog. The backend then uses the stored user and book data to generate personalized recommendations, either by sending the catalog directly to the LLM or by using RAG to retrieve relevant candidate books before LLM-based ranking.
 
 ```mermaid
