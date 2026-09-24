@@ -75,10 +75,107 @@ F --> G[LLM-only]
 F --> H[RAG + LLM]
 
 G --> I[Recommended Books]
+H --> I
 ```
 
-For **author-fan users**, the LLM and RAG methods could use author preferences expressed in free text, while the baseline could not. RAG also benefited from author information being included in the embedded book representation, but its retrieval stage relies on cosine similarity rather than exact author matching. As a result, books from the preferred author could occasionally be ranked lower or excluded from the retrieved candidate set, which introduced some fluctuation in RAG performance for this user type. However, this group contains only two users, so the result should be treated as an observation rather than a general conclusion.
+### 1.2. Recommendation Pipeline
 
+When RAG is used, the user's reading preferences are converted into an embedding and compared with precomputed book embeddings stored in the vector database. Cosine similarity is used to retrieve the top-k most relevant books, which are then passed to the LLM. The LLM analyzes these candidates together with the user's preferences and produces the final ranked recommendations.
+
+```mermaid
+flowchart LR
+
+A[User Query] --> B[Embedding Model]
+
+B --> C[Query Embedding]
+
+C --> D[Cosine Similarity]
+
+E[(Vector Database<br/>Book Embeddings)] --> D
+
+D --> F[Top-k Candidate Books]
+
+F --> G[LLM]
+
+A --> G
+
+G --> H[Ranked Recommendations]
+```
+
+**Note:** Since the current catalog contains only 20 books, Lunaria sends the user query and the full catalog directly to the LLM instead of using RAG. This avoids unnecessary retrieval overhead at the current scale. See Recommendation Method Evaluation for further discussion.
+
+## 2. Recommendation Method Evaluation
+
+To evaluate Lunaria's recommendation pipeline, three approaches were compared on a custom human-labeled benchmark:
+
+- **Baseline**: a lightweight heuristic that ranks books by the number of matching favorite genres.
+- **LLM-only**: `GPT-5 nano` receives the user's genre preferences, free-text preference description, and the full book catalog.
+- **RAG + LLM**: `intfloat/multilingual-e5-small` retrieves the top 10 candidate books, which are then reranked by GPT-5 nano.
+
+### 2.1. Benchmark Setup
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Simple user</strong><br>
+      <img src="assets/user_type/simple_user.jpg"
+           alt="A simple user"
+           width="100%">
+    </td>
+    <td align="center">
+      <strong>Constraint user</strong><br>
+      <img src="assets/user_type/constraint_user.jpg"
+           alt="A constraint user"
+           width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Semantic user</strong><br>
+      <img src="assets/user_type/semantic_user.jpg"
+           alt="A semantic user"
+           width="100%">
+    </td>
+    <td align="center">
+      <strong>Author-fan user</strong><br>
+      <img src="assets/user_type/author_fan_user.jpg"
+           alt="An author-fan user"
+           width="100%">
+    </td>
+  </tr>
+</table>
+
+The benchmark contains 20 simulated users divided into four categories: **simple**, **constraint**, **semantic**, and **author-fan**. Two relevance-labeling policies were evaluated to reduce dependence on a single subjective definition of relevance. The first gives more importance to the user's free-text description, while the second prioritizes direct genre matching.
+
+### 2.2. Overall Results
+
+#### 2.2.1. Free-text-priority labels
+
+| Method | Mean nDCG | Mean Normalized Precision | Mean Violation Rate |
+| --- | ---: | ---: | ---: |
+| LLM-only | **0.9609** | **0.9500** | **0.0000** |
+| RAG + LLM | 0.8783 | 0.8317 | **0.0000** |
+| Baseline | 0.8509 | 0.8425 | 0.1100 |
+
+#### 2.2.2. Genre-priority labels
+
+| Method | Mean nDCG | Mean Normalized Precision | Mean Violation Rate |
+| --- | ---: | ---: | ---: |
+| LLM-only | **0.9443** | **0.9225** | **0.0000** |
+| RAG + LLM | 0.8703 | 0.8092 | **0.0000** |
+| Baseline | 0.8625 | 0.8825 | 0.1100 |
+
+Changing the labeling policy affected the scores as expected: the baseline improved when genre matching received more importance, while the LLM-based approaches decreased slightly. However, the overall result remained similar, with the LLM-only method achieving the strongest ranking performance across both labeling policies.
+
+### 2.3. Results by User Type
+
+For **simple users**, whose preferences contain only favorite genres, all three methods performed similarly. The baseline is already highly effective in this case because counting genre matches provides most of the information needed for a good recommendation. Using an LLM therefore provides relatively little additional value while requiring more computation and cost.
+
+For **constraint users**, the advantage of having access to the free-text description becomes much clearer. These users explicitly mention genres they do not want to read. Both LLM-only and RAG + LLM avoided all labeled constraint violations in the evaluation, while the genre-only baseline frequently recommended books containing disliked genres. This suggests that free-text understanding is particularly useful when user preferences contain negative constraints that cannot be represented by favorite genres alone.
+
+For **semantic users**, the LLM-only approach performed especially well when the relevance labels prioritized the meaning of the free-text description. When genre matching was given more importance, the baseline became more competitive. This shows that the relative advantage of an LLM depends on what information is considered important: semantic preference descriptions favor language-based reasoning, while strongly genre-oriented relevance can already be handled effectively by a simple heuristic.
+
+For **author-fan users**, the LLM and RAG methods could use author preferences expressed in free text, while the baseline could not. RAG also benefited from author information being included in the embedded book representation, but its retrieval stage relies on cosine similarity rather than exact author matching. As a result, books from the preferred author could occasionally be ranked lower or excluded from the retrieved candidate set, which introduced some fluctuation in RAG performance for this user type. However, this group contains only two users, so the result should be treated as an observation rather than a general conclusion.
 ### 2.4. Interpretation
 
 The evaluation suggests that no single recommendation method is necessary for every user.
