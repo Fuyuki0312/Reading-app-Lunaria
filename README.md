@@ -53,7 +53,7 @@ Lunaria is an AI-powered Android reading application that explores the use of la
     <td align="center"><strong>2. Genre Survey</strong></td>
     <td align="center"><strong>3. Free-text Preference</strong></td>
     <td align="center"><strong>4. Recommendations</strong></td>
-    <td align="center"><strong>5. Book Details</strong></td>
+    <td align="center"><strong>5. Book Brief Info</strong></td>
   </tr>
 </table>
 
