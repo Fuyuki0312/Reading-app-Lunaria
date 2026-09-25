@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit
 object RetrofitClient {
 
     private const val BASE_URL =
-        "http://192.168.1.16:8000/" // My home Wi-Fi
-        //"http://10.166.95.59:8000/" // My phone's 4G
+        //"http://192.168.1.16:8000/" // My home Wi-Fi
+        "http://10.166.95.59:8000/" // My phone's 4G
 
     private val okHttpClient = OkHttpClient.Builder()
         .connectTimeout(20, TimeUnit.SECONDS)
