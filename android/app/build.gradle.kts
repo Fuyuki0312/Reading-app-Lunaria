@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.lunaria"
+        applicationId = "com.fuyuki.lunaria"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
