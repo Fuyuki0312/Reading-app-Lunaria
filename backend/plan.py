@@ -7,7 +7,7 @@
 #  - Test Lunaria with a large number of users
 #  - Help RAG handle users writting explicit names (author, book titles) in free-text description
 #  - (Optional) expand eval dataset or database
-#  DESTRUCTIVELY HARD ☠️: Continual Learning
+#  LEGENDARY QUEST ✨: Continual Learning
 
 # TODO breadth:
 #  - Enable users to actually read books
