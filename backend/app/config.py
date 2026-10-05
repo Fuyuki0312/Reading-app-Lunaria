@@ -6,7 +6,7 @@ class Config:
     def __init__(self):
 
         # Model
-        self.LLM = "gpt-5-nano"
+        self.LLM = "openai:gpt-5-nano" # used with LangChain
         self.EMBEDDING_MODEL = "intfloat/multilingual-e5-small"
         self.NUM_OF_RECOMMENDED_BOOK = 5 # the K number
 

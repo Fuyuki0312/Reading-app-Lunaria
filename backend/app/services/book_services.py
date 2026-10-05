@@ -58,8 +58,8 @@ class BookServices:
 
         indexed_books = []
 
-        for recommended_id in list_of_book_id:
-            id = recommended_id["book_id"]
+        for recommended_form in list_of_book_id:
+            id = recommended_form.book_id
 
             for book in self.books:
                 if id == book["id"]:

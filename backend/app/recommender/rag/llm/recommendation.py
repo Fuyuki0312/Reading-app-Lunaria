@@ -1,7 +1,8 @@
-from app.recommender.rag.llm.client import get_client
 from app.config import Config
 
-import json
+from app.recommender.rag.llm.llm import get_llm
+from langchain_core.prompts import ChatPromptTemplate
+
 
 config = Config()
 
@@ -11,21 +12,30 @@ def recommend_books(
         books: list[dict]
 ) -> list[dict]:
 
-    client = get_client()
-
-    if not user_genre_preference: # if user_genre_preference == []:
+    if not user_genre_preference:  # if user_genre_preference == []:
         user_genre_preference = ["Any"]
 
+    model = get_llm()
+    prompt = ChatPromptTemplate.from_messages([
+        (
+            "system",
+            config.get_system_prompt_for_model(books)
+        ),
+        (
+            "human",
+            "My genre preferences: {user_genre_preference}\n" +
+            "Other descriptions of preferences: {user_preference_description}"
+        )
+    ])
 
-    llm_response = client.responses.create(
-        model=config.LLM,
-        instructions=config.get_system_prompt_for_model(books=books),
-        input=f"My genre preferences: {user_genre_preference}\nOther descriptions of preferences: {user_preference_description}"
-    )
+    chain = prompt | model
 
-    json_outputs = json.loads(llm_response.output_text)
+    llm_response = chain.invoke({
+        "user_genre_preference": user_genre_preference,
+        "user_preference_description": user_preference_description
+    })
 
-    recommendations = json_outputs["recommendations"]
+    recommendations = llm_response.recommendation
 
-    return recommendations # List
+    return recommendations  # List
 

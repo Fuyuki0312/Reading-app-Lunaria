@@ -16,4 +16,3 @@
 #  - Use something to do Semantic Search
 #  - Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 
-
