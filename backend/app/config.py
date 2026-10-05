@@ -43,7 +43,8 @@ class Config:
             Output's format rules:
             - Recommend exactly {self.NUM_OF_RECOMMENDED_BOOK} books. If there is no relevant book left, you have to recommend other irrelevant books to reach this number.
             - Only recommend books that exist in the provided book list.
-            - book_id must exactly match the provided ID. Caution: book_id is discontinuous in order (e.g. book_id 6 does NOT exist)
+            - book_id must exactly match the provided ID. Caution: book_id is discontinuous in order (e.g. book_id 6 does NOT exist).
+            - Only give book_id and reason.
             - Keep each reason short.
             
             HARD EXCLUSION RULE — HIGHEST PRIORITY:
