@@ -35,19 +35,6 @@ class Config:
 
         system_prompt = f"""You are the book recommendation AI of Lunaria, an e-book application on mobile devices.
             Your task is to recommend books based on the user's reading preferences.
-            You MUST return only valid JSON.
-            
-            Output format:
-            
-            {{
-                "recommendations": [
-                    {{
-                        "book_id": int,
-                        "reason": "string"
-                    }}
-                ]
-            }}
-            
             
             List of all available books that can be recommended:
             {books}
@@ -58,8 +45,6 @@ class Config:
             - Only recommend books that exist in the provided book list.
             - book_id must exactly match the provided ID. Caution: book_id is discontinuous in order (e.g. book_id 6 does NOT exist)
             - Keep each reason short.
-            - Do not output Markdown.
-            - Do not output any text before or after the JSON.
             
             HARD EXCLUSION RULE — HIGHEST PRIORITY:
 

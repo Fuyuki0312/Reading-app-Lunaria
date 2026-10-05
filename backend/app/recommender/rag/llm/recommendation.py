@@ -2,6 +2,7 @@ from app.config import Config
 
 from app.recommender.rag.llm.llm import get_llm
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import SystemMessage
 
 
 config = Config()
@@ -17,9 +18,8 @@ def recommend_books(
 
     model = get_llm()
     prompt = ChatPromptTemplate.from_messages([
-        (
-            "system",
-            config.get_system_prompt_for_model(books)
+        SystemMessage(
+            content=config.get_system_prompt_for_model(books)
         ),
         (
             "human",

@@ -1,4 +1,6 @@
+from app.model.username import Username
 from app.recommender.rag.llm.recommendation import recommend_books
+from app.api.router import recommend
 
 import json
 
@@ -12,3 +14,4 @@ print(recommend_books(
     books=books
 ))
 
+print(recommend(Username(username="testRaG")))
