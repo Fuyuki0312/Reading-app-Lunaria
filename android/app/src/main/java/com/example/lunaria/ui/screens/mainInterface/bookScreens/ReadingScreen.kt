@@ -61,7 +61,7 @@ fun ReadingScreen(
     LaunchedEffect(bookId) {
 
         try {
-
+            // Get all pages of the book with input bookId
             pages =
                 RetrofitClient.api.getBookPages(bookId)
 
@@ -79,16 +79,71 @@ fun ReadingScreen(
 
     val currentPage = pages[currentPageIndex]
 
+
+    val scrollState = rememberScrollState()
+
+    // scroll to the head of the screen when user click "Next"
+    LaunchedEffect(currentPageIndex) {
+        scrollState.scrollTo(0)
+    }
+
+    // below is what are displayed in this screen
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(24.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        for (block in currentPage.content) {
 
-            BookContentBlock(block = block)
+        // user can scoll book's content, but other things like buttons cannot be scolled
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .verticalScroll(scrollState),
 
+            verticalArrangement =
+                Arrangement.spacedBy(16.dp)
+        ) {
+            // this for loop display all kind of texts in the page
+            for (block in currentPage.content) {
+
+                BookContentBlock(block = block)
+
+            }
+        }
+
+        // display the current page / total pages (e.g. 1/20)
+        Text(
+            text = "Page ${currentPageIndex + 1} / ${pages.size}",
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Center
+        )
+
+        // button "Next" and "Previous" to turn pages
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            Button(
+                onClick = {
+                    currentPageIndex--
+                },
+                enabled = currentPageIndex > 0
+            ) {
+                Text("Previous")
+            }
+
+
+            Button(
+                onClick = {
+                    currentPageIndex++
+                },
+                enabled = currentPageIndex < pages.lastIndex
+            ) {
+                Text("Next")
+            }
         }
     }
 }
