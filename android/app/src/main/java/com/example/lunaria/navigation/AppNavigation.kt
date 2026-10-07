@@ -1,7 +1,7 @@
 package com.example.lunaria.navigation
 
 import com.example.lunaria.ui.screens.mainInterface.HomeScreen
-import com.example.lunaria.ui.screens.mainInterface.BookDetailScreen
+import com.example.lunaria.ui.screens.mainInterface.bookScreens.BookDetailScreen
 import com.example.lunaria.ui.screens.mainInterface.ExploreScreen
 import com.example.lunaria.ui.screens.mainInterface.SettingsScreen
 import com.example.lunaria.ui.screens.login.LoginScreen

@@ -1,4 +1,4 @@
-package com.example.lunaria.ui.screens.mainInterface
+package com.example.lunaria.ui.screens.mainInterface.bookScreens
 
 import com.example.lunaria.data.model.book.Book
 
