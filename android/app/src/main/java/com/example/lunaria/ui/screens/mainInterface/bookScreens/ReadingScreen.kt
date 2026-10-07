@@ -86,8 +86,96 @@ fun ReadingScreen(
             .verticalScroll(rememberScrollState())
     ) {
         for (block in currentPage.content) {
+
+            BookContentBlock(block = block)
+
+        }
+    }
+}
+
+
+@Composable
+fun BookContentBlock(
+    block: PageContentBlock
+) {
+
+    val textAlignment =
+        when (block.align) {
+
+            "center" -> TextAlign.Center
+
+            "right" -> TextAlign.Right
+
+            "justify" -> TextAlign.Justify
+
+            else -> TextAlign.Left
+        }
+
+
+    when (block.type) {
+
+        "book_title" -> {
+
             Text(
-                text = block.text
+                text = block.text,
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = textAlignment,
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+
+
+        "chapter_title" -> {
+
+            Text(
+                text = block.text,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = textAlignment,
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+
+
+        "paragraph" -> {
+
+            Text(
+                text = block.text,
+                fontSize = 18.sp,
+
+                fontWeight =
+                    if (block.bold) {
+                        FontWeight.Bold
+                    } else {
+                        FontWeight.Normal
+                    },
+
+                textAlign = textAlignment,
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+
+
+        "emphasis" -> {
+
+            Text(
+                text = block.text,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = textAlignment,
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+
+
+        else -> {
+
+            Text(
+                text = block.text,
+                fontSize = 18.sp,
+                textAlign = textAlignment,
+                modifier = Modifier.fillMaxWidth()
             )
         }
     }
