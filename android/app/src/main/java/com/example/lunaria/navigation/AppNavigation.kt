@@ -55,6 +55,13 @@ data object Explore
 data object Settings
 
 
+// Reading books
+
+data class Reading(
+    val bookId: Int
+)
+
+
 // Login and registeration
 data object Login
 
@@ -328,6 +335,12 @@ fun AppNavigation() {
 
                                 onBack = {
                                     backStack.removeLastOrNull()
+                                },
+
+                                onRead = {
+                                    backStack.add(
+                                        Reading(book.id)
+                                    )
                                 }
                             )
 

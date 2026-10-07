@@ -1,6 +1,7 @@
 package com.example.lunaria.data.api
 
 import com.example.lunaria.data.model.book.Book
+import com.example.lunaria.data.model.book.BookPage
 import com.example.lunaria.data.model.user.PreferenceDescription
 import com.example.lunaria.data.model.user.UserAccount
 import com.example.lunaria.data.model.user.Username
@@ -9,6 +10,7 @@ import com.example.lunaria.data.model.user.UsernameAndPreferences
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface LunariaApi {
 
@@ -21,6 +23,11 @@ interface LunariaApi {
 
     @GET("book-brief-info")
     suspend fun getAllBooksFromDatabase(): List<Book>
+
+    @GET("books/{bookId}/pages")
+    suspend fun getBookPages(
+        @Path("bookId") bookId: Int
+    ): List<BookPage>
 
 
     // Users ------------------------------------------------

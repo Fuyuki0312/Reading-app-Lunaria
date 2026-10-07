@@ -1,6 +1,6 @@
 from app.database.database import get_cursor_from_database
 
-
+import json
 import copy
 
 cursor = get_cursor_from_database()
@@ -72,6 +72,35 @@ class BookServices:
     def get_the_number_of_books_in_database(self) -> int:
 
         return len(self.books)
+
+
+    def get_pages_by_book_id(self, book_id: int):
+
+        cursor.execute("""
+            SELECT page_num, book_id, content
+            FROM pages
+            WHERE book_id = %s
+            ORDER BY page_num
+        """)
+
+        rows = cursor.fetchall()
+        pages = []
+
+        # the for loop below ensures this function returns the type which frontend expects
+        for row in rows:
+
+            content = row["content"]
+
+            if isinstance(content, str):
+                content = json.loads(content)
+
+            pages.append({
+                "page_num": row["page_num"],
+                "book_id": row["book_id"],
+                "content": content
+            })
+
+        return pages
 
 
 book_services = BookServices()

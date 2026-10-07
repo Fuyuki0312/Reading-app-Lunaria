@@ -86,6 +86,15 @@ def recommend(username: Username):
     return recommended_books
 
 
+@router.get("/books/{book_id}/pages")
+def get_book_pages(book_id: int):
+
+    return book_services.get_pages_by_book_id(
+        book_id=book_id
+    )
+
+
+
 # Router for users ----------------------------------------------------
 
 @router.post("/register-user")

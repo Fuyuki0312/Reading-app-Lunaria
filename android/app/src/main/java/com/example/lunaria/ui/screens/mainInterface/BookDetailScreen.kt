@@ -23,7 +23,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun BookDetailScreen(
     book: Book,
-    onBack: () -> Unit
+    onBack: () -> Unit,
+    onRead: () -> Unit
 ) {
 
     Column(
@@ -76,6 +77,13 @@ fun BookDetailScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Back")
+        }
+
+        Button(
+            onClick = onRead,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Read")
         }
     }
 }

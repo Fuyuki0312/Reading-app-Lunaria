@@ -16,7 +16,6 @@ torch.manual_seed(config.TORCH_SEED)
 
 
 
-
 # Save functions
 
 def save_metrics_per_user_to_csv(one_user_metric_results: list[dict]):
