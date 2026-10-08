@@ -3,6 +3,8 @@ from app.database.database import get_database_connection
 import json
 import copy
 
+from app.model.llm_response import RecommendationForm
+
 
 class BookServices:
 
@@ -30,7 +32,7 @@ class BookServices:
             cursor.execute("SELECT * FROM books")
             self.books_without_genres = cursor.fetchall()
 
-            self.books = self.books_without_genres.copy()
+            self.books = copy.deepcopy(self.books_without_genres)
 
             self.attach_genres_to_books() # self.books become a list of books with their genres
 
@@ -63,7 +65,7 @@ class BookServices:
         return copy.deepcopy(self.books)
 
 
-    def index_books_with_id_list(self, list_of_book_id: list[dict]) -> list:
+    def index_books_with_id_list(self, list_of_book_id: list) -> list[RecommendationForm]:
 
         indexed_books = []
 

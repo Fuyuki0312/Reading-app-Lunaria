@@ -11,7 +11,7 @@ def recommend_books(
         user_genre_preference: list[str],
         user_preference_description: str,
         books: list[dict]
-) -> list[dict]:
+) -> list:
 
     if not user_genre_preference:  # if user_genre_preference == []:
         user_genre_preference = ["Any"]

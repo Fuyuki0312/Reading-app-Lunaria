@@ -20,6 +20,7 @@ all_book_genres = [
 """
 
 from app.config import Config
+from app.model.llm_response import RecommendationForm
 from app.services.book_services import get_book_services
 
 
@@ -42,7 +43,7 @@ class Baseline:
         random.shuffle(self.all_book_genres)
 
 
-    def score_books(self, user_genre_preferences: list[str]) -> list[dict[str, int]]:
+    def score_books(self, user_genre_preferences: list[str]) -> list[RecommendationForm]:
 
         user_genre_preferences_set = set()
         for genre in user_genre_preferences:
@@ -57,17 +58,21 @@ class Baseline:
 
         self.all_book_genres.sort(key=lambda x: x["score"], reverse=True)
 
-        return self.recommend_book_id() # return example: [{'id': 21}, {'id': 12}, {'id': 1}, {'id': 4}, {'id': 18}]
+        return self.recommend_book_id() # return example: see the return type
 
 
-    def recommend_book_id(self) -> list[dict[str, int]]:
+    def recommend_book_id(self) -> list[RecommendationForm]:
 
         recommended_id_list = []
 
         for i in range(config.NUM_OF_RECOMMENDED_BOOK):
 
             recommended_id_list.append(
-                {"book_id": self.all_book_genres[i]["id"]}
+                #{"book_id": self.all_book_genres[i]["id"]}
+                RecommendationForm(
+                    book_id=self.all_book_genres[i]["id"],
+                    reason=f"score: {self.all_book_genres[i]['score']}"
+                )
             )
 
         return recommended_id_list

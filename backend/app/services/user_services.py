@@ -17,7 +17,7 @@ class UserService:
     ):
 
         database = get_database_connection()
-        cursor = database.cursor()
+        cursor = database.cursor(dictionary=True)
 
         try:
             cursor.execute(f"""
@@ -44,7 +44,7 @@ class UserService:
     ):
 
         database = get_database_connection()
-        cursor = database.cursor()
+        cursor = database.cursor(dictionary=True)
 
         try:
             cursor.execute(f"""
@@ -70,7 +70,7 @@ class UserService:
     ):
 
         database = get_database_connection()
-        cursor = database.cursor()
+        cursor = database.cursor(dictionary=True)
 
         try:
 
@@ -96,7 +96,7 @@ class UserService:
     def get_genre_preferences_from_username(self, username):
 
         database = get_database_connection()
-        cursor = database.cursor()
+        cursor = database.cursor(dictionary=True)
 
         try:
             cursor.execute(f"""
@@ -118,7 +118,7 @@ class UserService:
     def get_preference_description_from_username(self, username):
 
         database = get_database_connection()
-        cursor = database.cursor()
+        cursor = database.cursor(dictionary=True)
 
         try:
             cursor.execute(f"""
@@ -140,7 +140,7 @@ class UserService:
     def get_all_username_from_database(self):
 
         database = get_database_connection()
-        cursor = database.cursor()
+        cursor = database.cursor(dictionary=True)
 
         try:
             cursor.execute(f"""
@@ -159,7 +159,7 @@ class UserService:
     def get_password_by_username_from_database(self, username):
 
         database = get_database_connection()
-        cursor = database.cursor()
+        cursor = database.cursor(dictionary=True)
 
         try:
 
