@@ -325,7 +325,7 @@ fun AppNavigation() {
 
                     entry<BookID> { key ->
 
-                        val book = recommendedBooks.find {
+                        val book = allBooks.find {
                             it.id == key.bookId
                         }
 

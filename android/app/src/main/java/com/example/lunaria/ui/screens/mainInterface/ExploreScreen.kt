@@ -98,7 +98,6 @@ fun ExploreScreen(
     }
 }
 
- // TODO: Use this fun
 fun searchBook (allBooks: List<Book>, query: String): MutableList<Book> {
 
     val filtered_books = mutableListOf<Book>()

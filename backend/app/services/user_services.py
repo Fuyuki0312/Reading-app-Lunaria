@@ -1,10 +1,8 @@
-from app.database.database import get_cursor_from_database, get_database
+from app.database.database import get_database_connection
 
 import json
 
 
-database = get_database()
-cursor = get_cursor_from_database()
 
 class UserService:
 
@@ -17,16 +15,26 @@ class UserService:
             password: str,
             genre_preferences: list
     ):
-        cursor.execute(f"""
-            INSERT INTO users(username, insecured_password, genre_preferences)
-            VALUES (%s, %s, %s);
-            """, (
-            username,
-            password,
-            json.dumps(genre_preferences)
-        ))
 
-        database.commit()
+        database = get_database_connection()
+        cursor = database.cursor()
+
+        try:
+            cursor.execute(f"""
+                INSERT INTO users(username, insecured_password, genre_preferences)
+                VALUES (%s, %s, %s);
+                """, (
+                username,
+                password,
+                json.dumps(genre_preferences)
+            ))
+
+            database.commit()
+
+        finally:
+
+            cursor.close()
+            database.close()
 
 
     def register_genre_preferences_to_database(
@@ -35,15 +43,24 @@ class UserService:
             username: str
     ):
 
-        cursor.execute(f"""
-            UPDATE users
-            SET genre_preferences = %s
-            WHERE username = %s;
-        """, (
-            json.dumps(preferences),
-            username
-        ))
-        database.commit()
+        database = get_database_connection()
+        cursor = database.cursor()
+
+        try:
+            cursor.execute(f"""
+                UPDATE users
+                SET genre_preferences = %s
+                WHERE username = %s;
+            """, (
+                json.dumps(preferences),
+                username
+            ))
+            database.commit()
+
+        finally:
+
+            cursor.close()
+            database.close()
 
 
     def register_preference_description_to_database(
@@ -52,69 +69,114 @@ class UserService:
             description
     ):
 
-        cursor.execute(f"""
-            UPDATE users
-            SET preference_description = %s
-            WHERE username = %s
-        """, (
-            description,
-            username
-        ))
+        database = get_database_connection()
+        cursor = database.cursor()
 
-        database.commit()
+        try:
+
+            cursor.execute(f"""
+                UPDATE users
+                SET preference_description = %s
+                WHERE username = %s
+            """, (
+                description,
+                username
+            ))
+
+            database.commit()
+
+        finally:
+
+            cursor.close()
+            database.close()
 
 
     # Getter from database ----------------------------------
 
     def get_genre_preferences_from_username(self, username):
 
-        cursor.execute(f"""
-            SELECT genre_preferences FROM users
-            WHERE username = %s;
-        """, (
-            username,
-        ))
+        database = get_database_connection()
+        cursor = database.cursor()
 
-        result_from_database = cursor.fetchone()
-        genre_preferences = json.loads(result_from_database["genre_preferences"])
-        return genre_preferences
+        try:
+            cursor.execute(f"""
+                SELECT genre_preferences FROM users
+                WHERE username = %s;
+            """, (
+                username,
+            ))
+
+            result_from_database = cursor.fetchone()
+            genre_preferences = json.loads(result_from_database["genre_preferences"])
+            return genre_preferences
+
+        finally:
+
+            cursor.close()
+            database.close()
 
     def get_preference_description_from_username(self, username):
 
-        cursor.execute(f"""
-            SELECT preference_description FROM users
-            WHERE username = %s;
-        """, (
-            username,
-        ))
+        database = get_database_connection()
+        cursor = database.cursor()
 
-        result_from_database = cursor.fetchone()
+        try:
+            cursor.execute(f"""
+                SELECT preference_description FROM users
+                WHERE username = %s;
+            """, (
+                username,
+            ))
 
-        return result_from_database["preference_description"]
+            result_from_database = cursor.fetchone()
 
+            return result_from_database["preference_description"]
+
+        finally:
+
+            cursor.close()
+            database.close()
 
     def get_all_username_from_database(self):
 
-        cursor.execute(f"""
-            SELECT username FROM users;
-        """)
+        database = get_database_connection()
+        cursor = database.cursor()
 
-        username_list = cursor.fetchall()
-        return username_list
+        try:
+            cursor.execute(f"""
+                SELECT username FROM users;
+            """)
+
+            username_list = cursor.fetchall()
+            return username_list
+
+        finally:
+
+            cursor.close()
+            database.close()
 
 
     def get_password_by_username_from_database(self, username):
 
-        cursor.execute(f"""
-            SELECT insecured_password FROM users
-            WHERE username = %s;
-        """, (
-            username,
-        ))
+        database = get_database_connection()
+        cursor = database.cursor()
 
-        result_from_database = cursor.fetchone()
-        return result_from_database["insecured_password"]
+        try:
 
+            cursor.execute(f"""
+                SELECT insecured_password FROM users
+                WHERE username = %s;
+            """, (
+                username,
+            ))
+
+            result_from_database = cursor.fetchone()
+            return result_from_database["insecured_password"]
+
+        finally:
+
+            cursor.close()
+            database.close()
 
 user_services = UserService()
 

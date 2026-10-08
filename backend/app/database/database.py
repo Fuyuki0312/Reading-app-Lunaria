@@ -1,7 +1,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
-import mysql.connector
+from mysql.connector.pooling import MySQLConnectionPool
 
 
 ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
@@ -18,7 +18,10 @@ MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
 MYSQL_DATABASE = os.getenv("MYSQL_DATABASE")
 
 
-database = mysql.connector.connect(
+database_pool = MySQLConnectionPool(
+    pool_name="lunaria_pool",
+    pool_size=5,
+
     host=MYSQL_HOST,
     user=MYSQL_USER,
     password=MYSQL_PASSWORD,
@@ -26,13 +29,7 @@ database = mysql.connector.connect(
     use_pure=True
 )
 
-cursor = database.cursor(dictionary=True)
 
+def get_database_connection():
 
-def get_cursor_from_database():
-
-    return cursor
-
-def get_database():
-
-    return database
+    return database_pool.get_connection()

@@ -1,34 +1,43 @@
-from app.database.database import get_cursor_from_database
+from app.database.database import get_database_connection
 
 import json
 import copy
 
-cursor = get_cursor_from_database()
 
 class BookServices:
 
     def __init__(self):
 
-        # Create a list of books' id with their genres ---------
-        cursor.execute("""
-            SELECT b.id, g.name
-            FROM books b
-            JOIN book_genres bg
-                ON bg.book_id = b.id
-            JOIN genres g
-                ON bg.genre_id = g.id;
-        """)
+        database = get_database_connection()
+        cursor = database.cursor(
+            dictionary=True
+        )
 
-        self.books_id_with_genres = cursor.fetchall()
+        try:
+            # Create a list of books' id with their genres ---------
+            cursor.execute("""
+                SELECT b.id, g.name
+                FROM books b
+                JOIN book_genres bg
+                    ON bg.book_id = b.id
+                JOIN genres g
+                    ON bg.genre_id = g.id;
+            """)
+
+            self.books_id_with_genres = cursor.fetchall()
 
 
-        cursor.execute("SELECT * FROM books")
-        self.books_without_genres = cursor.fetchall()
+            cursor.execute("SELECT * FROM books")
+            self.books_without_genres = cursor.fetchall()
 
-        self.books = self.books_without_genres.copy()
+            self.books = self.books_without_genres.copy()
 
-        self.attach_genres_to_books() # self.books become a list of books with their genres
+            self.attach_genres_to_books() # self.books become a list of books with their genres
 
+        finally:
+
+            cursor.close()
+            database.close()
 
 
     def attach_genres_to_books(self):
@@ -76,32 +85,42 @@ class BookServices:
 
     def get_pages_by_book_id(self, book_id: int):
 
-        cursor.execute("""
-            SELECT page_num, book_id, content
-            FROM pages
-            WHERE book_id = %s
-            ORDER BY page_num
-        """, (book_id,))
+        database = get_database_connection()
+        cursor = database.cursor(
+            dictionary=True
+        )
 
-        rows = cursor.fetchall()
-        pages = []
+        try:
+            cursor.execute("""
+                SELECT page_num, book_id, content
+                FROM pages
+                WHERE book_id = %s
+                ORDER BY page_num
+            """, (book_id,))
 
-        # the for loop below ensures this function returns the type which frontend expects
-        for row in rows:
+            rows = cursor.fetchall()
+            pages = []
 
-            content = row["content"]
+            # the for loop below ensures this function returns the type which frontend expects
+            for row in rows:
 
-            if isinstance(content, str):
-                content = json.loads(content)
+                content = row["content"]
 
-            pages.append({
-                "page_num": row["page_num"],
-                "book_id": row["book_id"],
-                "content": content
-            })
+                if isinstance(content, str):
+                    content = json.loads(content)
 
-        return pages
+                pages.append({
+                    "page_num": row["page_num"],
+                    "book_id": row["book_id"],
+                    "content": content
+                })
 
+            return pages
+
+        finally:
+
+            cursor.close()
+            database.close()
 
 book_services = BookServices()
 
