@@ -4,6 +4,7 @@ import com.example.lunaria.ui.screens.mainInterface.HomeScreen
 import com.example.lunaria.ui.screens.mainInterface.bookScreens.BookDetailScreen
 import com.example.lunaria.ui.screens.mainInterface.ExploreScreen
 import com.example.lunaria.ui.screens.mainInterface.SettingsScreen
+import com.example.lunaria.ui.screens.mainInterface.bookScreens.ReadingScreen
 import com.example.lunaria.ui.screens.login.LoginScreen
 import com.example.lunaria.ui.screens.login.RegisterScreen
 import com.example.lunaria.ui.screens.login.GenrePreferenceSurveyScreen
@@ -348,6 +349,17 @@ fun AppNavigation() {
 
                             Text("Book not found")
                         }
+                    }
+
+                    entry<Reading> { key ->
+
+                        ReadingScreen(
+                            bookId = key.bookId,
+
+                            onBack = {
+                                backStack.removeLastOrNull()
+                            }
+                        )
                     }
 
 

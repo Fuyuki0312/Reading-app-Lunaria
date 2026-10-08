@@ -81,7 +81,7 @@ class BookServices:
             FROM pages
             WHERE book_id = %s
             ORDER BY page_num
-        """)
+        """, (book_id,))
 
         rows = cursor.fetchall()
         pages = []

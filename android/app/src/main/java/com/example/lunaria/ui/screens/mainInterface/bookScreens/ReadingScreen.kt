@@ -96,6 +96,12 @@ fun ReadingScreen(
             .verticalScroll(rememberScrollState())
     ) {
 
+        Button(
+            onClick = onBack
+        ) {
+            Text("Back")
+        }
+
         // user can scoll book's content, but other things like buttons cannot be scolled
         Column(
             modifier = Modifier
