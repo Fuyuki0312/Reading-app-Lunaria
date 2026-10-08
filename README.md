@@ -205,7 +205,6 @@ This design keeps simple recommendation requests lightweight while using the LLM
 
 - Lunaria has not been tested with many users requesting recommendations at the same time, so its performance under high load is still unknown.
 - The evaluation dataset may not fully represent real Lunaria users. Therefore, the current results cannot guarantee the same recommendation quality in a real production environment.
-- The reading feature has not been fully implemented yet, so users cannot currently read books directly in the app.
 - Lunaria currently uses GPT-5 nano, which requires paid API calls for recommendation requests.
 - The current user interface is functional, but its visual design is still basic.
 
@@ -213,7 +212,6 @@ This design keeps simple recommendation requests lightweight while using the LLM
 
 - Test and improve backend performance under a large number of simultaneous requests.
 - Evaluate the recommendation system with a larger and more diverse dataset, including real users if possible.
-- Complete the reading interface so users can read books directly in Lunaria.
 - Explore cheaper LLMs that can still provide good book recommendations.
 - Improve the visual design of the user interface.  
 
