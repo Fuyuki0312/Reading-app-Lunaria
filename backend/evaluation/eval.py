@@ -9,11 +9,35 @@ import torch
 import json
 import pandas as pd
 
+from pathlib import Path
+
+
+# Priority bias and model name
+
+PRIORITY_BIAS = "genre_match_priority" # "genre_match_priority" or "text_description_priority"
+MODEL_NAME_FOR_PATH = "gpt_5_nano" # take a look at app/config.py
+
+
+# WHERE TO SAVE -------------------------------
+
+priority_bias_plus_relevance = PRIORITY_BIAS + "_relevance"
+
+USER_DATASET_PATH = Path("eval_dataset") / "eval_users.json"
+BOOK_DATASET_PATH = Path("eval_dataset") / priority_bias_plus_relevance / "relevance_labels.json"
+
+PER_USER_METRICS_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "per_user_metrics.csv"
+OVERALL_METRICS_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "mean_metrics.csv"
+
+BOOK_DETAILS_BY_LLM_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "analysis" / "books_from_llm.json"
+BOOK_DETAILS_BY_RAG_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "analysis" / "books_from_rag.json"
+BOOK_DETAILS_BY_EMBEDDING_MODEL_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "analysis" / "books_from_embedding_model.json"
+
+
+# Config and services --------------------------------------------
 
 config = Config()
 book_services = get_book_services()
 torch.manual_seed(config.TORCH_SEED)
-
 
 
 # Save functions
@@ -21,7 +45,7 @@ torch.manual_seed(config.TORCH_SEED)
 def save_metrics_per_user_to_csv(one_user_metric_results: list[dict]):
     df = pd.DataFrame(one_user_metric_results)
     df.to_csv(
-        "eval_results/genre_match_priority/per_user_metrics.csv",
+        PER_USER_METRICS_PATH,
         index=False
     )
 
@@ -83,36 +107,36 @@ def save_mean_metrics_to_csv(one_user_metric_results: list[dict]):
 
     df = pd.DataFrame(table)
     df.to_csv(
-        "eval_results/genre_match_priority/mean_metrics.csv",
+        OVERALL_METRICS_PATH,
         index=False
     )
 
 
 def save_books_recommeded_by_llm(recommendations_from_llm):
 
-    with open("eval_results\\genre_match_priority\\analysis\\books_from_llm.json", "w") as file:
+    with open(BOOK_DETAILS_BY_LLM_PATH, "w") as file:
         json.dump(recommendations_from_llm, file, indent=4)
 
 
 def save_books_recommeded_by_rag(recommendations_from_rag):
 
-    with open("eval_results\\genre_match_priority\\analysis\\books_from_rag.json", "w") as file:
+    with open(BOOK_DETAILS_BY_RAG_PATH, "w") as file:
         json.dump(recommendations_from_rag, file, indent=4)
 
 
 def save_books_recommeded_by_embedding_model(recommendations_from_embedding_model):
 
-    with open("eval_results\\genre_match_priority\\analysis\\books_from_embedding_model.json", "w") as file:
+    with open(BOOK_DETAILS_BY_EMBEDDING_MODEL_PATH, "w") as file:
         json.dump(recommendations_from_embedding_model, file, indent=4)
 
 
 # Get dataset -----------------------------------------------
 
 
-with open("eval_dataset\\eval_users.json", "r") as f:
+with open(USER_DATASET_PATH, "r") as f:
     eval_users = json.load(f)
 
-with open("eval_dataset\\genre_match_priority_relevance\\relevance_labels.json", "r") as f:
+with open(BOOK_DATASET_PATH, "r") as f:
     eval_relevance = json.load(f)
 
 

@@ -1,5 +1,5 @@
 # TODO: learn tools:
-#  - Use LangChain (to explore different LLMs and to ensure JSON-structured outputs)
+#  - (DONE) Use LangChain (to explore different LLMs and to ensure JSON-structured outputs)
 #  - Use Docker (I don't know why. Job description wants it, but I will research later if I really need it.)
 
 # TODO depth:
@@ -10,7 +10,7 @@
 #  LEGENDARY QUEST ✨: Continual Learning
 
 # TODO breadth:
-#  - Enable users to actually read books
+#  - (DONE) Enable users to actually read books
 #  - Hash users' password
 #  - Style: Decorate app with Lunaria style
 #  - Use something to do Semantic Search
