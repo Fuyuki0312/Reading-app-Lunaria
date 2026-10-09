@@ -238,7 +238,10 @@ def main():
         all_recommendations_from_llm.append(
             {
                 "user_id": user["id"],
-                "recommendations": llm_recommeded_books
+                "recommendations": [
+                    book.model_dump()
+                    for book in llm_recommeded_books
+                ]
             }
         )
 
@@ -280,7 +283,10 @@ def main():
         all_recommendations_from_rag.append(
             {
                 "user_id": user["id"],
-                "recommendations": rag_recommeded_books
+                "recommendations": [
+                    book.model_dump()
+                    for book in rag_recommeded_books
+                ]
             }
         )
 
@@ -308,7 +314,7 @@ def main():
         rag_rel_in_order = []
         rag_violation_counter = 0
         for book in rag_recommeded_books:
-            book_id = book["book_id"]
+            book_id = book.book_id
             rel = book_id_with_relevance_score[book_id]["rel_score"]
 
             if book_id_with_relevance_score[book_id]["violation"]:

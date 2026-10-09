@@ -65,7 +65,7 @@ class BookServices:
         return copy.deepcopy(self.books)
 
 
-    def index_books_with_id_list(self, list_of_book_id: list) -> list[RecommendationForm]:
+    def index_books_with_id_list(self, list_of_book_id: list) -> list[dict]:
 
         indexed_books = []
 
