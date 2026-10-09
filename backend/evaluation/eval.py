@@ -13,12 +13,13 @@ from pathlib import Path
 
 
 # Priority bias and model name
+# ⚠️: Look at these 2 below Hyperparameters before run this file
 
 PRIORITY_BIAS = "genre_match_priority" # "genre_match_priority" or "text_description_priority"
 MODEL_NAME_FOR_PATH = "gpt_5_nano" # take a look at app/config.py
 
 
-# WHERE TO SAVE -------------------------------
+# Hyperparameters (where to save) -------------------------------
 
 priority_bias_plus_relevance = PRIORITY_BIAS + "_relevance"
 
@@ -172,6 +173,37 @@ def main():
 
     for user in eval_users:
 
+        # Get ideal recommendations
+
+        user_id = user["id"]
+        ideal_recommended_books_in_order = []
+
+        relevance_start_idx = number_of_books * (user_id - 1)
+        relevance_end_idx = relevance_start_idx + number_of_books
+
+        assert type(relevance_start_idx) is int, "relevance_start_idx is NOT int, check relevance_start_idx's equation"
+        assert type(relevance_end_idx) is int, "relevance_end_idx is NOT int, check relevance_end_idx's equation"
+
+        book_id_with_relevance_score: dict[int, dict] = {}  # = { int: {"rel_score": rel_score,
+                                                            #           "violation": bool} }
+        for i in range(relevance_start_idx, relevance_end_idx):
+            ideal_recommended_books_in_order.append(
+                {
+                    "book_id": eval_relevance[i]["book_id"],
+                    "relevance": eval_relevance[i]["relevance"]
+                }
+            )
+
+            book_id_with_relevance_score[eval_relevance[i]["book_id"]] = {
+                "rel_score": eval_relevance[i]["relevance"],
+                "violation": eval_relevance[i]["violation"]
+            }
+
+        ideal_recommended_books_in_order.sort(key=lambda x: x["relevance"], reverse=True)
+
+        ideal_recommended_books_in_order = ideal_recommended_books_in_order[:config.NUM_OF_RECOMMENDED_BOOK]
+
+
         print(f"Recommending books for user {user['id']}...\n")
 
         # Get recommendations from baseline
@@ -186,6 +218,21 @@ def main():
             user_genre_preference=user["genre_preferences"],
             user_preference_description=user["genre_description"],
             books=book_services.get_books_with_genres()
+        )
+
+        # The below assertions do 3 things:
+        # 1. Check if LLM recommended exactly (config.NUM_OF_RECOMMENDED_BOOK) books
+        # 2. Check if recommended books are duplicated
+        # 3. Check if all recommeneded books exist in database
+        assert len(llm_recommeded_books) == config.NUM_OF_RECOMMENDED_BOOK, (f"LLM did not recommend exactly {config.NUM_OF_RECOMMENDED_BOOK} books for user with id {user['id']}:\n\n"
+                                                                             f"{llm_recommeded_books}")
+        ids_temp = [book.book_id for book in llm_recommeded_books]
+
+        assert len(ids_temp) == len(set(ids_temp)), (f"Books recommended by the LLM is duplicated:\n\n"
+                                                     f"{llm_recommeded_books}")
+        assert all(book_id in book_id_with_relevance_score for book_id in ids_temp), (
+            f"Books recommended by the LLM do not exist in database:\n\n"
+            f"{llm_recommeded_books}"
         )
 
         all_recommendations_from_llm.append(
@@ -219,6 +266,17 @@ def main():
             books=books_for_llm_with_rag
         )
 
+        assert len(rag_recommeded_books) == config.NUM_OF_RECOMMENDED_BOOK, (f"RAG did not recommend exactly {config.NUM_OF_RECOMMENDED_BOOK} books for user with id {user['id']}:\n\n"
+                                                                             f"{rag_recommeded_books}")
+        ids_temp = [book.book_id for book in rag_recommeded_books]
+
+        assert len(ids_temp) == len(set(ids_temp)), (f"Books recommended by RAG is duplicated:\n\n"
+                                                     f"{rag_recommeded_books}")
+        assert all(book_id in book_id_with_relevance_score for book_id in ids_temp), (
+            f"Books recommended by RAG do not exist in database:\n\n"
+            f"{rag_recommeded_books}"
+        )
+
         all_recommendations_from_rag.append(
             {
                 "user_id": user["id"],
@@ -226,36 +284,6 @@ def main():
             }
         )
 
-        # Get ideal recommendations
-
-        user_id = user["id"]
-        ideal_recommended_books_in_order = []
-
-
-        relevance_start_idx = number_of_books * (user_id - 1)
-        relevance_end_idx = relevance_start_idx + number_of_books
-
-        assert type(relevance_start_idx) is int, "relevance_start_idx is NOT int, check relevance_start_idx's equation"
-        assert type(relevance_end_idx) is int, "relevance_end_idx is NOT int, check relevance_end_idx's equation"
-
-        book_id_with_relevance_score: dict[int, dict] = {} # = {"rel_score": rel_score,
-                                                           #    "violation": bool},
-        for i in range(relevance_start_idx, relevance_end_idx):
-            ideal_recommended_books_in_order.append(
-                {
-                    "book_id": eval_relevance[i]["book_id"],
-                    "relevance": eval_relevance[i]["relevance"]
-                }
-            )
-
-            book_id_with_relevance_score[eval_relevance[i]["book_id"]] = {
-                "rel_score": eval_relevance[i]["relevance"],
-                "violation": eval_relevance[i]["violation"]
-            }
-
-        ideal_recommended_books_in_order.sort(key=lambda x: x["relevance"], reverse=True)
-
-        ideal_recommended_books_in_order = ideal_recommended_books_in_order[:config.NUM_OF_RECOMMENDED_BOOK]
 
         # Get relevance score and violation rate from each method's recommendations
 
@@ -268,7 +296,7 @@ def main():
         llm_rel_in_order = []
         llm_violaion_counter = 0
         for book in llm_recommeded_books:
-            book_id = book["book_id"]
+            book_id = book.book_id
             rel = book_id_with_relevance_score[book_id]["rel_score"]
 
             if book_id_with_relevance_score[book_id]["violation"]:
@@ -293,7 +321,7 @@ def main():
         baseline_rel_in_order = []
         baseline_violation_counter = 0
         for book in baseline_recommended_books:
-            book_id = book["book_id"]
+            book_id = book.book_id
             rel = book_id_with_relevance_score[book_id]["rel_score"]
 
             if book_id_with_relevance_score[book_id]["violation"]:

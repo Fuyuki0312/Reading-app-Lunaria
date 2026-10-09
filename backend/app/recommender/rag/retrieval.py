@@ -1,3 +1,4 @@
+from app.model.llm_response import RecommendationForm
 from app.recommender.rag.embedding.model import embed_query
 from app.recommender.rag.vector_store.chroma import get_chroma_collection
 from app.config import Config

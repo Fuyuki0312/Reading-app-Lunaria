@@ -1,4 +1,5 @@
 from app.config import Config
+from app.model.llm_response import RecommendationForm
 
 from app.recommender.rag.llm.llm import get_llm
 from langchain_core.prompts import ChatPromptTemplate
@@ -11,7 +12,7 @@ def recommend_books(
         user_genre_preference: list[str],
         user_preference_description: str,
         books: list[dict]
-) -> list:
+) -> list[RecommendationForm]:
 
     if not user_genre_preference:  # if user_genre_preference == []:
         user_genre_preference = ["Any"]
@@ -37,5 +38,5 @@ def recommend_books(
 
     recommendations = llm_response.recommendation
 
-    return recommendations  # List
+    return recommendations
 

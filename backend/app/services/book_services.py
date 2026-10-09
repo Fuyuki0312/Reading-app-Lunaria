@@ -70,7 +70,13 @@ class BookServices:
         indexed_books = []
 
         for recommended_form in list_of_book_id:
-            id = recommended_form.book_id
+
+            if isinstance(recommended_form, dict):
+                id = recommended_form["book_id"]
+            elif isinstance(recommended_form, RecommendationForm):
+                id = recommended_form.book_id
+            else:
+                raise Exception("Book service cannot recognize what is in list_of_book_id.")
 
             for book in self.books:
                 if id == book["id"]:
