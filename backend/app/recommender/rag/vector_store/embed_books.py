@@ -10,6 +10,10 @@ if __name__ == "__main__":
     all_books = book_services.get_books_with_genres()
 
 
+    if any(not book["genres"] for book in all_books):
+        raise ValueError("Some books have no genres.")
+
+
     embedded_books = embed_books(all_books)
 
     collection.upsert(
@@ -23,7 +27,9 @@ if __name__ == "__main__":
         metadatas=[
             {
                 "book_id": book["id"],
-                "title": book["title"]
+                "title": book["title"],
+                "author": book["author"],
+                "genres": book["genres"]
             }
             for book in all_books
         ]
@@ -31,3 +37,9 @@ if __name__ == "__main__":
 
     print("Books:", len(all_books))
     print("Embeddings shape:", embedded_books.shape)
+
+    results = collection.get(
+        where={"author": "Iris Vale"}
+    )
+
+    print(results["ids"])
