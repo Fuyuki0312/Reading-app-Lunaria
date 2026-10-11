@@ -16,6 +16,22 @@
 #  - Use something to do Semantic Search
 #  - Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 
-import sys
+from app.recommender.rag.retrieval import retrieve_books
+from app.services.book_services import get_book_services
 
-print(sys.version)
+results = retrieve_books(
+    preferred_genres=["Mystery"],
+    user_description="I enjoy mysterious stories.",
+    excluded_authors=["Iris Vale"],
+    excluded_genres=["Dark Fantasy", "Psychological Thriller"]
+)
+
+books = get_book_services().index_books_with_id_list(results)
+
+for book in books:
+    assert book["author"] != "Iris Vale"
+    assert "Dark Fantasy" not in book["genres"]
+    assert "Psychological Thriller" not in book["genres"]
+
+print("Retrieved:", len(books))
+print("Pre-filtered semantic retrieval: PASSED")
