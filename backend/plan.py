@@ -17,6 +17,7 @@
 #  - Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 
 from app.recommender.rag.retrieval import entity_matching
+from pprint import pprint
 
 # Use actual books from the database
 book = entity_matching.all_books[0]
@@ -88,3 +89,11 @@ for _ in range(100):
 assert entity_matching.entities is cached_entities
 
 print("Test 5: PASSED")
+
+
+# Visualization
+text = "I love Iris Vale, but I prefer Nora Vale."
+
+results = entity_matching.match_entities(text)
+
+pprint(results)

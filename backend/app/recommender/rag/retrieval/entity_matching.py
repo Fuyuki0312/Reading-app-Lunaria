@@ -1,3 +1,8 @@
+# This is called Regular Expression (Regex)
+
+# This will find all author names and book titles inside
+# user text-free description (if there are any)
+
 import re
 
 from app.services.book_services import BookServices
@@ -15,7 +20,7 @@ for book in all_books:
 
 def match_entities(
     user_description: str
-) -> list[dict]:
+) -> list[dict]: # see return example down below
 
     global entities
 
@@ -38,3 +43,8 @@ def match_entities(
             })
 
     return sorted(matches, key=lambda x: x["start"])
+
+    # return example:
+
+    # [{'end': 16, 'name': 'Iris Vale', 'start': 7, 'type': 'author'},
+    #  {'end': 40, 'name': 'Nora Vale', 'start': 31, 'type': 'author'}]
