@@ -1,5 +1,7 @@
-# At the time being, I am using GPT-5 nano to extract user's intents.
-# Maybe, it would be better to use a cheaper LLM.
+# Problems:
+# - GPT-5 nano is an overkill.
+# - This module needs evaluation.
+# - This module does not process disliked genres.
 
 import json
 from pathlib import Path
