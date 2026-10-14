@@ -29,19 +29,7 @@ def extract_intents(
         return []
 
     response = model.invoke([ # Throw this to config
-        SystemMessage(content="""
-        Identify the user's CURRENT intent toward each detected entity.
-
-        Labels:
-        - prefer: currently liked or preferred
-        - exclude: explicitly unwanted or rejected
-        - reference: a book used as an example for finding similar books
-        - neutral: merely mentioned, unclear, or insufficient evidence
-
-        Consider negation, past preferences, and changes in preference.
-        Do not infer an exclusion without clear evidence.
-        Return exactly one result for each entity, using its index.
-        """),
+        SystemMessage(content=Config().get_prompt_for_llm_in_intent_extraction()),
 
         HumanMessage(content=json.dumps({
             "user_description": user_description,

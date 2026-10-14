@@ -78,3 +78,22 @@ class Config:
             - The recommendations must be ordered from most suitable to least suitable."""
 
         return system_prompt
+
+
+    def get_prompt_for_llm_in_intent_extraction(self):
+
+        prompt = """
+        Identify the user's CURRENT intent toward each detected entity.
+
+        Labels:
+        - prefer: currently liked or preferred
+        - exclude: explicitly unwanted or rejected
+        - reference: a book used as an example for finding similar books
+        - neutral: merely mentioned, unclear, or insufficient evidence
+
+        Consider negation, past preferences, and changes in preference.
+        Do not infer an exclusion without clear evidence.
+        Return exactly one result for each entity, using its index.
+        """
+
+        return prompt
