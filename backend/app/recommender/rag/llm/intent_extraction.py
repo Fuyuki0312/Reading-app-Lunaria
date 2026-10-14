@@ -67,3 +67,18 @@ def extract_intents(
         {**entity, "intent": intents[i]}
         for i, entity in enumerate(entities)
     ]
+
+# return example:
+
+"""
+[{'end': 33,
+  'intent': 'neutral',
+  'name': 'The Silence Between Stars',
+  'start': 8,
+  'type': 'book'},
+ {'end': 61,
+  'intent': 'exclude',
+  'name': 'Iris Vale',
+  'start': 52,
+  'type': 'author'}]
+"""
