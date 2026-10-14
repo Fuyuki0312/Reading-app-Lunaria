@@ -9,3 +9,4 @@ class EntityIntent(BaseModel):
 
 class IntentOutput(BaseModel):
     results: list[EntityIntent]
+    excluded_genres: list[str]

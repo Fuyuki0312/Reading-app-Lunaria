@@ -5,9 +5,9 @@
 
 import re
 
-from app.services.book_services import BookServices
+from app.services.book_services import get_book_services
 
-book_services = BookServices()
+book_services = get_book_services()
 all_books = book_services.get_books_with_genres()
 
 

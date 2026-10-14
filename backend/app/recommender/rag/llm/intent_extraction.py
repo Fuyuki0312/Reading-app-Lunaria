@@ -1,5 +1,4 @@
 # Problems:
-# - GPT-5 nano is an overkill.
 # - This module needs evaluation.
 # - This module does not process disliked genres.
 
@@ -9,7 +8,10 @@ from langchain_ollama import ChatOllama
 
 from app.config import Config
 from app.model.model_for_intent_extraction import IntentOutput
+from app.services.book_services import get_book_services
 
+
+book_services = get_book_services()
 
 model = ChatOllama(
     model=Config().LLM_FOR_INTENT_EXTRACTION,
@@ -25,10 +27,8 @@ def extract_intents(
     entities: list[dict]
 ) -> list[dict]:
 
-    if not entities:
-        return []
 
-    response = model.invoke([ # Throw this to config
+    response = model.invoke([
         SystemMessage(content=Config().get_prompt_for_llm_in_intent_extraction()),
 
         HumanMessage(content=json.dumps({
@@ -40,7 +40,8 @@ def extract_intents(
                     "name": entity["name"]
                 }
                 for i, entity in enumerate(entities)
-            ]
+            ],
+            "known_genres": list(book_services.get_all_genres())
         }, ensure_ascii=False))
     ])
 

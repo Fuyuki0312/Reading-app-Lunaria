@@ -7,6 +7,7 @@ text = (
     "I loved The Silence Between Stars, "
     "but I don't want Iris Vale anymore. "
     "Now I prefer Nora Vale."
+    "I hate Mystery."
 )
 
 entities = match_entities(text)

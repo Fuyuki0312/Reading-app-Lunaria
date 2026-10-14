@@ -16,3 +16,13 @@
 #  - Use something to do Semantic Search
 #  - Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)
 
+
+a = set()
+a.add("Fuyuki")
+a.add("Fuyuki")
+a.add("Fuyuki")
+a.add("Nayari")
+
+a = list(a)
+
+print(a)

@@ -83,17 +83,23 @@ class Config:
     def get_prompt_for_llm_in_intent_extraction(self):
 
         prompt = """
-        Identify the user's CURRENT intent toward each detected entity.
+        You are a preference extraction component in a book recommendation system.
+        Your task is to extract structured preferences from the user's text.
+        Your output will be used to retrieve relevant books and filter out books that violate the user's explicit exclusions.
 
         Labels:
-        - prefer: currently liked or preferred
+        - prefer: currently liked or preferred (only for author names or genres)
         - exclude: explicitly unwanted or rejected
         - reference: a book used as an example for finding similar books
         - neutral: merely mentioned, unclear, or insufficient evidence
-
-        Consider negation, past preferences, and changes in preference.
-        Do not infer an exclusion without clear evidence.
-        Return exactly one result for each entity, using its index.
+        
+        Rules:
+        1. Consider negation, past preferences, and changes in preference.
+        2. Only extract excluded genres from the provided known_genres.
+        3. Never infer hard exclusions from vague descriptions.
+        4. Do not invent entities or genre names.
+        6. Return empty lists when no matching information exists.
+        7. Do not recommend books.
         """
 
         return prompt

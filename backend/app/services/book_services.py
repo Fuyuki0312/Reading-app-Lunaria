@@ -33,6 +33,7 @@ class BookServices:
             self.books_without_genres = cursor.fetchall()
 
             self.books = copy.deepcopy(self.books_without_genres)
+            self.all_genres = set()
 
             self.attach_genres_to_books() # self.books become a list of books with their genres
 
@@ -58,6 +59,7 @@ class BookServices:
 
             pos_of_book_in_database = hash_map_of_book_id_and_index[book_id_with_genre["id"]]
             self.books[pos_of_book_in_database]["genres"].append(book_id_with_genre["name"])
+            self.all_genres.add(book_id_with_genre["name"])
 
 
     def get_books_with_genres(self) -> list:
@@ -129,6 +131,12 @@ class BookServices:
 
             cursor.close()
             database.close()
+
+    def get_all_genres(self) -> set:
+
+        return self.all_genres
+        # return example: {"Adventure", "Fantasy", "Comedy", etc.}
+
 
 book_services = BookServices()
 
