@@ -25,7 +25,7 @@ model = ChatOllama(
 def extract_intents(
     user_description: str,
     entities: list[dict]
-) -> list[dict]:
+) -> dict[str, list]:
 
 
     response = model.invoke([
@@ -52,10 +52,17 @@ def extract_intents(
 
     intents = {item.index: item.intent for item in response.results}
 
-    return [
-        {**entity, "intent": intents[i]}
-        for i, entity in enumerate(entities)
-    ]
+    return {
+        "entities": [
+            {**entity, "intent": intents[i]}
+            for i, entity in enumerate(entities)
+        ],
+        "excluded_genres": [
+            genre
+            for genre in response.excluded_genres
+            if genre in book_services.get_all_genres()
+        ]
+    }
 
 # return example:
 

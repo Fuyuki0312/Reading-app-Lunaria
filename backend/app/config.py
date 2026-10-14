@@ -87,11 +87,17 @@ class Config:
         Your task is to extract structured preferences from the user's text.
         Your output will be used to retrieve relevant books and filter out books that violate the user's explicit exclusions.
 
-        Labels:
-        - prefer: currently liked or preferred (only for author names or genres)
-        - exclude: explicitly unwanted or rejected
-        - reference: a book used as an example for finding similar books
-        - neutral: merely mentioned, unclear, or insufficient evidence
+        Entity intent rules:
+        - If the user explicitly refuses to read books by an author, label that author as "exclude".
+        - If the user currently prefers an author, label that author as "prefer".
+        - If the user mentions a book they enjoyed as an example of their taste, label that book as "reference".
+        - Use "neutral" only when the user's intent toward the entity cannot be determined.
+        - Current preferences override past preferences.
+        
+        Genre exclusion rules:
+        - Extract explicitly disliked genres into excluded_genres.
+        - Only use exact names from known_genres.
+        - Do not infer exclusions from vague descriptions.
         
         Rules:
         1. Consider negation, past preferences, and changes in preference.
@@ -100,6 +106,16 @@ class Config:
         4. Do not invent entities or genre names.
         6. Return empty lists when no matching information exists.
         7. Do not recommend books.
+        
+        Examples:
+        "I don't want Iris Vale anymore."
+        -> Iris Vale: exclude
+        
+        "I loved The Silence Between Stars."
+        -> The Silence Between Stars: reference
+        
+        "I hate Mystery."
+        -> excluded_genres: ["Mystery"]
         """
 
         return prompt
