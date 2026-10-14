@@ -4,19 +4,17 @@
 # - This module does not process disliked genres.
 
 import json
-from pathlib import Path
-from dotenv import load_dotenv
-from langchain.chat_models import init_chat_model
 from langchain_core.messages import SystemMessage, HumanMessage
+from langchain_ollama import ChatOllama
+
 from app.config import Config
 from app.model.model_for_intent_extraction import IntentOutput
 
 
-load_dotenv(
-    Path(__file__).resolve().parent.parent.parent.parent / ".env"
-)
-
-model = init_chat_model(Config().LLM).with_structured_output(
+model = ChatOllama(
+    model=Config().LLM_FOR_INTENT_EXTRACTION,
+    reasoning=False
+).with_structured_output(
     IntentOutput,
     method="json_schema",
     strict=True
