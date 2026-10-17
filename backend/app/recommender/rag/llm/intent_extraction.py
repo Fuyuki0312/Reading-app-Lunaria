@@ -1,6 +1,5 @@
 # Problems:
 # - This module needs evaluation.
-# - This module does not process disliked genres.
 
 import json
 from langchain_core.messages import SystemMessage, HumanMessage
