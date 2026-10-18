@@ -2,7 +2,7 @@ from app.recommender.baseline.baseline import Baseline
 from app.recommender.rag.retrieval import retrieve_books
 from app.services.book_services import get_book_services
 from metric_calculator import normalized_dcg, normalized_precision, violation_rate
-from app.recommender.rag.llm.recommendation import recommend_books
+from app.recommender.rag.llm.llm_recommendation import recommend_books_with_llm
 from app.config import Config
 
 import torch
@@ -214,7 +214,7 @@ def main():
 
         # Get recommendations from LLM
 
-        llm_recommeded_books = recommend_books(
+        llm_recommeded_books = recommend_books_with_llm(
             user_genre_preference=user["genre_preferences"],
             user_preference_description=user["genre_description"],
             books=book_services.get_books_with_genres()
@@ -263,7 +263,7 @@ def main():
             retrieved_books
         )
 
-        rag_recommeded_books = recommend_books(
+        rag_recommeded_books = recommend_books_with_llm(
             user_genre_preference=user["genre_preferences"],
             user_preference_description=user["genre_description"],
             books=books_for_llm_with_rag

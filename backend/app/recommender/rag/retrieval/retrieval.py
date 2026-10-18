@@ -3,12 +3,11 @@ from app.recommender.rag.vector_store.chroma import get_chroma_collection
 from app.config import Config
 
 
-config = Config()
 
 def retrieve_books(
     preferred_genres: list[str],
     user_description: str,
-    top_k: int = config.NUM_OF_BOOKS_RETURNED_FROM_RAG,
+    top_k: int = Config().NUM_OF_BOOKS_RETURNED_FROM_RAG,
     excluded_authors: list[str] | None = None,
     excluded_genres: list[str] | None = None
 ) -> list[dict]:

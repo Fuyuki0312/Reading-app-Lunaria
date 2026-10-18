@@ -5,7 +5,7 @@ from app.model.user_account import UserAccount
 from app.model.username_and_genre_preference import UsernameAndPreferences
 from app.model.username import Username
 from app.model.preference_description import PreferenceDescription
-from app.recommender.rag.llm.recommendation import recommend_books
+from app.recommender.rag.llm.llm_recommendation import recommend_books_with_llm
 from app.recommender.rag.retrieval import retrieve_books
 from app.recommender.baseline.baseline import Baseline
 
@@ -66,7 +66,7 @@ def recommend(username: Username):
             )
 
             # LLM's recommendations at the end of RAG
-            json_book_id_list = recommend_books(
+            json_book_id_list = recommend_books_with_llm(
                 user_genre_preference=genre_preferences,
                 user_preference_description=preference_description,
                 books=books_for_llm
@@ -75,7 +75,7 @@ def recommend(username: Username):
         # Otherwise, give LLM all books in database without any retriever (LLM-only recommendation)
         else:
 
-            json_book_id_list = recommend_books(
+            json_book_id_list = recommend_books_with_llm(
                 user_genre_preference=genre_preferences,
                 user_preference_description=preference_description,
                 books=book_services.get_books_with_genres()

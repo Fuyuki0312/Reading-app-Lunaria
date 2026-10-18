@@ -66,14 +66,20 @@ def extract_intents(
 # return example:
 
 """
-[{'end': 33,
-  'intent': 'neutral',
-  'name': 'The Silence Between Stars',
-  'start': 8,
-  'type': 'book'},
- {'end': 61,
-  'intent': 'exclude',
-  'name': 'Iris Vale',
-  'start': 52,
-  'type': 'author'}]
+{'entities': [{'end': 44,
+               'intent': 'reference',
+               'name': 'The Cartographer of Moonfall',
+               'start': 16,
+               'type': 'book'},
+              {'end': 79,
+               'intent': 'exclude',
+               'name': 'Jeshine',
+               'start': 72,
+               'type': 'author'},
+              {'end': 121,
+               'intent': 'prefer',
+               'name': 'Avery Lorne',
+               'start': 110,
+               'type': 'author'}],
+ 'excluded_genres': ['Comedy']}
 """

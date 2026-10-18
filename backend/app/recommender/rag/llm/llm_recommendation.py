@@ -8,7 +8,7 @@ from langchain_core.messages import SystemMessage
 
 config = Config()
 
-def recommend_books(
+def recommend_books_with_llm(
         user_genre_preference: list[str],
         user_preference_description: str,
         books: list[dict]
