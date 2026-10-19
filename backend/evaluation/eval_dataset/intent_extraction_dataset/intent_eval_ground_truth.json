@@ -1,0 +1,376 @@
+[
+  {
+    "id": 1,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 2,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 3,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 4,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 5,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 6,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Mystery"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Dark Fantasy",
+        "Isekai"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Comedy",
+        "Romcom"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Psychological Thriller"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Drama"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Iris Vale",
+          "start": 9,
+          "end": 18,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 12,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Jeshine",
+          "start": 43,
+          "end": 50,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 13,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Nora Vale",
+          "start": 16,
+          "end": 25,
+          "intent": "neutral"
+        },
+        {
+          "type": "author",
+          "name": "Rowan Vale",
+          "start": 44,
+          "end": 54,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 14,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Avery Lorne",
+          "start": 16,
+          "end": 27,
+          "intent": "neutral"
+        },
+        {
+          "type": "author",
+          "name": "Mira Solen",
+          "start": 55,
+          "end": 65,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 15,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Eleanor Voss",
+          "start": 21,
+          "end": 33,
+          "intent": "prefer"
+        },
+        {
+          "type": "author",
+          "name": "Eleanor Vane",
+          "start": 48,
+          "end": 60,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 16,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Cartographer of Moonfall",
+          "start": 8,
+          "end": 36,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 17,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The World Beneath the Blessing",
+          "start": 8,
+          "end": 38,
+          "intent": "reference"
+        },
+        {
+          "type": "book",
+          "name": "Definitely Not a Date",
+          "start": 79,
+          "end": 100,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 18,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Silence Between Stars",
+          "start": 0,
+          "end": 25,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 19,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Interview Advantage",
+          "start": 10,
+          "end": 33,
+          "intent": "reference"
+        },
+        {
+          "type": "book",
+          "name": "AI Without the Fog",
+          "start": 49,
+          "end": 67,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 20,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Last Light Before Morning",
+          "start": 20,
+          "end": 49,
+          "intent": "reference"
+        },
+        {
+          "type": "book",
+          "name": "How to Survive Being Seventeen",
+          "start": 88,
+          "end": 118,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 21,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Nora Vale",
+          "start": 16,
+          "end": 25,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": [
+        "Mystery"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Memory You Never Had",
+          "start": 8,
+          "end": 32,
+          "intent": "reference"
+        },
+        {
+          "type": "author",
+          "name": "Iris Vale",
+          "start": 60,
+          "end": 69,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": [
+        "Comedy"
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The City the Maps Forgot",
+          "start": 34,
+          "end": 58,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": [
+        "Dark Fantasy",
+        "Isekai"
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Lucien Vale",
+          "start": 76,
+          "end": 87,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": [
+        "Drama"
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The City the Maps Forgot",
+          "start": 18,
+          "end": 42,
+          "intent": "reference"
+        },
+        {
+          "type": "author",
+          "name": "Rowan Vale",
+          "start": 57,
+          "end": 67,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": [
+        "Comedy"
+      ]
+    }
+  }
+]
