@@ -91,6 +91,8 @@ class Config:
         - If the user explicitly refuses to read books by an author, label that author as "exclude".
         - If the user currently prefers an author, label that author as "prefer".
         - If the user mentions a book they enjoyed as an example of their taste, label that book as "reference".
+        - If no entities are provided, return results as an empty list [].
+        - If no genres are explicitly disliked or rejected, return excluded_genres as an empty list [].
         - Use "neutral" only when the user's intent toward the entity cannot be determined.
         - Current preferences override past preferences.
         
@@ -116,6 +118,9 @@ class Config:
         
         "I hate Mystery."
         -> excluded_genres: ["Mystery"]
+        
+        "I want something interesting to read."
+        -> Output: {"results": [], "excluded_genres": []}
         """
 
         return prompt

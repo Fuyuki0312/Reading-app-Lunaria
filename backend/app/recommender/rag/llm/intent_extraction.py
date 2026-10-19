@@ -48,7 +48,7 @@ def extract_intents(
 
     if sorted(indices) != list(range(len(entities))):
         print("ValueError in intent_extraction.py: Invalid entity indices in LLM response.")
-        return {}
+        return {'entities': [], 'excluded_genres': []}
 
     intents = {item.index: item.intent for item in response.results}
 
