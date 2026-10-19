@@ -27,6 +27,8 @@ def recommend_books_with_rag(
         entities=match_entities(user_preference_description)
     )
 
+    print(f"Extracted intents: {intents}") # FOR TESTING
+
 
     excluded_authors = []
 
@@ -46,6 +48,9 @@ def recommend_books_with_rag(
         excluded_genres = intents["excluded_genres"]
     else:
         excluded_genres = None
+
+    print(f"Excluded genres: {excluded_genres}") # FOR TESTING
+    print(f"Excluded authors: {excluded_authors}")
 
     retrieved_books = retrieve_books(
         preferred_genres=user_genre_preference,
