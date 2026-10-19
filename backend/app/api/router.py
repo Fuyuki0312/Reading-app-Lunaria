@@ -6,7 +6,7 @@ from app.model.username_and_genre_preference import UsernameAndPreferences
 from app.model.username import Username
 from app.model.preference_description import PreferenceDescription
 from app.recommender.rag.llm.llm_recommendation import recommend_books_with_llm
-from app.recommender.rag.retrieval import retrieve_books
+from app.recommender.rag import recommend_books_with_rag
 from app.recommender.baseline.baseline import Baseline
 
 
@@ -56,21 +56,11 @@ def recommend(username: Username):
         # if there are more than a certain number of books in database, RAG comes in
         if book_services.get_the_number_of_books_in_database() >= config.NUM_OF_BOOKS_THRESHOLD_TO_TRIGGER_RAG:
 
-            retrieved_books = retrieve_books(
-                genre_preferences,
-                preference_description
-            )
-
-            books_for_llm = book_services.index_books_with_id_list(
-                retrieved_books
-            )
-
-            # LLM's recommendations at the end of RAG
-            json_book_id_list = recommend_books_with_llm(
+            json_book_id_list = recommend_books_with_rag(
                 user_genre_preference=genre_preferences,
-                user_preference_description=preference_description,
-                books=books_for_llm
+                user_preference_description=preference_description
             )
+
 
         # Otherwise, give LLM all books in database without any retriever (LLM-only recommendation)
         else:

@@ -3,10 +3,14 @@ from app.recommender.rag.llm.llm_recommendation import recommend_books_with_llm
 from app.recommender.rag.llm.intent_extraction import extract_intents
 from app.recommender.rag.retrieval import retrieve_books
 from app.recommender.rag.retrieval import match_entities
+from app.services.book_services import get_book_services
+
+
+book_services = get_book_services()
 
 def recommend_books_with_rag(
         user_genre_preference: list[str],
-        user_preference_description: str,
+        user_preference_description: str
 ) -> list[RecommendationForm]:
     """
     This function run in the below order:
@@ -50,10 +54,14 @@ def recommend_books_with_rag(
         excluded_authors=excluded_authors
     )
 
+    books_for_llm = book_services.index_books_with_id_list(
+        retrieved_books
+    )
+
     recommended_books = recommend_books_with_llm(
         user_genre_preference=user_genre_preference,
         user_preference_description=user_preference_description,
-        books=retrieved_books
+        books=books_for_llm
     )
 
     return recommended_books

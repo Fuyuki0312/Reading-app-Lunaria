@@ -3,6 +3,8 @@ from app.recommender.rag.vector_store.chroma import get_chroma_collection
 from app.config import Config
 
 
+collection = get_chroma_collection()
+
 
 def retrieve_books(
     preferred_genres: list[str],
@@ -39,8 +41,6 @@ def retrieve_books(
     else:
         where_filter = {"$and": conditions} # A book must satisfy all conditions, so "$and" should be used here
 
-
-    collection = get_chroma_collection()
 
     # Search based on cosine similarity
     results = collection.query(
