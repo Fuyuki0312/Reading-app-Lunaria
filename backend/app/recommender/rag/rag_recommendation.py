@@ -30,27 +30,30 @@ def recommend_books_with_rag(
     print(f"Extracted intents: {intents}") # FOR TESTING
 
 
+    excluded_genres = None
     excluded_authors = []
 
-    for entity in intents["entities"]:
+    if intents:
 
-        if entity["intent"] == "exclude":
+        for entity in intents["entities"]:
 
-            if entity["type"] == "author":
-                excluded_authors.append(entity["name"])
-            elif entity["type"] == "book":
-                print("WARNING: Detected disliked books in user description. "
-                      "RAG does not exclude disliked books for the time being.")
-            else:
-                print("WARNING: Detected unknown type of which intent is 'excluded'.")
+            if entity["intent"] == "exclude":
 
-    if intents["excluded_genres"]:
-        excluded_genres = intents["excluded_genres"]
-    else:
-        excluded_genres = None
+                if entity["type"] == "author":
+                    excluded_authors.append(entity["name"])
+                elif entity["type"] == "book":
+                    print("WARNING: Detected disliked books in user description. "
+                          "RAG does not exclude disliked books for the time being.")
+                else:
+                    print("WARNING: Detected unknown type of which intent is 'excluded'.")
 
-    print(f"Excluded genres: {excluded_genres}") # FOR TESTING
-    print(f"Excluded authors: {excluded_authors}")
+        if intents["excluded_genres"]:
+            excluded_genres = intents["excluded_genres"]
+
+
+        print(f"Excluded genres: {excluded_genres}") # FOR TESTING
+        print(f"Excluded authors: {excluded_authors}")
+
 
     retrieved_books = retrieve_books(
         preferred_genres=user_genre_preference,
