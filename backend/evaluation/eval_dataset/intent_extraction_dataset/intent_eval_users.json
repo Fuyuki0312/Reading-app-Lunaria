@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "description": "recommend me something interesting to read this weekend",
+    "type": "vague"
+  },
+  {
+    "id": 2,
+    "description": "I enjoy popular books with engaging stories, but I am open to anything.",
+    "type": "vague"
+  },
+  {
+    "id": 3,
+    "description": "I am looking for a light, comforting read before bed",
+    "type": "vague"
+  },
+  {
+    "id": 4,
+    "description": "I used to enjoy slow books, but lately I want something fast-paced",
+    "type": "vague"
+  },
+  {
+    "id": 5,
+    "description": "Surprise me! I do not have any strong preferences or deal-breakers.",
+    "type": "vague"
+  },
+  {
+    "id": 6,
+    "description": "I need something absorbing for a long train ride",
+    "type": "vague"
+  },
+  {
+    "id": 7,
+    "description": "Could you suggest an easy read that doesn't require much concentration?",
+    "type": "vague"
+  },
+  {
+    "id": 8,
+    "description": "I'm open to trying something outside my usual comfort zone",
+    "type": "vague"
+  },
+  {
+    "id": 9,
+    "description": "please pick a book that starts strong and keeps me curious",
+    "type": "vague"
+  },
+  {
+    "id": 10,
+    "description": "I want a thoughtful story, but nothing feels right lately.",
+    "type": "vague"
+  },
+  {
+    "id": 11,
+    "description": "My reading taste changes a lot; surprise me with your best pick.",
+    "type": "vague"
+  },
+  {
+    "id": 12,
+    "description": "I'm hoping for a character-driven page-turner",
+    "type": "vague"
+  },
+  {
+    "id": 13,
+    "description": "find me something hopeful after a stressful week",
+    "type": "vague"
+  },
+  {
+    "id": 14,
+    "description": "I prefer shorter chapters and a satisfying ending",
+    "type": "vague"
+  },
+  {
+    "id": 15,
+    "description": "I usually read at night and want something that helps me unwind.",
+    "type": "vague"
+  },
+  {
+    "id": 16,
+    "description": "I used to chase bestsellers, but now I care more about originality.",
+    "type": "vague"
+  },
+  {
+    "id": 17,
+    "description": "I don't have an author or title in mind, just give me a good book",
+    "type": "vague"
+  },
+  {
+    "id": 18,
+    "description": "I want an imaginative setting without a complicated plot",
+    "type": "vague"
+  },
+  {
+    "id": 19,
+    "description": "I enjoy clever dialogue more than action scenes",
+    "type": "vague"
+  },
+  {
+    "id": 20,
+    "description": "Nothing too intense, please. I'm in a quiet mood",
+    "type": "vague"
+  },
+  {
+    "id": 21,
+    "description": "I dislike mystery",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 22,
+    "description": "Fantasy is fine, but please avoid Dark Fantasy and Isekai.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 23,
+    "description": "I am not in the mood for comedy or romcom. Science fiction is okay",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 24,
+    "description": "I used to hate Romance, but now I enjoy it. I still cannot stand Psychological Thriller.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 25,
+    "description": "I don't dislike historical fiction; I just don't want drama",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 26,
+    "description": "Please avoid Mystery.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 27,
+    "description": "I can't stand comedy or drama.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 28,
+    "description": "No isekai, please; fantasy is still welcome.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 29,
+    "description": "I like romance, but romcom is an absolute no for me",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 30,
+    "description": "Historical fiction used to bore me, but now I like it. I still avoid dark Fantasy.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 31,
+    "description": "I do NOT hate Psychological Thriller. I'm just tired of Self-help.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 32,
+    "description": "anything except adventure and coming of age",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 33,
+    "description": "I disliked science fiction years ago, but I'm enjoying it lately. Skip non-fiction instead.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 34,
+    "description": "I'm fine with comedy. Drama, though? Keep it off my list.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 35,
+    "description": "Fantasy is okay only when it is not Dark Fantasy.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 36,
+    "description": "Don't exclude mystery; exclude historical Fiction.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 37,
+    "description": "i would rather not read any more self-help, non-fiction, or romcom.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 38,
+    "description": "i want something light, so please leave psychological thriller out.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 39,
+    "description": "I hated Adventure as a kid, but now I enjoy it. I still won't read isekai.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 40,
+    "description": "I don't mind Romance, and Comedy is welcome. What I really refuse is drama.",
+    "type": "disliked_genre"
+  },
+  {
+    "id": 41,
+    "description": "Books by Iris Vale are my favorite.",
+    "type": "author"
+  },
+  {
+    "id": 42,
+    "description": "Please don't recommend anything written by Jeshine.",
+    "type": "author"
+  },
+  {
+    "id": 43,
+    "description": "I used to enjoy Nora Vale, but now I prefer Rowan Vale.",
+    "type": "author"
+  },
+  {
+    "id": 44,
+    "description": "I don't dislike Avery Lorne, but I don't want books by Mira Solen.",
+    "type": "author"
+  },
+  {
+    "id": 45,
+    "description": "I want more books by eleanor voss. Please avoid eleanor vane.",
+    "type": "author"
+  },
+  {
+    "id": 46,
+    "description": "Eleanor Vane is the writer I keep coming back to.",
+    "type": "author"
+  },
+  {
+    "id": 47,
+    "description": "Please stop showing me books by Rowan Vale!",
+    "type": "author"
+  },
+  {
+    "id": 48,
+    "description": "I like both Mara Ellison and Selene Hart",
+    "type": "author"
+  },
+  {
+    "id": 49,
+    "description": "Jeshine was my favorite years ago, but I haven't decided what I think now",
+    "type": "author"
+  },
+  {
+    "id": 50,
+    "description": "I don't dislike Lucien Vale; I just prefer Hana Mirei.",
+    "type": "author"
+  },
+  {
+    "id": 51,
+    "description": "Never recommend Iris Vale again, but Nora Vale is great.",
+    "type": "author"
+  },
+  {
+    "id": 52,
+    "description": "I want something by Evan Rowe. I haven't read Oliver Penn yet",
+    "type": "author"
+  },
+  {
+    "id": 53,
+    "description": "I'm no longer interested in anything by Mira Solen",
+    "type": "author"
+  },
+  {
+    "id": 54,
+    "description": "I've heard of Avery Lorne, but Clara Wynn is my favorite.",
+    "type": "author"
+  },
+  {
+    "id": 55,
+    "description": "I used to avoid Nora Vey's books, but recently I've started loving them",
+    "type": "author"
+  },
+  {
+    "id": 56,
+    "description": "I've never read Eleanor Voss, so I can't judge her books",
+    "type": "author"
+  },
+  {
+    "id": 57,
+    "description": "I don't want anything by Iris Vale or Lucien Vale",
+    "type": "author"
+  },
+  {
+    "id": 58,
+    "description": "I really enjoy Maya Rowan, though I have no opinion on Jamie Clarke",
+    "type": "author"
+  },
+  {
+    "id": 59,
+    "description": "I used to admire Elara Fen, but I won't read her books anymore",
+    "type": "author"
+  },
+  {
+    "id": 60,
+    "description": "Give me more of Rowan Vale's writing; leave out Jeshine entirely",
+    "type": "author"
+  },
+  {
+    "id": 61,
+    "description": "I loved The Cartographer Of Moonfall. I'd like something with a similar feel",
+    "type": "books"
+  },
+  {
+    "id": 62,
+    "description": "I liked The World Beneath The Blessing's atmosphere, but I do not want to read Definitely Not A Date.",
+    "type": "books"
+  },
+  {
+    "id": 63,
+    "description": "The Silence Between Stars was exactly my kind of book, and I want more like it.",
+    "type": "books"
+  },
+  {
+    "id": 64,
+    "description": "I enjoyed the interview advantage. I've heard of AI without the fog, but I have no opinion on it.",
+    "type": "books"
+  },
+  {
+    "id": 65,
+    "description": "I want stories like The Last Light before Morning, but I absolutely do not want to read How to Survive Being Seventeen.",
+    "type": "books"
+  },
+  {
+    "id": 66,
+    "description": "Please find something similar to When The Winter Garden Blooms.",
+    "type": "books"
+  },
+  {
+    "id": 67,
+    "description": "I've reread Make Tomorrow Easier and want more books with that tone.",
+    "type": "books"
+  },
+  {
+    "id": 68,
+    "description": "I refuse to read The Department of Minor Emergencies",
+    "type": "books"
+  },
+  {
+    "id": 69,
+    "description": "The Last Song of Gion is the kind of story I am looking for",
+    "type": "books"
+  },
+  {
+    "id": 70,
+    "description": "I'm curious about Eat Well, Live Normally, but I haven't formed an opinion yet.",
+    "type": "books"
+  },
+  {
+    "id": 71,
+    "description": "I enjoyed The Fog Bell At Blackwater Point, though I don't want How To Survive Being Seventeen",
+    "type": "books"
+  },
+  {
+    "id": 72,
+    "description": "Please avoid Definitely Not A Date. I want stories reminiscent of The Lighthouse Beneath The Clouds.",
+    "type": "books"
+  },
+  {
+    "id": 73,
+    "description": "I've heard people talk about The Interview Advantage, but I know nothing about it.",
+    "type": "books"
+  },
+  {
+    "id": 74,
+    "description": "I've finished AI Without the Fog and would enjoy something with a similar style",
+    "type": "books"
+  },
+  {
+    "id": 75,
+    "description": "Don't give me The World Beneath the Blessing; I'd like a book like Beyond The Last Blue Mountain",
+    "type": "books"
+  },
+  {
+    "id": 76,
+    "description": "You Are Worth the Attempt helped me get through a tough month. I would like a similar read",
+    "type": "books"
+  },
+  {
+    "id": 77,
+    "description": "I used to avoid The Memory You Never Had, but now I'd love something along those lines",
+    "type": "books"
+  },
+  {
+    "id": 78,
+    "description": "I'd rather skip The City the Maps Forgot entirely",
+    "type": "books"
+  },
+  {
+    "id": 79,
+    "description": "Someone mentioned The Last Light Before Morning, but I haven't read it or decided how I feel",
+    "type": "books"
+  },
+  {
+    "id": 80,
+    "description": "I enjoyed The Cartographer of Moonfall in the past, but now I don't want to read it again",
+    "type": "books"
+  },
+  {
+    "id": 81,
+    "description": "I love books by Nora Vale, but I cannot stand mystery",
+    "type": "mixed"
+  },
+  {
+    "id": 82,
+    "description": "I loved The Memory You Never Had, but I don't want books by Iris Vale anymore. I also dislike comedy.",
+    "type": "mixed"
+  },
+  {
+    "id": 83,
+    "description": "Please recommend books similar to The City the Maps Forgot, but avoid Dark Fantasy and Isekai.",
+    "type": "mixed"
+  },
+  {
+    "id": 84,
+    "description": "I used to avoid Science Fiction, but now I enjoy it. I do not want books by Lucien Vale, and I still dislike Drama.",
+    "type": "mixed"
+  },
+  {
+    "id": 85,
+    "description": "I want books like The City the Maps Forgot, and I prefer Rowan Vale. Please skip comedy",
+    "type": "mixed"
+  },
+  {
+    "id": 86,
+    "description": "I prefer Iris Vale, but please avoid comedy",
+    "type": "mixed"
+  },
+  {
+    "id": 87,
+    "description": "Recommend something like The Last Song of Gion, but don't include Drama.",
+    "type": "mixed"
+  },
+  {
+    "id": 88,
+    "description": "I'm a fan of Mara Ellison, but I don't want The World Beneath the Blessing.",
+    "type": "mixed"
+  },
+  {
+    "id": 89,
+    "description": "I enjoyed The Interview Advantage, but please avoid self-help from now on.",
+    "type": "mixed"
+  },
+  {
+    "id": 90,
+    "description": "I no longer want books by Jeshine, but I liked The Cartographer of Moonfall.",
+    "type": "mixed"
+  },
+  {
+    "id": 91,
+    "description": "I love books by Eleanor Vane. Please avoid historical fiction, though",
+    "type": "mixed"
+  },
+  {
+    "id": 92,
+    "description": "I want something like The Silence Between Stars, but I won't read Iris Vale anymore",
+    "type": "mixed"
+  },
+  {
+    "id": 93,
+    "description": "Fantasy is welcome, but please exclude Dark Fantasy. I enjoyed The City The Maps Forgot",
+    "type": "mixed"
+  },
+  {
+    "id": 94,
+    "description": "I'm done with Lucien Vale and Isekai. Nora Vale, on the other hand, is welcome.",
+    "type": "mixed"
+  },
+  {
+    "id": 95,
+    "description": "I like Clara Wynn's books, but comedy is off the table and I won't read Definitely Not A Date again.",
+    "type": "mixed"
+  },
+  {
+    "id": 96,
+    "description": "I used to enjoy mystery, but not anymore. I really like Eleanor Voss.",
+    "type": "mixed"
+  },
+  {
+    "id": 97,
+    "description": "The Fog Bell at Blackwater Point is a favorite of mine. Please don't send me Drama or any books by Eleanor Voss.",
+    "type": "mixed"
+  },
+  {
+    "id": 98,
+    "description": "I know about AI Without the Fog, but I don't have an opinion on it. I refuse to read non-fiction.",
+    "type": "mixed"
+  },
+  {
+    "id": 99,
+    "description": "i want books by avery lorne, similar in spirit to you are worth the attempt, but skip romance",
+    "type": "mixed"
+  },
+  {
+    "id": 100,
+    "description": "I don't dislike Rowan Vale, but I do avoid Psychological Thriller. Something like The Lighthouse Beneath the Clouds would be nice",
+    "type": "mixed"
+  }
+]

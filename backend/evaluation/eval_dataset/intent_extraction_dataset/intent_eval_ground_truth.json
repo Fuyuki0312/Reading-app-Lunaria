@@ -38,13 +38,118 @@
     "id": 6,
     "expected_output": {
       "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 7,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 8,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 9,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 10,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 11,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 12,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 13,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 14,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 15,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 16,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 17,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 18,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 19,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 20,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 21,
+    "expected_output": {
+      "entities": [],
       "excluded_genres": [
         "Mystery"
       ]
     }
   },
   {
-    "id": 7,
+    "id": 22,
     "expected_output": {
       "entities": [],
       "excluded_genres": [
@@ -54,7 +159,7 @@
     }
   },
   {
-    "id": 8,
+    "id": 23,
     "expected_output": {
       "entities": [],
       "excluded_genres": [
@@ -64,7 +169,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 24,
     "expected_output": {
       "entities": [],
       "excluded_genres": [
@@ -73,7 +178,7 @@
     }
   },
   {
-    "id": 10,
+    "id": 25,
     "expected_output": {
       "entities": [],
       "excluded_genres": [
@@ -82,7 +187,146 @@
     }
   },
   {
-    "id": 11,
+    "id": 26,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Mystery"
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Comedy",
+        "Drama"
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Isekai"
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Romcom"
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Dark Fantasy"
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Self-help"
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Adventure",
+        "Coming of Age"
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Non-fiction"
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Drama"
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Dark Fantasy"
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Historical Fiction"
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Self-help",
+        "Non-fiction",
+        "Romcom"
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Psychological Thriller"
+      ]
+    }
+  },
+  {
+    "id": 39,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Isekai"
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "expected_output": {
+      "entities": [],
+      "excluded_genres": [
+        "Drama"
+      ]
+    }
+  },
+  {
+    "id": 41,
     "expected_output": {
       "entities": [
         {
@@ -97,7 +341,7 @@
     }
   },
   {
-    "id": 12,
+    "id": 42,
     "expected_output": {
       "entities": [
         {
@@ -112,7 +356,7 @@
     }
   },
   {
-    "id": 13,
+    "id": 43,
     "expected_output": {
       "entities": [
         {
@@ -134,7 +378,7 @@
     }
   },
   {
-    "id": 14,
+    "id": 44,
     "expected_output": {
       "entities": [
         {
@@ -156,7 +400,7 @@
     }
   },
   {
-    "id": 15,
+    "id": 45,
     "expected_output": {
       "entities": [
         {
@@ -178,7 +422,288 @@
     }
   },
   {
-    "id": 16,
+    "id": 46,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Eleanor Vane",
+          "start": 0,
+          "end": 12,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 47,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Rowan Vale",
+          "start": 32,
+          "end": 42,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 48,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Mara Ellison",
+          "start": 12,
+          "end": 24,
+          "intent": "prefer"
+        },
+        {
+          "type": "author",
+          "name": "Selene Hart",
+          "start": 29,
+          "end": 40,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 49,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Jeshine",
+          "start": 0,
+          "end": 7,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 50,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Lucien Vale",
+          "start": 16,
+          "end": 27,
+          "intent": "neutral"
+        },
+        {
+          "type": "author",
+          "name": "Hana Mirei",
+          "start": 43,
+          "end": 53,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 51,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Iris Vale",
+          "start": 16,
+          "end": 25,
+          "intent": "exclude"
+        },
+        {
+          "type": "author",
+          "name": "Nora Vale",
+          "start": 37,
+          "end": 46,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 52,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Evan Rowe",
+          "start": 20,
+          "end": 29,
+          "intent": "prefer"
+        },
+        {
+          "type": "author",
+          "name": "Oliver Penn",
+          "start": 46,
+          "end": 57,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 53,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Mira Solen",
+          "start": 40,
+          "end": 50,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 54,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Avery Lorne",
+          "start": 14,
+          "end": 25,
+          "intent": "neutral"
+        },
+        {
+          "type": "author",
+          "name": "Clara Wynn",
+          "start": 31,
+          "end": 41,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 55,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Nora Vey",
+          "start": 16,
+          "end": 24,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 56,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Eleanor Voss",
+          "start": 16,
+          "end": 28,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 57,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Iris Vale",
+          "start": 25,
+          "end": 34,
+          "intent": "exclude"
+        },
+        {
+          "type": "author",
+          "name": "Lucien Vale",
+          "start": 38,
+          "end": 49,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 58,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Maya Rowan",
+          "start": 15,
+          "end": 25,
+          "intent": "prefer"
+        },
+        {
+          "type": "author",
+          "name": "Jamie Clarke",
+          "start": 55,
+          "end": 67,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 59,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Elara Fen",
+          "start": 17,
+          "end": 26,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 60,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Rowan Vale",
+          "start": 16,
+          "end": 26,
+          "intent": "prefer"
+        },
+        {
+          "type": "author",
+          "name": "Jeshine",
+          "start": 48,
+          "end": 55,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 61,
     "expected_output": {
       "entities": [
         {
@@ -193,7 +718,7 @@
     }
   },
   {
-    "id": 17,
+    "id": 62,
     "expected_output": {
       "entities": [
         {
@@ -215,7 +740,7 @@
     }
   },
   {
-    "id": 18,
+    "id": 63,
     "expected_output": {
       "entities": [
         {
@@ -230,7 +755,7 @@
     }
   },
   {
-    "id": 19,
+    "id": 64,
     "expected_output": {
       "entities": [
         {
@@ -252,7 +777,7 @@
     }
   },
   {
-    "id": 20,
+    "id": 65,
     "expected_output": {
       "entities": [
         {
@@ -274,7 +799,253 @@
     }
   },
   {
-    "id": 21,
+    "id": 66,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "When the Winter Garden Blooms",
+          "start": 33,
+          "end": 62,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 67,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "Make Tomorrow Easier",
+          "start": 12,
+          "end": 32,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 68,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Department of Minor Emergencies",
+          "start": 17,
+          "end": 52,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 69,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Last Song of Gion",
+          "start": 0,
+          "end": 21,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 70,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "Eat Well, Live Normally",
+          "start": 18,
+          "end": 41,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 71,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Fog Bell at Blackwater Point",
+          "start": 10,
+          "end": 42,
+          "intent": "reference"
+        },
+        {
+          "type": "book",
+          "name": "How to Survive Being Seventeen",
+          "start": 64,
+          "end": 94,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 72,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "Definitely Not a Date",
+          "start": 13,
+          "end": 34,
+          "intent": "exclude"
+        },
+        {
+          "type": "book",
+          "name": "The Lighthouse Beneath the Clouds",
+          "start": 66,
+          "end": 99,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 73,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Interview Advantage",
+          "start": 29,
+          "end": 52,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 74,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "AI Without the Fog",
+          "start": 14,
+          "end": 32,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 75,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The World Beneath the Blessing",
+          "start": 14,
+          "end": 44,
+          "intent": "exclude"
+        },
+        {
+          "type": "book",
+          "name": "Beyond the Last Blue Mountain",
+          "start": 67,
+          "end": 96,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 76,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "You Are Worth the Attempt",
+          "start": 0,
+          "end": 25,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 77,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Memory You Never Had",
+          "start": 16,
+          "end": 40,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 78,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The City the Maps Forgot",
+          "start": 16,
+          "end": 40,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 79,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Last Light Before Morning",
+          "start": 18,
+          "end": 47,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 80,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Cartographer of Moonfall",
+          "start": 10,
+          "end": 38,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 81,
     "expected_output": {
       "entities": [
         {
@@ -291,7 +1062,7 @@
     }
   },
   {
-    "id": 22,
+    "id": 82,
     "expected_output": {
       "entities": [
         {
@@ -315,7 +1086,7 @@
     }
   },
   {
-    "id": 23,
+    "id": 83,
     "expected_output": {
       "entities": [
         {
@@ -333,7 +1104,7 @@
     }
   },
   {
-    "id": 24,
+    "id": 84,
     "expected_output": {
       "entities": [
         {
@@ -350,7 +1121,7 @@
     }
   },
   {
-    "id": 25,
+    "id": 85,
     "expected_output": {
       "entities": [
         {
@@ -370,6 +1141,311 @@
       ],
       "excluded_genres": [
         "Comedy"
+      ]
+    }
+  },
+  {
+    "id": 86,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Iris Vale",
+          "start": 9,
+          "end": 18,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": [
+        "Comedy"
+      ]
+    }
+  },
+  {
+    "id": 87,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Last Song of Gion",
+          "start": 25,
+          "end": 46,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": [
+        "Drama"
+      ]
+    }
+  },
+  {
+    "id": 88,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Mara Ellison",
+          "start": 13,
+          "end": 25,
+          "intent": "prefer"
+        },
+        {
+          "type": "book",
+          "name": "The World Beneath the Blessing",
+          "start": 44,
+          "end": 74,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 89,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Interview Advantage",
+          "start": 10,
+          "end": 33,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": [
+        "Self-help"
+      ]
+    }
+  },
+  {
+    "id": 90,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Jeshine",
+          "start": 26,
+          "end": 33,
+          "intent": "exclude"
+        },
+        {
+          "type": "book",
+          "name": "The Cartographer of Moonfall",
+          "start": 47,
+          "end": 75,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 91,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Eleanor Vane",
+          "start": 16,
+          "end": 28,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": [
+        "Historical Fiction"
+      ]
+    }
+  },
+  {
+    "id": 92,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Silence Between Stars",
+          "start": 22,
+          "end": 47,
+          "intent": "reference"
+        },
+        {
+          "type": "author",
+          "name": "Iris Vale",
+          "start": 66,
+          "end": 75,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": []
+    }
+  },
+  {
+    "id": 93,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The City the Maps Forgot",
+          "start": 63,
+          "end": 87,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": [
+        "Dark Fantasy"
+      ]
+    }
+  },
+  {
+    "id": 94,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Lucien Vale",
+          "start": 14,
+          "end": 25,
+          "intent": "exclude"
+        },
+        {
+          "type": "author",
+          "name": "Nora Vale",
+          "start": 38,
+          "end": 47,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": [
+        "Isekai"
+      ]
+    }
+  },
+  {
+    "id": 95,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Clara Wynn",
+          "start": 7,
+          "end": 17,
+          "intent": "prefer"
+        },
+        {
+          "type": "book",
+          "name": "Definitely Not a Date",
+          "start": 72,
+          "end": 93,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": [
+        "Comedy"
+      ]
+    }
+  },
+  {
+    "id": 96,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Eleanor Voss",
+          "start": 56,
+          "end": 68,
+          "intent": "prefer"
+        }
+      ],
+      "excluded_genres": [
+        "Mystery"
+      ]
+    }
+  },
+  {
+    "id": 97,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "The Fog Bell at Blackwater Point",
+          "start": 0,
+          "end": 32,
+          "intent": "reference"
+        },
+        {
+          "type": "author",
+          "name": "Eleanor Voss",
+          "start": 99,
+          "end": 111,
+          "intent": "exclude"
+        }
+      ],
+      "excluded_genres": [
+        "Drama"
+      ]
+    }
+  },
+  {
+    "id": 98,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "book",
+          "name": "AI Without the Fog",
+          "start": 13,
+          "end": 31,
+          "intent": "neutral"
+        }
+      ],
+      "excluded_genres": [
+        "Non-fiction"
+      ]
+    }
+  },
+  {
+    "id": 99,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Avery Lorne",
+          "start": 16,
+          "end": 27,
+          "intent": "prefer"
+        },
+        {
+          "type": "book",
+          "name": "You Are Worth the Attempt",
+          "start": 50,
+          "end": 75,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": [
+        "Romance"
+      ]
+    }
+  },
+  {
+    "id": 100,
+    "expected_output": {
+      "entities": [
+        {
+          "type": "author",
+          "name": "Rowan Vale",
+          "start": 16,
+          "end": 26,
+          "intent": "neutral"
+        },
+        {
+          "type": "book",
+          "name": "The Lighthouse Beneath the Clouds",
+          "start": 82,
+          "end": 115,
+          "intent": "reference"
+        }
+      ],
+      "excluded_genres": [
+        "Psychological Thriller"
       ]
     }
   }
