@@ -2,6 +2,8 @@
 # - This module needs evaluation.
 
 import json
+
+import torch
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_ollama import ChatOllama
 
@@ -21,6 +23,9 @@ model = ChatOllama(
     strict=True
 )
 
+config = Config()
+torch.manual_seed(config.TORCH_SEED)
+
 def extract_intents(
     user_description: str,
     entities: list[dict]
@@ -28,7 +33,7 @@ def extract_intents(
 
 
     response = model.invoke([
-        SystemMessage(content=Config().get_prompt_for_llm_in_intent_extraction()),
+        SystemMessage(content=config.get_prompt_for_llm_in_intent_extraction()),
 
         HumanMessage(content=json.dumps({
             "user_description": user_description,
@@ -45,9 +50,15 @@ def extract_intents(
     ])
 
     indices = [item.index for item in response.results]
+    expected_indices = list(range(len(entities))) # FOR EVALUATION
 
     if sorted(indices) != list(range(len(entities))):
         print("ValueError in intent_extraction.py: Invalid entity indices in LLM response.")
+
+        print(f"Expected indices: {expected_indices}") # FOR EVALUATION
+        print(f"Actual indices: {indices}") # FOR EVALUATION
+        print(f"Qwen response: {response.model_dump()}") # FOR EVALUATION
+
         return {'entities': [], 'excluded_genres': []}
 
     intents = {item.index: item.intent for item in response.results}

@@ -109,6 +109,14 @@ class Config:
         6. Return empty lists when no matching information exists.
         7. Do not recommend books.
         
+        Entity output rules:
+        - You MUST return exactly one result for EVERY provided entity.
+        - Each result must use the index of its corresponding input entity.
+        - Do not skip any entity, even if its intent is unclear.
+        - Use "neutral" when the intent cannot be determined.
+        - If entities contains N items, results MUST contain N items.
+        - Return results as [] ONLY when the input entities list is empty.
+        
         Examples:
         "I don't want Iris Vale anymore."
         -> Iris Vale: exclude

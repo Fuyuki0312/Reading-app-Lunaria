@@ -1,0 +1,2312 @@
+[
+    {
+        "user_id": 1,
+        "type": "vague",
+        "description": "recommend me something interesting to read this weekend",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 2,
+        "type": "vague",
+        "description": "I enjoy popular books with engaging stories, but I am open to anything.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 3,
+        "type": "vague",
+        "description": "I am looking for a light, comforting read before bed",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 4,
+        "type": "vague",
+        "description": "I used to enjoy slow books, but lately I want something fast-paced",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 5,
+        "type": "vague",
+        "description": "Surprise me! I do not have any strong preferences or deal-breakers.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 6,
+        "type": "vague",
+        "description": "I need something absorbing for a long train ride",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 7,
+        "type": "vague",
+        "description": "Could you suggest an easy read that doesn't require much concentration?",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 8,
+        "type": "vague",
+        "description": "I'm open to trying something outside my usual comfort zone",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 9,
+        "type": "vague",
+        "description": "please pick a book that starts strong and keeps me curious",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 10,
+        "type": "vague",
+        "description": "I want a thoughtful story, but nothing feels right lately.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 11,
+        "type": "vague",
+        "description": "My reading taste changes a lot; surprise me with your best pick.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 12,
+        "type": "vague",
+        "description": "I'm hoping for a character-driven page-turner",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 13,
+        "type": "vague",
+        "description": "find me something hopeful after a stressful week",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 14,
+        "type": "vague",
+        "description": "I prefer shorter chapters and a satisfying ending",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 15,
+        "type": "vague",
+        "description": "I usually read at night and want something that helps me unwind.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 16,
+        "type": "vague",
+        "description": "I used to chase bestsellers, but now I care more about originality.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 17,
+        "type": "vague",
+        "description": "I don't have an author or title in mind, just give me a good book",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 18,
+        "type": "vague",
+        "description": "I want an imaginative setting without a complicated plot",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 19,
+        "type": "vague",
+        "description": "I enjoy clever dialogue more than action scenes",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 20,
+        "type": "vague",
+        "description": "Nothing too intense, please. I'm in a quiet mood",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 21,
+        "type": "disliked_genre",
+        "description": "I dislike mystery",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Mystery"
+            ]
+        }
+    },
+    {
+        "user_id": 22,
+        "type": "disliked_genre",
+        "description": "Fantasy is fine, but please avoid Dark Fantasy and Isekai.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Dark Fantasy",
+                "Isekai"
+            ]
+        }
+    },
+    {
+        "user_id": 23,
+        "type": "disliked_genre",
+        "description": "I am not in the mood for comedy or romcom. Science fiction is okay",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Comedy",
+                "Romcom"
+            ]
+        }
+    },
+    {
+        "user_id": 24,
+        "type": "disliked_genre",
+        "description": "I used to hate Romance, but now I enjoy it. I still cannot stand Psychological Thriller.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Psychological Thriller"
+            ]
+        }
+    },
+    {
+        "user_id": 25,
+        "type": "disliked_genre",
+        "description": "I don't dislike historical fiction; I just don't want drama",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Drama"
+            ]
+        }
+    },
+    {
+        "user_id": 26,
+        "type": "disliked_genre",
+        "description": "Please avoid Mystery.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Mystery"
+            ]
+        }
+    },
+    {
+        "user_id": 27,
+        "type": "disliked_genre",
+        "description": "I can't stand comedy or drama.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Comedy",
+                "Drama"
+            ]
+        }
+    },
+    {
+        "user_id": 28,
+        "type": "disliked_genre",
+        "description": "No isekai, please; fantasy is still welcome.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Isekai"
+            ]
+        }
+    },
+    {
+        "user_id": 29,
+        "type": "disliked_genre",
+        "description": "I like romance, but romcom is an absolute no for me",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Romcom"
+            ]
+        }
+    },
+    {
+        "user_id": 30,
+        "type": "disliked_genre",
+        "description": "Historical fiction used to bore me, but now I like it. I still avoid dark Fantasy.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 31,
+        "type": "disliked_genre",
+        "description": "I do NOT hate Psychological Thriller. I'm just tired of Self-help.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Self-help"
+            ]
+        }
+    },
+    {
+        "user_id": 32,
+        "type": "disliked_genre",
+        "description": "anything except adventure and coming of age",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Adventure",
+                "Coming of Age"
+            ]
+        }
+    },
+    {
+        "user_id": 33,
+        "type": "disliked_genre",
+        "description": "I disliked science fiction years ago, but I'm enjoying it lately. Skip non-fiction instead.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Non-fiction"
+            ]
+        }
+    },
+    {
+        "user_id": 34,
+        "type": "disliked_genre",
+        "description": "I'm fine with comedy. Drama, though? Keep it off my list.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Drama"
+            ]
+        }
+    },
+    {
+        "user_id": 35,
+        "type": "disliked_genre",
+        "description": "Fantasy is okay only when it is not Dark Fantasy.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 36,
+        "type": "disliked_genre",
+        "description": "Don't exclude mystery; exclude historical Fiction.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Historical Fiction"
+            ]
+        }
+    },
+    {
+        "user_id": 37,
+        "type": "disliked_genre",
+        "description": "i would rather not read any more self-help, non-fiction, or romcom.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Self-help",
+                "Non-fiction",
+                "Romcom"
+            ]
+        }
+    },
+    {
+        "user_id": 38,
+        "type": "disliked_genre",
+        "description": "i want something light, so please leave psychological thriller out.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Psychological Thriller"
+            ]
+        }
+    },
+    {
+        "user_id": 39,
+        "type": "disliked_genre",
+        "description": "I hated Adventure as a kid, but now I enjoy it. I still won't read isekai.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Isekai"
+            ]
+        }
+    },
+    {
+        "user_id": 40,
+        "type": "disliked_genre",
+        "description": "I don't mind Romance, and Comedy is welcome. What I really refuse is drama.",
+        "matched_entities": [],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": [
+                "Drama"
+            ]
+        }
+    },
+    {
+        "user_id": 41,
+        "type": "author",
+        "description": "Books by Iris Vale are my favorite.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Iris Vale",
+                "start": 9,
+                "end": 18
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Iris Vale",
+                    "start": 9,
+                    "end": 18,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 42,
+        "type": "author",
+        "description": "Please don't recommend anything written by Jeshine.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Jeshine",
+                "start": 43,
+                "end": 50
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Jeshine",
+                    "start": 43,
+                    "end": 50,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 43,
+        "type": "author",
+        "description": "I used to enjoy Nora Vale, but now I prefer Rowan Vale.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Nora Vale",
+                "start": 16,
+                "end": 25
+            },
+            {
+                "type": "author",
+                "name": "Rowan Vale",
+                "start": 44,
+                "end": 54
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Nora Vale",
+                    "start": 16,
+                    "end": 25,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "author",
+                    "name": "Rowan Vale",
+                    "start": 44,
+                    "end": 54,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 44,
+        "type": "author",
+        "description": "I don't dislike Avery Lorne, but I don't want books by Mira Solen.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Avery Lorne",
+                "start": 16,
+                "end": 27
+            },
+            {
+                "type": "author",
+                "name": "Mira Solen",
+                "start": 55,
+                "end": 65
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Avery Lorne",
+                    "start": 16,
+                    "end": 27,
+                    "intent": "neutral"
+                },
+                {
+                    "type": "author",
+                    "name": "Mira Solen",
+                    "start": 55,
+                    "end": 65,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 45,
+        "type": "author",
+        "description": "I want more books by eleanor voss. Please avoid eleanor vane.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Eleanor Voss",
+                "start": 21,
+                "end": 33
+            },
+            {
+                "type": "author",
+                "name": "Eleanor Vane",
+                "start": 48,
+                "end": 60
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Eleanor Voss",
+                    "start": 21,
+                    "end": 33,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "author",
+                    "name": "Eleanor Vane",
+                    "start": 48,
+                    "end": 60,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 46,
+        "type": "author",
+        "description": "Eleanor Vane is the writer I keep coming back to.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Eleanor Vane",
+                "start": 0,
+                "end": 12
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Eleanor Vane",
+                    "start": 0,
+                    "end": 12,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 47,
+        "type": "author",
+        "description": "Please stop showing me books by Rowan Vale!",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Rowan Vale",
+                "start": 32,
+                "end": 42
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Rowan Vale",
+                    "start": 32,
+                    "end": 42,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 48,
+        "type": "author",
+        "description": "I like both Mara Ellison and Selene Hart",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Mara Ellison",
+                "start": 12,
+                "end": 24
+            },
+            {
+                "type": "author",
+                "name": "Selene Hart",
+                "start": 29,
+                "end": 40
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Mara Ellison",
+                    "start": 12,
+                    "end": 24,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "author",
+                    "name": "Selene Hart",
+                    "start": 29,
+                    "end": 40,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 49,
+        "type": "author",
+        "description": "Jeshine was my favorite years ago, but I haven't decided what I think now",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Jeshine",
+                "start": 0,
+                "end": 7
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Jeshine",
+                    "start": 0,
+                    "end": 7,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 50,
+        "type": "author",
+        "description": "I don't dislike Lucien Vale; I just prefer Hana Mirei.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Lucien Vale",
+                "start": 16,
+                "end": 27
+            },
+            {
+                "type": "author",
+                "name": "Hana Mirei",
+                "start": 43,
+                "end": 53
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Lucien Vale",
+                    "start": 16,
+                    "end": 27,
+                    "intent": "neutral"
+                },
+                {
+                    "type": "author",
+                    "name": "Hana Mirei",
+                    "start": 43,
+                    "end": 53,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 51,
+        "type": "author",
+        "description": "Never recommend Iris Vale again, but Nora Vale is great.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Iris Vale",
+                "start": 16,
+                "end": 25
+            },
+            {
+                "type": "author",
+                "name": "Nora Vale",
+                "start": 37,
+                "end": 46
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Iris Vale",
+                    "start": 16,
+                    "end": 25,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "author",
+                    "name": "Nora Vale",
+                    "start": 37,
+                    "end": 46,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 52,
+        "type": "author",
+        "description": "I want something by Evan Rowe. I haven't read Oliver Penn yet",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Evan Rowe",
+                "start": 20,
+                "end": 29
+            },
+            {
+                "type": "author",
+                "name": "Oliver Penn",
+                "start": 46,
+                "end": 57
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Evan Rowe",
+                    "start": 20,
+                    "end": 29,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "author",
+                    "name": "Oliver Penn",
+                    "start": 46,
+                    "end": 57,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 53,
+        "type": "author",
+        "description": "I'm no longer interested in anything by Mira Solen",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Mira Solen",
+                "start": 40,
+                "end": 50
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Mira Solen",
+                    "start": 40,
+                    "end": 50,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 54,
+        "type": "author",
+        "description": "I've heard of Avery Lorne, but Clara Wynn is my favorite.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Avery Lorne",
+                "start": 14,
+                "end": 25
+            },
+            {
+                "type": "author",
+                "name": "Clara Wynn",
+                "start": 31,
+                "end": 41
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Avery Lorne",
+                    "start": 14,
+                    "end": 25,
+                    "intent": "neutral"
+                },
+                {
+                    "type": "author",
+                    "name": "Clara Wynn",
+                    "start": 31,
+                    "end": 41,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 55,
+        "type": "author",
+        "description": "I used to avoid Nora Vey's books, but recently I've started loving them",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Nora Vey",
+                "start": 16,
+                "end": 24
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Nora Vey",
+                    "start": 16,
+                    "end": 24,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 56,
+        "type": "author",
+        "description": "I've never read Eleanor Voss, so I can't judge her books",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Eleanor Voss",
+                "start": 16,
+                "end": 28
+            }
+        ],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 57,
+        "type": "author",
+        "description": "I don't want anything by Iris Vale or Lucien Vale",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Iris Vale",
+                "start": 25,
+                "end": 34
+            },
+            {
+                "type": "author",
+                "name": "Lucien Vale",
+                "start": 38,
+                "end": 49
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Iris Vale",
+                    "start": 25,
+                    "end": 34,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "author",
+                    "name": "Lucien Vale",
+                    "start": 38,
+                    "end": 49,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 58,
+        "type": "author",
+        "description": "I really enjoy Maya Rowan, though I have no opinion on Jamie Clarke",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Maya Rowan",
+                "start": 15,
+                "end": 25
+            },
+            {
+                "type": "author",
+                "name": "Jamie Clarke",
+                "start": 55,
+                "end": 67
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Maya Rowan",
+                    "start": 15,
+                    "end": 25,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "author",
+                    "name": "Jamie Clarke",
+                    "start": 55,
+                    "end": 67,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 59,
+        "type": "author",
+        "description": "I used to admire Elara Fen, but I won't read her books anymore",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Elara Fen",
+                "start": 17,
+                "end": 26
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Elara Fen",
+                    "start": 17,
+                    "end": 26,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 60,
+        "type": "author",
+        "description": "Give me more of Rowan Vale's writing; leave out Jeshine entirely",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Rowan Vale",
+                "start": 16,
+                "end": 26
+            },
+            {
+                "type": "author",
+                "name": "Jeshine",
+                "start": 48,
+                "end": 55
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Rowan Vale",
+                    "start": 16,
+                    "end": 26,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "author",
+                    "name": "Jeshine",
+                    "start": 48,
+                    "end": 55,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 61,
+        "type": "books",
+        "description": "I loved The Cartographer Of Moonfall. I'd like something with a similar feel",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Cartographer of Moonfall",
+                "start": 8,
+                "end": 36
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Cartographer of Moonfall",
+                    "start": 8,
+                    "end": 36,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 62,
+        "type": "books",
+        "description": "I liked The World Beneath The Blessing's atmosphere, but I do not want to read Definitely Not A Date.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The World Beneath the Blessing",
+                "start": 8,
+                "end": 38
+            },
+            {
+                "type": "book",
+                "name": "Definitely Not a Date",
+                "start": 79,
+                "end": 100
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The World Beneath the Blessing",
+                    "start": 8,
+                    "end": 38,
+                    "intent": "reference"
+                },
+                {
+                    "type": "book",
+                    "name": "Definitely Not a Date",
+                    "start": 79,
+                    "end": 100,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 63,
+        "type": "books",
+        "description": "The Silence Between Stars was exactly my kind of book, and I want more like it.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Silence Between Stars",
+                "start": 0,
+                "end": 25
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Silence Between Stars",
+                    "start": 0,
+                    "end": 25,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 64,
+        "type": "books",
+        "description": "I enjoyed the interview advantage. I've heard of AI without the fog, but I have no opinion on it.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Interview Advantage",
+                "start": 10,
+                "end": 33
+            },
+            {
+                "type": "book",
+                "name": "AI Without the Fog",
+                "start": 49,
+                "end": 67
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Interview Advantage",
+                    "start": 10,
+                    "end": 33,
+                    "intent": "reference"
+                },
+                {
+                    "type": "book",
+                    "name": "AI Without the Fog",
+                    "start": 49,
+                    "end": 67,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 65,
+        "type": "books",
+        "description": "I want stories like The Last Light before Morning, but I absolutely do not want to read How to Survive Being Seventeen.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Last Light Before Morning",
+                "start": 20,
+                "end": 49
+            },
+            {
+                "type": "book",
+                "name": "How to Survive Being Seventeen",
+                "start": 88,
+                "end": 118
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Last Light Before Morning",
+                    "start": 20,
+                    "end": 49,
+                    "intent": "reference"
+                },
+                {
+                    "type": "book",
+                    "name": "How to Survive Being Seventeen",
+                    "start": 88,
+                    "end": 118,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 66,
+        "type": "books",
+        "description": "Please find something similar to When The Winter Garden Blooms.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "When the Winter Garden Blooms",
+                "start": 33,
+                "end": 62
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "When the Winter Garden Blooms",
+                    "start": 33,
+                    "end": 62,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 67,
+        "type": "books",
+        "description": "I've reread Make Tomorrow Easier and want more books with that tone.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "Make Tomorrow Easier",
+                "start": 12,
+                "end": 32
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "Make Tomorrow Easier",
+                    "start": 12,
+                    "end": 32,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 68,
+        "type": "books",
+        "description": "I refuse to read The Department of Minor Emergencies",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Department of Minor Emergencies",
+                "start": 17,
+                "end": 52
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Department of Minor Emergencies",
+                    "start": 17,
+                    "end": 52,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 69,
+        "type": "books",
+        "description": "The Last Song of Gion is the kind of story I am looking for",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Last Song of Gion",
+                "start": 0,
+                "end": 21
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Last Song of Gion",
+                    "start": 0,
+                    "end": 21,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 70,
+        "type": "books",
+        "description": "I'm curious about Eat Well, Live Normally, but I haven't formed an opinion yet.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "Eat Well, Live Normally",
+                "start": 18,
+                "end": 41
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "Eat Well, Live Normally",
+                    "start": 18,
+                    "end": 41,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 71,
+        "type": "books",
+        "description": "I enjoyed The Fog Bell At Blackwater Point, though I don't want How To Survive Being Seventeen",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Fog Bell at Blackwater Point",
+                "start": 10,
+                "end": 42
+            },
+            {
+                "type": "book",
+                "name": "How to Survive Being Seventeen",
+                "start": 64,
+                "end": 94
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Fog Bell at Blackwater Point",
+                    "start": 10,
+                    "end": 42,
+                    "intent": "reference"
+                },
+                {
+                    "type": "book",
+                    "name": "How to Survive Being Seventeen",
+                    "start": 64,
+                    "end": 94,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 72,
+        "type": "books",
+        "description": "Please avoid Definitely Not A Date. I want stories reminiscent of The Lighthouse Beneath The Clouds.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "Definitely Not a Date",
+                "start": 13,
+                "end": 34
+            },
+            {
+                "type": "book",
+                "name": "The Lighthouse Beneath the Clouds",
+                "start": 66,
+                "end": 99
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "Definitely Not a Date",
+                    "start": 13,
+                    "end": 34,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "book",
+                    "name": "The Lighthouse Beneath the Clouds",
+                    "start": 66,
+                    "end": 99,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 73,
+        "type": "books",
+        "description": "I've heard people talk about The Interview Advantage, but I know nothing about it.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Interview Advantage",
+                "start": 29,
+                "end": 52
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Interview Advantage",
+                    "start": 29,
+                    "end": 52,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 74,
+        "type": "books",
+        "description": "I've finished AI Without the Fog and would enjoy something with a similar style",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "AI Without the Fog",
+                "start": 14,
+                "end": 32
+            }
+        ],
+        "qwen_output": {
+            "entities": [],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 75,
+        "type": "books",
+        "description": "Don't give me The World Beneath the Blessing; I'd like a book like Beyond The Last Blue Mountain",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The World Beneath the Blessing",
+                "start": 14,
+                "end": 44
+            },
+            {
+                "type": "book",
+                "name": "Beyond the Last Blue Mountain",
+                "start": 67,
+                "end": 96
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The World Beneath the Blessing",
+                    "start": 14,
+                    "end": 44,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "book",
+                    "name": "Beyond the Last Blue Mountain",
+                    "start": 67,
+                    "end": 96,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 76,
+        "type": "books",
+        "description": "You Are Worth the Attempt helped me get through a tough month. I would like a similar read",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "You Are Worth the Attempt",
+                "start": 0,
+                "end": 25
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "You Are Worth the Attempt",
+                    "start": 0,
+                    "end": 25,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 77,
+        "type": "books",
+        "description": "I used to avoid The Memory You Never Had, but now I'd love something along those lines",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Memory You Never Had",
+                "start": 16,
+                "end": 40
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Memory You Never Had",
+                    "start": 16,
+                    "end": 40,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 78,
+        "type": "books",
+        "description": "I'd rather skip The City the Maps Forgot entirely",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The City the Maps Forgot",
+                "start": 16,
+                "end": 40
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The City the Maps Forgot",
+                    "start": 16,
+                    "end": 40,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 79,
+        "type": "books",
+        "description": "Someone mentioned The Last Light Before Morning, but I haven't read it or decided how I feel",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Last Light Before Morning",
+                "start": 18,
+                "end": 47
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Last Light Before Morning",
+                    "start": 18,
+                    "end": 47,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 80,
+        "type": "books",
+        "description": "I enjoyed The Cartographer of Moonfall in the past, but now I don't want to read it again",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Cartographer of Moonfall",
+                "start": 10,
+                "end": 38
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Cartographer of Moonfall",
+                    "start": 10,
+                    "end": 38,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 81,
+        "type": "mixed",
+        "description": "I love books by Nora Vale, but I cannot stand mystery",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Nora Vale",
+                "start": 16,
+                "end": 25
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Nora Vale",
+                    "start": 16,
+                    "end": 25,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": [
+                "Mystery"
+            ]
+        }
+    },
+    {
+        "user_id": 82,
+        "type": "mixed",
+        "description": "I loved The Memory You Never Had, but I don't want books by Iris Vale anymore. I also dislike comedy.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Memory You Never Had",
+                "start": 8,
+                "end": 32
+            },
+            {
+                "type": "author",
+                "name": "Iris Vale",
+                "start": 60,
+                "end": 69
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Memory You Never Had",
+                    "start": 8,
+                    "end": 32,
+                    "intent": "reference"
+                },
+                {
+                    "type": "author",
+                    "name": "Iris Vale",
+                    "start": 60,
+                    "end": 69,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": [
+                "Comedy"
+            ]
+        }
+    },
+    {
+        "user_id": 83,
+        "type": "mixed",
+        "description": "Please recommend books similar to The City the Maps Forgot, but avoid Dark Fantasy and Isekai.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The City the Maps Forgot",
+                "start": 34,
+                "end": 58
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The City the Maps Forgot",
+                    "start": 34,
+                    "end": 58,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": [
+                "Dark Fantasy",
+                "Isekai"
+            ]
+        }
+    },
+    {
+        "user_id": 84,
+        "type": "mixed",
+        "description": "I used to avoid Science Fiction, but now I enjoy it. I do not want books by Lucien Vale, and I still dislike Drama.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Lucien Vale",
+                "start": 76,
+                "end": 87
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Lucien Vale",
+                    "start": 76,
+                    "end": 87,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": [
+                "Drama"
+            ]
+        }
+    },
+    {
+        "user_id": 85,
+        "type": "mixed",
+        "description": "I want books like The City the Maps Forgot, and I prefer Rowan Vale. Please skip comedy",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The City the Maps Forgot",
+                "start": 18,
+                "end": 42
+            },
+            {
+                "type": "author",
+                "name": "Rowan Vale",
+                "start": 57,
+                "end": 67
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The City the Maps Forgot",
+                    "start": 18,
+                    "end": 42,
+                    "intent": "reference"
+                },
+                {
+                    "type": "author",
+                    "name": "Rowan Vale",
+                    "start": 57,
+                    "end": 67,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": [
+                "Comedy"
+            ]
+        }
+    },
+    {
+        "user_id": 86,
+        "type": "mixed",
+        "description": "I prefer Iris Vale, but please avoid comedy",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Iris Vale",
+                "start": 9,
+                "end": 18
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Iris Vale",
+                    "start": 9,
+                    "end": 18,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": [
+                "Comedy"
+            ]
+        }
+    },
+    {
+        "user_id": 87,
+        "type": "mixed",
+        "description": "Recommend something like The Last Song of Gion, but don't include Drama.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Last Song of Gion",
+                "start": 25,
+                "end": 46
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Last Song of Gion",
+                    "start": 25,
+                    "end": 46,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": [
+                "Drama"
+            ]
+        }
+    },
+    {
+        "user_id": 88,
+        "type": "mixed",
+        "description": "I'm a fan of Mara Ellison, but I don't want The World Beneath the Blessing.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Mara Ellison",
+                "start": 13,
+                "end": 25
+            },
+            {
+                "type": "book",
+                "name": "The World Beneath the Blessing",
+                "start": 44,
+                "end": 74
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Mara Ellison",
+                    "start": 13,
+                    "end": 25,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "book",
+                    "name": "The World Beneath the Blessing",
+                    "start": 44,
+                    "end": 74,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 89,
+        "type": "mixed",
+        "description": "I enjoyed The Interview Advantage, but please avoid self-help from now on.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Interview Advantage",
+                "start": 10,
+                "end": 33
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Interview Advantage",
+                    "start": 10,
+                    "end": 33,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": [
+                "Self-help"
+            ]
+        }
+    },
+    {
+        "user_id": 90,
+        "type": "mixed",
+        "description": "I no longer want books by Jeshine, but I liked The Cartographer of Moonfall.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Jeshine",
+                "start": 26,
+                "end": 33
+            },
+            {
+                "type": "book",
+                "name": "The Cartographer of Moonfall",
+                "start": 47,
+                "end": 75
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Jeshine",
+                    "start": 26,
+                    "end": 33,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "book",
+                    "name": "The Cartographer of Moonfall",
+                    "start": 47,
+                    "end": 75,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 91,
+        "type": "mixed",
+        "description": "I love books by Eleanor Vane. Please avoid historical fiction, though",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Eleanor Vane",
+                "start": 16,
+                "end": 28
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Eleanor Vane",
+                    "start": 16,
+                    "end": 28,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": [
+                "Historical Fiction"
+            ]
+        }
+    },
+    {
+        "user_id": 92,
+        "type": "mixed",
+        "description": "I want something like The Silence Between Stars, but I won't read Iris Vale anymore",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Silence Between Stars",
+                "start": 22,
+                "end": 47
+            },
+            {
+                "type": "author",
+                "name": "Iris Vale",
+                "start": 66,
+                "end": 75
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Silence Between Stars",
+                    "start": 22,
+                    "end": 47,
+                    "intent": "reference"
+                },
+                {
+                    "type": "author",
+                    "name": "Iris Vale",
+                    "start": 66,
+                    "end": 75,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 93,
+        "type": "mixed",
+        "description": "Fantasy is welcome, but please exclude Dark Fantasy. I enjoyed The City The Maps Forgot",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The City the Maps Forgot",
+                "start": 63,
+                "end": 87
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The City the Maps Forgot",
+                    "start": 63,
+                    "end": 87,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": [
+                "Dark Fantasy"
+            ]
+        }
+    },
+    {
+        "user_id": 94,
+        "type": "mixed",
+        "description": "I'm done with Lucien Vale and Isekai. Nora Vale, on the other hand, is welcome.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Lucien Vale",
+                "start": 14,
+                "end": 25
+            },
+            {
+                "type": "author",
+                "name": "Nora Vale",
+                "start": 38,
+                "end": 47
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Lucien Vale",
+                    "start": 14,
+                    "end": 25,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "author",
+                    "name": "Nora Vale",
+                    "start": 38,
+                    "end": 47,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": [
+                "Isekai"
+            ]
+        }
+    },
+    {
+        "user_id": 95,
+        "type": "mixed",
+        "description": "I like Clara Wynn's books, but comedy is off the table and I won't read Definitely Not A Date again.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Clara Wynn",
+                "start": 7,
+                "end": 17
+            },
+            {
+                "type": "book",
+                "name": "Definitely Not a Date",
+                "start": 72,
+                "end": 93
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Clara Wynn",
+                    "start": 7,
+                    "end": 17,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "book",
+                    "name": "Definitely Not a Date",
+                    "start": 72,
+                    "end": 93,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": [
+                "Comedy"
+            ]
+        }
+    },
+    {
+        "user_id": 96,
+        "type": "mixed",
+        "description": "I used to enjoy mystery, but not anymore. I really like Eleanor Voss.",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Eleanor Voss",
+                "start": 56,
+                "end": 68
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Eleanor Voss",
+                    "start": 56,
+                    "end": 68,
+                    "intent": "prefer"
+                }
+            ],
+            "excluded_genres": []
+        }
+    },
+    {
+        "user_id": 97,
+        "type": "mixed",
+        "description": "The Fog Bell at Blackwater Point is a favorite of mine. Please don't send me Drama or any books by Eleanor Voss.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "The Fog Bell at Blackwater Point",
+                "start": 0,
+                "end": 32
+            },
+            {
+                "type": "author",
+                "name": "Eleanor Voss",
+                "start": 99,
+                "end": 111
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "The Fog Bell at Blackwater Point",
+                    "start": 0,
+                    "end": 32,
+                    "intent": "reference"
+                },
+                {
+                    "type": "author",
+                    "name": "Eleanor Voss",
+                    "start": 99,
+                    "end": 111,
+                    "intent": "exclude"
+                }
+            ],
+            "excluded_genres": [
+                "Drama"
+            ]
+        }
+    },
+    {
+        "user_id": 98,
+        "type": "mixed",
+        "description": "I know about AI Without the Fog, but I don't have an opinion on it. I refuse to read non-fiction.",
+        "matched_entities": [
+            {
+                "type": "book",
+                "name": "AI Without the Fog",
+                "start": 13,
+                "end": 31
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "AI Without the Fog",
+                    "start": 13,
+                    "end": 31,
+                    "intent": "neutral"
+                }
+            ],
+            "excluded_genres": [
+                "Non-fiction"
+            ]
+        }
+    },
+    {
+        "user_id": 99,
+        "type": "mixed",
+        "description": "i want books by avery lorne, similar in spirit to you are worth the attempt, but skip romance",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Avery Lorne",
+                "start": 16,
+                "end": 27
+            },
+            {
+                "type": "book",
+                "name": "You Are Worth the Attempt",
+                "start": 50,
+                "end": 75
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Avery Lorne",
+                    "start": 16,
+                    "end": 27,
+                    "intent": "prefer"
+                },
+                {
+                    "type": "book",
+                    "name": "You Are Worth the Attempt",
+                    "start": 50,
+                    "end": 75,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": [
+                "Romcom"
+            ]
+        }
+    },
+    {
+        "user_id": 100,
+        "type": "mixed",
+        "description": "I don't dislike Rowan Vale, but I do avoid Psychological Thriller. Something like The Lighthouse Beneath the Clouds would be nice",
+        "matched_entities": [
+            {
+                "type": "author",
+                "name": "Rowan Vale",
+                "start": 16,
+                "end": 26
+            },
+            {
+                "type": "book",
+                "name": "The Lighthouse Beneath the Clouds",
+                "start": 82,
+                "end": 115
+            }
+        ],
+        "qwen_output": {
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Rowan Vale",
+                    "start": 16,
+                    "end": 26,
+                    "intent": "exclude"
+                },
+                {
+                    "type": "book",
+                    "name": "The Lighthouse Beneath the Clouds",
+                    "start": 82,
+                    "end": 115,
+                    "intent": "reference"
+                }
+            ],
+            "excluded_genres": [
+                "Psychological Thriller"
+            ]
+        }
+    }
+]
