@@ -9,7 +9,7 @@ class Config:
         self.LLM = "openai:gpt-5-nano" # used with LangChain
         self.EMBEDDING_MODEL = "intfloat/multilingual-e5-small"
         self.NUM_OF_RECOMMENDED_BOOK = 5 # the K number
-        self.LLM_FOR_INTENT_EXTRACTION = "qwen3.5:4b-q4_K_M"
+        self.LLM_FOR_INTENT_EXTRACTION = "qwen3.5:9b-q4_K_M"
 
         # RAG
         self.NUM_OF_BOOKS_THRESHOLD_TO_TRIGGER_RAG = 15

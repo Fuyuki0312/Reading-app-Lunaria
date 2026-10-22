@@ -317,7 +317,9 @@
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
-            "excluded_genres": []
+            "excluded_genres": [
+                "Dark Fantasy"
+            ]
         }
     },
     {
@@ -376,7 +378,9 @@
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
-            "excluded_genres": []
+            "excluded_genres": [
+                "Dark Fantasy"
+            ]
         }
     },
     {
@@ -399,9 +403,9 @@
         "qwen_output": {
             "entities": [],
             "excluded_genres": [
-                "Self-help",
                 "Non-fiction",
-                "Romcom"
+                "Romcom",
+                "Self-help"
             ]
         }
     },
@@ -516,7 +520,7 @@
                     "name": "Nora Vale",
                     "start": 16,
                     "end": 25,
-                    "intent": "exclude"
+                    "intent": "neutral"
                 },
                 {
                     "type": "author",
@@ -933,7 +937,15 @@
             }
         ],
         "qwen_output": {
-            "entities": [],
+            "entities": [
+                {
+                    "type": "author",
+                    "name": "Eleanor Voss",
+                    "start": 16,
+                    "end": 28,
+                    "intent": "neutral"
+                }
+            ],
             "excluded_genres": []
         }
     },
@@ -1284,7 +1296,7 @@
                     "name": "Make Tomorrow Easier",
                     "start": 12,
                     "end": 32,
-                    "intent": "neutral"
+                    "intent": "reference"
                 }
             ],
             "excluded_genres": []
@@ -1479,7 +1491,15 @@
             }
         ],
         "qwen_output": {
-            "entities": [],
+            "entities": [
+                {
+                    "type": "book",
+                    "name": "AI Without the Fog",
+                    "start": 14,
+                    "end": 32,
+                    "intent": "reference"
+                }
+            ],
             "excluded_genres": []
         }
     },
@@ -1565,7 +1585,7 @@
                     "name": "The Memory You Never Had",
                     "start": 16,
                     "end": 40,
-                    "intent": "neutral"
+                    "intent": "reference"
                 }
             ],
             "excluded_genres": []
@@ -1640,7 +1660,7 @@
                     "name": "The Cartographer of Moonfall",
                     "start": 10,
                     "end": 38,
-                    "intent": "exclude"
+                    "intent": "neutral"
                 }
             ],
             "excluded_genres": []
@@ -2089,7 +2109,7 @@
                     "name": "Nora Vale",
                     "start": 38,
                     "end": 47,
-                    "intent": "neutral"
+                    "intent": "prefer"
                 }
             ],
             "excluded_genres": [
@@ -2132,9 +2152,7 @@
                     "intent": "exclude"
                 }
             ],
-            "excluded_genres": [
-                "Comedy"
-            ]
+            "excluded_genres": []
         }
     },
     {
@@ -2159,7 +2177,9 @@
                     "intent": "prefer"
                 }
             ],
-            "excluded_genres": []
+            "excluded_genres": [
+                "Mystery"
+            ]
         }
     },
     {
@@ -2265,7 +2285,7 @@
                 }
             ],
             "excluded_genres": [
-                "Romcom"
+                "Romance"
             ]
         }
     },
@@ -2294,7 +2314,7 @@
                     "name": "Rowan Vale",
                     "start": 16,
                     "end": 26,
-                    "intent": "exclude"
+                    "intent": "neutral"
                 },
                 {
                     "type": "book",
