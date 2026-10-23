@@ -1,5 +1,5 @@
 from app.recommender.baseline.baseline import Baseline
-from app.recommender.rag.retrieval import retrieve_books
+from app.recommender.rag.rag_recommendation import recommend_books_with_rag
 from app.services.book_services import get_book_services
 from metric_calculator import normalized_dcg, normalized_precision, violation_rate
 from app.recommender.rag.llm.llm_recommendation import recommend_books_with_llm
@@ -8,6 +8,7 @@ from app.config import Config
 import torch
 import json
 import pandas as pd
+import time
 
 from pathlib import Path
 
@@ -31,7 +32,6 @@ OVERALL_METRICS_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PAT
 
 BOOK_DETAILS_BY_LLM_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "analysis" / "books_from_llm.json"
 BOOK_DETAILS_BY_RAG_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "analysis" / "books_from_rag.json"
-BOOK_DETAILS_BY_EMBEDDING_MODEL_PATH = Path("eval_results") / PRIORITY_BIAS / MODEL_NAME_FOR_PATH / "analysis" / "books_from_embedding_model.json"
 
 
 # Config and services --------------------------------------------
@@ -53,61 +53,11 @@ def save_metrics_per_user_to_csv(one_user_metric_results: list[dict]):
 
 def save_mean_metrics_to_csv(one_user_metric_results: list[dict]):
 
-    k = len(one_user_metric_results)
+    df = pd.DataFrame(one_user_metric_results).drop(columns=["user_id"])
+    mean_metrics = df.mean()
 
-    LLM_ndcg_in_total = 0
-    LLM_precision_in_total = 0
-    LLM_violation_rate_in_total = 0
-
-    Baseline_ndcg_in_total = 0
-    Baseline_precision_in_total = 0
-    Baseline_violation_rate_in_total = 0
-
-    RAG_ndcg_in_total = 0
-    RAG_precision_in_total = 0
-    RAG_violation_rate_in_total = 0
-
-    for row in one_user_metric_results:
-        LLM_ndcg_in_total += row["LLM_ndcg"]
-        LLM_precision_in_total += row["LLM_precision"]
-        LLM_violation_rate_in_total += row["LLM_violation_rate"]
-
-        Baseline_ndcg_in_total += row["Baseline_ndcg"]
-        Baseline_precision_in_total += row["Baseline_precision"]
-        Baseline_violation_rate_in_total += row["Baseline_violation_rate"]
-
-        RAG_ndcg_in_total += row["RAG_ndcg"]
-        RAG_precision_in_total += row["RAG_precision"]
-        RAG_violation_rate_in_total += row["RAG_violation_rate"]
-
-    LLM_ndcg_mean = LLM_ndcg_in_total / k
-    LLM_precision_mean = LLM_precision_in_total / k
-    LLM_violation_rate_mean = LLM_violation_rate_in_total / k
-
-    Baseline_ndcg_mean = Baseline_ndcg_in_total / k
-    Baseline_precision_mean = Baseline_precision_in_total / k
-    Baseline_violation_rate_mean = Baseline_violation_rate_in_total / k
-
-    RAG_ndcg_mean = RAG_ndcg_in_total / k
-    RAG_precision_mean = RAG_precision_in_total / k
-    RAG_violation_rate_mean = RAG_violation_rate_in_total / k
-
-    table = [
-        {
-            "LLM_ndcg_mean": LLM_ndcg_mean,
-            "LLM_precision_mean": LLM_precision_mean,
-            "LLM_violation_rate_mean": LLM_violation_rate_mean,
-            "Baseline_ndcg_mean": Baseline_ndcg_mean,
-            "Baseline_precision_mean": Baseline_precision_mean,
-            "Baseline_violation_rate_mean": Baseline_violation_rate_mean,
-            "RAG_ndcg_mean": RAG_ndcg_mean,
-            "RAG_precision_mean": RAG_precision_mean,
-            "RAG_violation_rate_mean": RAG_violation_rate_mean
-        }
-    ]
-
-    df = pd.DataFrame(table)
-    df.to_csv(
+    mean_metrics.index = [f"{metric}_mean" for metric in mean_metrics.index]
+    mean_metrics.to_frame().T.to_csv(
         OVERALL_METRICS_PATH,
         index=False
     )
@@ -123,12 +73,6 @@ def save_books_recommeded_by_rag(recommendations_from_rag):
 
     with open(BOOK_DETAILS_BY_RAG_PATH, "w") as file:
         json.dump(recommendations_from_rag, file, indent=4)
-
-
-def save_books_recommeded_by_embedding_model(recommendations_from_embedding_model):
-
-    with open(BOOK_DETAILS_BY_EMBEDDING_MODEL_PATH, "w") as file:
-        json.dump(recommendations_from_embedding_model, file, indent=4)
 
 
 # Get dataset -----------------------------------------------
@@ -167,7 +111,6 @@ eval_results: list[dict[str, float]] = [
 
 all_recommendations_from_llm = []
 all_recommendations_from_rag = []
-all_recommendations_from_embedding_model = []
 
 def main():
 
@@ -208,17 +151,21 @@ def main():
 
         # Get recommendations from baseline
 
+        start_time = time.perf_counter()
         baseline_recommended_books = baseline.score_books(
             user_genre_preferences=user["genre_preferences"]
         )
+        baseline_latency = time.perf_counter() - start_time
 
         # Get recommendations from LLM
 
+        start_time = time.perf_counter()
         llm_recommeded_books = recommend_books_with_llm(
             user_genre_preference=user["genre_preferences"],
             user_preference_description=user["genre_description"],
             books=book_services.get_books_with_genres()
         )
+        llm_latency = time.perf_counter() - start_time
 
         # The below assertions do 3 things:
         # 1. Check if LLM recommended exactly (config.NUM_OF_RECOMMENDED_BOOK) books
@@ -247,27 +194,12 @@ def main():
 
         # Get recommendations from RAG
 
-        retrieved_books = retrieve_books(
-            preferred_genres=user["genre_preferences"],
-            user_description=user["genre_description"]
-        )
-
-        all_recommendations_from_embedding_model.append(
-            {
-                "user_id": user["id"],
-                "recommendations": retrieved_books
-            }
-        )
-
-        books_for_llm_with_rag = book_services.index_books_with_id_list(
-            retrieved_books
-        )
-
-        rag_recommeded_books = recommend_books_with_llm(
+        start_time = time.perf_counter()
+        rag_recommeded_books = recommend_books_with_rag(
             user_genre_preference=user["genre_preferences"],
-            user_preference_description=user["genre_description"],
-            books=books_for_llm_with_rag
+            user_preference_description=user["genre_description"]
         )
+        rag_latency = time.perf_counter() - start_time
 
         assert len(rag_recommeded_books) == config.NUM_OF_RECOMMENDED_BOOK, (f"RAG did not recommend exactly {config.NUM_OF_RECOMMENDED_BOOK} books for user with id {user['id']}:\n\n"
                                                                              f"{rag_recommeded_books}")
@@ -399,26 +331,32 @@ def main():
                 "LLM_ndcg": llm_ndcg,
                 "LLM_precision": llm_precision,
                 "LLM_violation_rate": llm_violation_rate,
+                "LLM_latency": llm_latency,
                 "Baseline_ndcg": baseline_ndcg,
                 "Baseline_precision": baseline_precision,
                 "Baseline_violation_rate": baseline_violation_rate,
+                "Baseline_latency": baseline_latency,
                 "RAG_ndcg": rag_ndcg,
                 "RAG_precision": rag_precision,
-                "RAG_violation_rate": rag_violation_rate
+                "RAG_violation_rate": rag_violation_rate,
+                "RAG_latency": rag_latency
             }
         )
 
         print(f"LLM_ndcg: {llm_ndcg}")
         print(f"LLM_precision: {llm_precision}")
         print(f"LLM_violation_rate: {llm_violation_rate}")
+        print(f"LLM_latency: {llm_latency:.4f} s/user")
         print()
         print(f"Baseline_ndcg: {baseline_ndcg}")
         print(f"Baseline_precision: {baseline_precision}")
         print(f"Baseline_violation_rate: {baseline_violation_rate}")
+        print(f"Baseline_latency: {baseline_latency:.4f} s/user")
         print()
         print(f"RAG_ndcg: {rag_ndcg}")
         print(f"RAG_precision: {rag_precision}")
         print(f"RAG_violation_rate: {rag_violation_rate}")
+        print(f"RAG_latency: {rag_latency:.4f} s/user")
         print()
         print()
 
@@ -430,7 +368,6 @@ def main():
     # Save what llm and rag actually recommeded for further analysis
     save_books_recommeded_by_llm(all_recommendations_from_llm)
     save_books_recommeded_by_rag(all_recommendations_from_rag)
-    save_books_recommeded_by_embedding_model(all_recommendations_from_embedding_model)
 
 
 if __name__ == "__main__":

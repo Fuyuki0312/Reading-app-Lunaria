@@ -1,2 +1,2 @@
-LLM_ndcg_mean,LLM_precision_mean,LLM_violation_rate_mean,Baseline_ndcg_mean,Baseline_precision_mean,Baseline_violation_rate_mean,RAG_ndcg_mean,RAG_precision_mean,RAG_violation_rate_mean
-0.9442550000000001,0.9225000000000001,0.0,0.86249,0.8825000000000001,0.11000000000000001,0.870275,0.8091649999999999,0.0
+LLM_ndcg_mean,LLM_precision_mean,LLM_violation_rate_mean,LLM_latency_mean,Baseline_ndcg_mean,Baseline_precision_mean,Baseline_violation_rate_mean,Baseline_latency_mean,RAG_ndcg_mean,RAG_precision_mean,RAG_violation_rate_mean,RAG_latency_mean
+0.9569099999999999,0.9525,0.0,21.469789834999983,0.86249,0.8825,0.11000000000000001,5.58650000130001e-05,0.9029749999999999,0.848335,0.0,18.955606785000054
