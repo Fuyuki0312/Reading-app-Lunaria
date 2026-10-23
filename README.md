@@ -83,14 +83,6 @@ H --> I
 When RAG is used, the user's reading preferences are converted into an embedding and compared with precomputed book embeddings stored in the vector database. Cosine similarity is used to retrieve the top-k most relevant books, which are then passed to the LLM. The LLM analyzes these candidates together with the user's preferences and produces the final ranked recommendations.
 
 
-Bản này đúng với ý tưởng cậu vừa nói, và cũng dễ đọc hơn biểu đồ cũ.
-
----
-
-### Cách B — sát code hơn
-Nếu cậu muốn diagram phản ánh backend sát hơn, mình thấy bản này còn tốt hơn:
-
-```markdown
 ```mermaid
 flowchart LR
 
