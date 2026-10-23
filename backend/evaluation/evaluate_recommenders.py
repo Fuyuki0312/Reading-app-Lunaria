@@ -89,6 +89,14 @@ with open(BOOK_DATASET_PATH, "r") as f:
 
 baseline = Baseline()
 
+# Warm-up LLM's API -----------------------------------------
+
+temp = recommend_books_with_llm(
+    user_genre_preference=["Fantasy", "Adventure"],
+    user_preference_description="I love Magical World",
+    books=book_services.get_books_with_genres()
+)
+
 # Search for all fake users ---------------------------------
 
 number_of_books = int(len(eval_relevance) / len(eval_users))

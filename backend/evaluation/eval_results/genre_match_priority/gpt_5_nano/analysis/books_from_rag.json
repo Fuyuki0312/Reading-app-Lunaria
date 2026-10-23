@@ -4,23 +4,23 @@
         "recommendations": [
             {
                 "book_id": 21,
-                "reason": "Fantasy and Mystery adventure."
+                "reason": "Fantasy + Mystery adventure in a magical map world."
             },
             {
                 "book_id": 1,
-                "reason": "Fantasy with Mystery elements."
-            },
-            {
-                "book_id": 18,
-                "reason": "Mystery set in a coastal historical town."
+                "reason": "Fantasy mystery quest through shifting moonlit roads."
             },
             {
                 "book_id": 19,
-                "reason": "Mystery with a sci-fi twist."
+                "reason": "Mystery in a near-future memory archive."
             },
             {
-                "book_id": 11,
-                "reason": "Fantasy with isekai vibes."
+                "book_id": 3,
+                "reason": "Mystery with sci-fi adventure and coming-of-age elements."
+            },
+            {
+                "book_id": 18,
+                "reason": "Historical mystery set at a Scottish lighthouse."
             }
         ]
     },
@@ -29,23 +29,23 @@
         "recommendations": [
             {
                 "book_id": 9,
-                "reason": "Romance and coming-of-age in a historical setting."
+                "reason": "Romance + coming-of-age story."
             },
             {
                 "book_id": 4,
-                "reason": "Romance and coming-of-age fantasy."
+                "reason": "Romance with a coming-of-age journey."
+            },
+            {
+                "book_id": 14,
+                "reason": "Romcom with strong romance appeal."
             },
             {
                 "book_id": 15,
-                "reason": "Coming-of-age humor about growing up."
+                "reason": "Coming-of-age with humor."
             },
             {
                 "book_id": 22,
                 "reason": "Coming-of-age sci-fi adventure."
-            },
-            {
-                "book_id": 14,
-                "reason": "Romcom about romance and pretend dating."
             }
         ]
     },
@@ -54,23 +54,23 @@
         "recommendations": [
             {
                 "book_id": 14,
-                "reason": "Romcom with fake dating premise."
+                "reason": "Romcom with fake dating and playful chemistry."
             },
             {
                 "book_id": 15,
                 "reason": "Funny coming-of-age comedy."
             },
             {
-                "book_id": 16,
-                "reason": "Light workplace comedy."
+                "book_id": 9,
+                "reason": "Romantic coming-of-age with light humor."
             },
             {
-                "book_id": 9,
-                "reason": "Historical romance with coming-of-age themes."
+                "book_id": 16,
+                "reason": "Whimsical workplace comedy."
             },
             {
                 "book_id": 7,
-                "reason": "Practical self-help guide."
+                "reason": "Practical self-help about valuing yourself and pursuing goals."
             }
         ]
     },
@@ -78,24 +78,24 @@
         "user_id": 4,
         "recommendations": [
             {
-                "book_id": 8,
-                "reason": "Practical interview guide for confidence and strategy."
-            },
-            {
                 "book_id": 7,
-                "reason": "Encouraging self-worth and goal-setting."
+                "reason": "Self-help guide with practical self-worth strategies."
             },
             {
                 "book_id": 5,
-                "reason": "Concrete methods to start tasks and stay motivated."
+                "reason": "Practical daily planning and task-start guidance."
+            },
+            {
+                "book_id": 8,
+                "reason": "Career-focused self-help with interview strategies."
             },
             {
                 "book_id": 17,
-                "reason": "Balanced, flexible approach to everyday eating."
+                "reason": "Non-fiction guide to balanced everyday meals."
             },
             {
                 "book_id": 13,
-                "reason": "Beginner-friendly AI intro with a practical path."
+                "reason": "Beginner-friendly non-fiction on AI basics."
             }
         ]
     },
@@ -104,23 +104,23 @@
         "recommendations": [
             {
                 "book_id": 22,
-                "reason": "SF with Adventure and coming-of-age themes."
+                "reason": "Science fiction adventure about a space colony crisis."
             },
             {
                 "book_id": 3,
-                "reason": "Sci-Fi and Adventure with mystery and growth."
-            },
-            {
-                "book_id": 2,
-                "reason": "Strong Sci-Fi pick that matches your Sci-Fi preference."
+                "reason": "Science fiction with mystery and coming\u2011of\u2011age elements."
             },
             {
                 "book_id": 21,
-                "reason": "Adventure-driven story with mystery and escape from the ordinary."
+                "reason": "Adventure-driven quest in a map-filled fantasy world."
             },
             {
-                "book_id": 11,
-                "reason": "Isekai fantasy with rich world-building and moral questions."
+                "book_id": 2,
+                "reason": "Science fiction mystery with future transmissions."
+            },
+            {
+                "book_id": 7,
+                "reason": "Practical self-help about self-worth."
             }
         ]
     },
@@ -129,23 +129,23 @@
         "recommendations": [
             {
                 "book_id": 11,
-                "reason": "Strong match: Isekai and Dark Fantasy."
+                "reason": "Best fit: Isekai and Dark Fantasy."
             },
             {
                 "book_id": 12,
-                "reason": "Strong match: includes Isekai and fantasy/adventure."
+                "reason": "Strong Isekai presence in a fantasy-adventure."
             },
             {
                 "book_id": 21,
-                "reason": "Fantasy-driven adventure with mystery; good fit after top picks."
+                "reason": "Fantasy adventure with a mystery twist."
             },
             {
-                "book_id": 9,
-                "reason": "Moderate fit: historical fiction with coming-of-age."
+                "book_id": 22,
+                "reason": "Sci-Fi adventure with coming-of-age themes."
             },
             {
-                "book_id": 15,
-                "reason": "Moderate fit: coming-of-age theme; lighter tone."
+                "book_id": 19,
+                "reason": "Sci-Fi mystery thriller."
             }
         ]
     },
@@ -154,23 +154,23 @@
         "recommendations": [
             {
                 "book_id": 21,
-                "reason": "Strong fit: blends Fantasy and Adventure with mystery."
+                "reason": "Strong match: Fantasy + Adventure with mystery."
             },
             {
                 "book_id": 4,
-                "reason": "Fantasy-led with coming-of-age romance vibe."
+                "reason": "Fantasy with romance and coming-of-age themes."
             },
             {
                 "book_id": 22,
-                "reason": "Adventure-forward sci-fi, aligns with your Adventure taste."
-            },
-            {
-                "book_id": 9,
-                "reason": "Not fantasy/adventure, but strong historical romance."
+                "reason": "Adventure-focused sci-fi with coming-of-age elements."
             },
             {
                 "book_id": 10,
-                "reason": "Not fantasy/adventure, but engaging historical drama."
+                "reason": "Historical fiction with a rich, character-driven plot."
+            },
+            {
+                "book_id": 9,
+                "reason": "Historical coming-of-age romance."
             }
         ]
     },
@@ -179,23 +179,23 @@
         "recommendations": [
             {
                 "book_id": 18,
-                "reason": "Mystery and Drama; strong match to your prefs."
+                "reason": "Drama and Mystery match your preferences."
             },
             {
                 "book_id": 21,
-                "reason": "Mystery-focused adventure; close to your mystery interest."
+                "reason": "Strong Mystery element."
             },
             {
                 "book_id": 9,
-                "reason": "Historical fiction with emotional, dramatic stakes."
+                "reason": "Historical fiction with emotional themes."
             },
             {
                 "book_id": 14,
-                "reason": "Romantic comedy with family dynamics and light drama."
+                "reason": "Lighthearted romance with a warm tone."
             },
             {
                 "book_id": 15,
-                "reason": "Coming-of-age with humor and relatable themes."
+                "reason": "Humorous coming-of-age tale."
             }
         ]
     },
@@ -204,23 +204,23 @@
         "recommendations": [
             {
                 "book_id": 22,
-                "reason": "Science Fiction + Coming of Age on a colony ship."
-            },
-            {
-                "book_id": 9,
-                "reason": "Coming-of-Age in a historical romance setting."
-            },
-            {
-                "book_id": 4,
-                "reason": "Coming-of-Age in a romantic fantasy."
+                "reason": "SF with Coming-of-Age themes."
             },
             {
                 "book_id": 15,
-                "reason": "Coming-of-Age with comedic tone."
+                "reason": "Coming-of-age with humor."
+            },
+            {
+                "book_id": 9,
+                "reason": "Coming-of-age in a historical setting."
+            },
+            {
+                "book_id": 4,
+                "reason": "Coming-of-age with romance and fantasy."
             },
             {
                 "book_id": 11,
-                "reason": "Isekai dark fantasy adventure."
+                "reason": "Isekai fantasy with growth themes."
             }
         ]
     },
@@ -229,23 +229,23 @@
         "recommendations": [
             {
                 "book_id": 9,
-                "reason": "Strong match: Historical Fiction, Romance; themes of choosing your own path against family and social pressures."
+                "reason": "Historical romance with coming-of-age and social pressure."
             },
             {
                 "book_id": 10,
-                "reason": "Historical Fiction with Drama; explores personal autonomy and dignity against social constraints."
-            },
-            {
-                "book_id": 14,
-                "reason": "Romance-forward story with personal growth and life decisions."
+                "reason": "Historical fiction drama about choosing your own path."
             },
             {
                 "book_id": 15,
-                "reason": "Coming-of-age tale about becoming less afraid of uncertainty and choosing your path."
+                "reason": "Coming-of-age story exploring family expectations."
+            },
+            {
+                "book_id": 14,
+                "reason": "Romance under family dynamics; not historical but about life choices."
             },
             {
                 "book_id": 22,
-                "reason": "Coming of Age in a sci-fi setting; themes of responsibility and growth beyond home."
+                "reason": "Coming-of-age in a sci-fi setting; ties to self-discovery."
             }
         ]
     },
@@ -254,23 +254,23 @@
         "recommendations": [
             {
                 "book_id": 15,
-                "reason": "Light coming\u2011of\u2011age comedy with awkward moments."
+                "reason": "Comedy and coming-of-age vibes; light and witty."
             },
             {
                 "book_id": 16,
-                "reason": "Pure workplace comedy, short and breezy."
+                "reason": "Light workplace comedy with awkward moments."
             },
             {
                 "book_id": 3,
-                "reason": "Coming\u2011of\u2011age sci\u2011fi mystery with adventuring flair."
+                "reason": "Coming-of-age sci-fi adventure with a hopeful tone."
             },
             {
                 "book_id": 22,
-                "reason": "Coming\u2011of\u2011age space adventure with personal growth."
+                "reason": "Coming-of-age space voyage and personal growth."
             },
             {
                 "book_id": 21,
-                "reason": "Fantasy mystery-adventure with witty world-building."
+                "reason": "Light fantasy-adventure with mystery and curiosity."
             }
         ]
     },
@@ -279,23 +279,23 @@
         "recommendations": [
             {
                 "book_id": 21,
-                "reason": "Fantasy-mystery with a hidden city and world-shifting maps."
+                "reason": "Fantasy + Mystery with a map-centered quest and hidden truths."
             },
             {
                 "book_id": 1,
-                "reason": "Fantasy adventure about a cartographer who uncovers Moonfall Hollow."
-            },
-            {
-                "book_id": 4,
-                "reason": "Fantasy with frost magic and a coming-of-age romance that tests promises."
+                "reason": "Fantasy adventure about shifting roads and a forbidden Moonfall Hollow."
             },
             {
                 "book_id": 18,
-                "reason": "Historical mystery on the Scottish coast with family secrets."
+                "reason": "Mystery-driven historical drama with secrets from the coast."
             },
             {
-                "book_id": 13,
-                "reason": "Non-fiction primer on AI for complete beginners."
+                "book_id": 4,
+                "reason": "Fantasy romance with frost magic and a perilous promise."
+            },
+            {
+                "book_id": 9,
+                "reason": "Historical coming-of-age romance with rich period detail."
             }
         ]
     },
@@ -304,23 +304,23 @@
         "recommendations": [
             {
                 "book_id": 5,
-                "reason": "Practical guide to turning plans into small, finishable tasks."
+                "reason": "Practical steps to start tasks and build momentum."
             },
             {
                 "book_id": 7,
-                "reason": "Focus on self-worth and steady, achievable steps to pursue goals."
+                "reason": "Focus on small actions and building self-worth to keep going."
             },
             {
                 "book_id": 8,
-                "reason": "Structured approach to preparation and confidence-building for projects."
+                "reason": "Practical strategy and confidence-building for planning and staying motivated."
+            },
+            {
+                "book_id": 13,
+                "reason": "Beginner-friendly intro to AI with a practical learning path."
             },
             {
                 "book_id": 16,
-                "reason": "Lighthearted comedy for a relaxed break after a rough week."
-            },
-            {
-                "book_id": 2,
-                "reason": "Engaging sci-fi mystery with psychological depth for a compelling change of pace."
+                "reason": "Light, humorous read to balance mood when projects stall."
             }
         ]
     },
@@ -329,23 +329,23 @@
         "recommendations": [
             {
                 "book_id": 13,
-                "reason": "Clear non-technical AI overview with a learning path."
+                "reason": "Beginner-friendly AI guide with real-life examples, limits, and a practical learning path."
             },
             {
                 "book_id": 5,
-                "reason": "Turns goals into small, action-focused steps."
+                "reason": "Actionable planning guide to turning intentions into concrete tasks and steady progress."
             },
             {
                 "book_id": 7,
-                "reason": "Motivational guidance to pursue goals."
+                "reason": "Encouraging self-help on building self-worth and pursuing meaningful goals."
             },
             {
                 "book_id": 8,
-                "reason": "Practical framework for presenting your learning progress."
+                "reason": "Practical career guidance to clarify targets, prepare for interviews, and present yourself well."
             },
             {
                 "book_id": 17,
-                "reason": "Everyday routine tips to support learning."
+                "reason": "Non-fiction guide to balanced eating with simple, budget-friendly tips."
             }
         ]
     },
@@ -354,23 +354,23 @@
         "recommendations": [
             {
                 "book_id": 22,
-                "reason": "SF adventure about leaving home and growing up with a crew."
+                "reason": "Sci\u2011fi coming\u2011of\u2011age adventure on a teen-led space voyage."
             },
             {
                 "book_id": 3,
-                "reason": "SF/Adventure/Coming-of-Age journey of a teen uncovering the truth about her world."
-            },
-            {
-                "book_id": 2,
-                "reason": "SF mystery where a young engineer grapples with future signals and responsibility."
-            },
-            {
-                "book_id": 9,
-                "reason": "Historical Coming-of-Age romance about a teen choosing her own path."
+                "reason": "Young weather apprentice uncovers a hidden world and grows up."
             },
             {
                 "book_id": 15,
-                "reason": "Coming-of-age tale about a seventeen-year-old navigating growth and uncertainty."
+                "reason": "Seventeen-year-old navigating friendship, exams, and uncertainty."
+            },
+            {
+                "book_id": 9,
+                "reason": "Historical coming\u2011of\u2011age romance about choosing dreams over duty."
+            },
+            {
+                "book_id": 2,
+                "reason": "Sci\u2011fi mystery about changing fate and tough choices."
             }
         ]
     },
@@ -379,23 +379,23 @@
         "recommendations": [
             {
                 "book_id": 9,
-                "reason": "Historical setting with romance and coming-of-age focus; relationship at the center."
+                "reason": "Historical romance with a coming-of-age arc."
             },
             {
                 "book_id": 4,
-                "reason": "Romance with fantasy elements and coming-of-age journey; conflict around promises."
-            },
-            {
-                "book_id": 22,
-                "reason": "Coming-of-age in a sci-fi voyage; themes of responsibility and growing up."
-            },
-            {
-                "book_id": 15,
-                "reason": "Coming-of-age with humor and friendships; navigating uncertainty."
+                "reason": "Fantasy romance with a coming-of-age journey."
             },
             {
                 "book_id": 14,
-                "reason": "Romantic fake-dating comedy with family expectations."
+                "reason": "Romantic comedy with fake dating and real chemistry."
+            },
+            {
+                "book_id": 15,
+                "reason": "Coming-of-age comedy about growth and friendships."
+            },
+            {
+                "book_id": 22,
+                "reason": "Coming-of-age sci-fi adventure with big questions."
             }
         ]
     },
@@ -404,23 +404,23 @@
         "recommendations": [
             {
                 "book_id": 15,
-                "reason": "Warm, funny coming-of-age with awkward moments."
+                "reason": "Fun, light coming-of-age comedy with awkward school moments."
             },
             {
                 "book_id": 14,
-                "reason": "Fake dating that becomes real romance."
+                "reason": "Romcom with a pretend date that spirals into real chemistry."
             },
             {
                 "book_id": 16,
-                "reason": "Office comedy with escalating minor emergencies."
+                "reason": "Workplace comedy about a chaotic department and escalating emergencies."
             },
             {
-                "book_id": 5,
-                "reason": "Practical, light self-help for planning and action."
+                "book_id": 21,
+                "reason": "Whimsical fantasy-mystery adventure with clever maps and escapism."
             },
             {
-                "book_id": 7,
-                "reason": "Encouraging self-help about self-worth and small steps."
+                "book_id": 18,
+                "reason": "Historical mystery with twists and engaging pacing."
             }
         ]
     },
@@ -429,23 +429,23 @@
         "recommendations": [
             {
                 "book_id": 21,
-                "reason": "Enchanted maps and a hidden city drive a mystery-filled quest."
+                "reason": "Forgotten city and enchanted maps drive the mystery."
             },
             {
                 "book_id": 1,
-                "reason": "Cartography-driven adventure with shifting roads and buried secrets."
+                "reason": "Cartographer's quest through shifting roads and hidden truths."
             },
             {
                 "book_id": 12,
-                "reason": "Hidden frontiers, old maps, and a journey beyond the edge."
+                "reason": "Isekai fantasy adventure about seeking a homeland beyond known frontiers."
             },
             {
                 "book_id": 11,
-                "reason": "Isekai fantasy uncovering the costs behind a beautiful world."
+                "reason": "Dark fantasy world with secrets behind its prosperity."
             },
             {
-                "book_id": 19,
-                "reason": "Memory-altered past drives a suspenseful mystery."
+                "book_id": 18,
+                "reason": "Historical mystery uncovering village lies around a shipwreck."
             }
         ]
     },
@@ -454,23 +454,23 @@
         "recommendations": [
             {
                 "book_id": 22,
-                "reason": "Direct Nora Vale pick; same genres and coming-of-age themes."
+                "reason": "From Nora Vale; similar YA sci-fi journey about growing up."
             },
             {
                 "book_id": 3,
-                "reason": "SF adventure with coming-of-age journey."
+                "reason": "SF adventure with a coming-of-age arc in Aerolith."
             },
             {
                 "book_id": 2,
-                "reason": "Strong sci-fi with mystery; fits your SF preference."
+                "reason": "SF mystery with a determined young protagonist facing the future."
             },
             {
                 "book_id": 21,
-                "reason": "Adventure-driven with mystery; adventurous pick."
+                "reason": "Adventure with enchanted maps and a coming-of-age tone."
             },
             {
                 "book_id": 9,
-                "reason": "Coming-of-age tale set in a historical setting; growth focus."
+                "reason": "Historical coming-of-age tale with romance."
             }
         ]
     },
@@ -479,23 +479,23 @@
         "recommendations": [
             {
                 "book_id": 19,
-                "reason": "Iris Vale favorite; strong mystery and sci-fi blend."
+                "reason": "Favorites Iris Vale; strong Mystery + Science Fiction blend."
             },
             {
                 "book_id": 2,
-                "reason": "Another Iris Vale title; tight sci-fi mystery."
+                "reason": "Another Iris Vale title with sci\u2011fi mystery and thriller elements."
             },
             {
                 "book_id": 3,
-                "reason": "Sci-fi mystery adventure, fits both genres."
-            },
-            {
-                "book_id": 1,
-                "reason": "Mystery wrapped in a moonlit cartography fantasy."
+                "reason": "Sci\u2011Fi mystery with adventure and coming\u2011of\u2011age themes."
             },
             {
                 "book_id": 22,
-                "reason": "Pure sci-fi adventure with coming-of-age vibe."
+                "reason": "Pure Science Fiction pick with space-age exploration."
+            },
+            {
+                "book_id": 21,
+                "reason": "Mystery-driven quest in a map\u2011weaving fantasy world."
             }
         ]
     }

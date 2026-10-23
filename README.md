@@ -113,7 +113,7 @@ To evaluate Lunaria's recommendation pipeline, three approaches were compared on
 
 - **Baseline**: a lightweight heuristic that ranks books by the number of matching favorite genres.
 - **LLM-only**: `GPT-5 nano` receives the user's genre preferences, free-text preference description, and the full book catalog.
-- **RAG + LLM**: `intfloat/multilingual-e5-small` retrieves the top 10 candidate books, which are then reranked by GPT-5 nano.
+- **RAG + LLM**: `Qwen3.5:9B` extracts intents, then `intfloat/multilingual-e5-small` retrieves the top 10 candidate books, which are then reranked by GPT-5 nano.
 
 ### 2.1. Benchmark Setup
 
