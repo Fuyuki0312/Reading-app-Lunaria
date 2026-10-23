@@ -12,7 +12,7 @@ class Config:
         self.LLM_FOR_INTENT_EXTRACTION = "qwen3.5:9b-q4_K_M"
 
         # RAG
-        self.NUM_OF_BOOKS_THRESHOLD_TO_TRIGGER_RAG = 15
+        self.NUM_OF_BOOKS_THRESHOLD_TO_TRIGGER_RAG = 31
         self.NUM_OF_BOOKS_RETURNED_FROM_RAG = 10
         BASE_DIR = Path(__file__).resolve().parent.parent
         self.CHROMA_DB_PATH = BASE_DIR / "chroma_db"
