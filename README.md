@@ -80,8 +80,7 @@ H --> I
 
 ### 1.2. Recommendation Pipeline
 
-When RAG is used, the user's reading preferences are converted into an embedding and compared with precomputed book embeddings stored in the vector database. Cosine similarity is used to retrieve the top-k most relevant books, which are then passed to the LLM. The LLM analyzes these candidates together with the user's preferences and produces the final ranked recommendations.
-
+Before retrieval begins, Lunaria analyzes the user's free-text preference description using **Regex** and a smaller LLM, **Qwen3.5:9B**, to extract user intents. This step identifies disliked genres and authors so that books matching these negative preferences can be filtered out before semantic retrieval. The remaining candidates are then processed by the RAG pipeline, where the user query is embedded, compared with book embeddings using cosine similarity, and the top-k books are passed to the main LLM for final ranking.
 
 ```mermaid
 flowchart LR
