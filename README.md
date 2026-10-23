@@ -62,19 +62,19 @@ After logging in, users complete a short reading-preference survey by selecting 
 ```mermaid
 flowchart LR
 
-A[Login / Register] --> B[Reading Preference Survey]
+A["Login / Register"] --> B["Preference<br/>Survey"]
 
-B --> C[Favorite Genres]
-B --> D[Free-text Description]
+B --> C["Favorite Genres"]
+B --> D["Free-text<br/>Description"]
 
-C --> E[(MySQL Database)]
+C --> E[("MySQL Database")]
 D --> E
 
-E --> F[Recommendation Backend]
-F --> G[LLM-only]
-F --> H[RAG + LLM]
+E --> F["Recommendation<br/>Backend"]
+F --> G["LLM-only"]
+F --> H["RAG + LLM"]
 
-G --> I[Recommended Books]
+G --> I["Recommended<br/>Books"]
 H --> I
 ```
 
@@ -82,24 +82,36 @@ H --> I
 
 When RAG is used, the user's reading preferences are converted into an embedding and compared with precomputed book embeddings stored in the vector database. Cosine similarity is used to retrieve the top-k most relevant books, which are then passed to the LLM. The LLM analyzes these candidates together with the user's preferences and produces the final ranked recommendations.
 
+
+Bản này đúng với ý tưởng cậu vừa nói, và cũng dễ đọc hơn biểu đồ cũ.
+
+---
+
+### Cách B — sát code hơn
+Nếu cậu muốn diagram phản ánh backend sát hơn, mình thấy bản này còn tốt hơn:
+
+```markdown
 ```mermaid
 flowchart LR
 
-A[User Query] --> B[Embedding Model]
+A["User Query"] --> B["Entity<br/>Matching"]
+B --> C["Intent<br/>Extraction"]
 
-B --> C[Query Embedding]
+C --> D["Filtering"]
+C --> E["Embedding<br/>Model"]
 
-C --> D[Cosine Similarity]
+E --> F["Query<br/>Embedding"]
+D --> G[("Vector Database<br/>Book Embeddings")]
 
-E[(Vector Database<br/>Book Embeddings)] --> D
+F --> H["Cosine<br/>Similarity"]
+G --> H
 
-D --> F[Top-k Candidate Books]
+H --> I["Top-k Candidate<br/>Books"]
 
-F --> G[LLM]
+I --> J["LLM"]
+A --> J
 
-A --> G
-
-G --> H[Ranked Recommendations]
+J --> K["Ranked<br/>Recommendations"]
 ```
 
 **Note:** Since the current catalog contains only 20 books, Lunaria sends the user query and the full catalog directly to the LLM instead of using RAG. This avoids unnecessary retrieval overhead at the current scale. See Recommendation Method Evaluation for further discussion.
