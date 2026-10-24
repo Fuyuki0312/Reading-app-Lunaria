@@ -207,13 +207,54 @@ This design keeps simple recommendation requests lightweight while using the LLM
 
 ## 3. Intent Extraction Evaluation
 
+Before retrieval, Lunaria analyzes the user's free-text description to identify information that can be used by the RAG pipeline. Regex first searches for known author names and book titles in the description. Because this matching is based on the names stored in Lunaria's database, misspelled names may not be detected.
+
+The matched entities, the original user description, and the list of known genres are then passed to **Qwen3.5:9B**. The model classifies the intent of each matched entity, such as whether an author is preferred, excluded, or mentioned neutrally, and extracts genres that the user explicitly does not want. Excluded authors and genres are then used to filter books before semantic retrieval.
+
 ### 3.1. Benchmark Setup
+
+The intent extraction benchmark is separate from the dataset used in the Recommendation Method Evaluation. It contains **100 simulated users**, divided equally into five categories with 20 users each:
+
+- **Vague:** descriptions without clear entities or genre exclusions.
+- **Disliked genre:** descriptions containing genres that should be excluded, including negation and changes in preference.
+- **Author:** descriptions mentioning authors with different intents, such as prefer, exclude, or neutral.
+- **Books:** descriptions mentioning book titles with intents such as reference, exclude, or neutral.
+- **Mixed:** descriptions combining authors, books, and genre exclusions.
+
+Some descriptions also mention genre names that do not exist in Lunaria's current catalog. These act as distractors and help test whether the extraction pipeline incorrectly treats unrelated genre names as valid exclusions. Only genres that exist in Lunaria's catalog are kept before retrieval, so an unknown genre itself cannot remove books from the candidate set. However, incorrectly excluding a valid genre can still remove relevant books.
+
+The evaluation uses four metrics: **Exact Match Accuracy**, **Excluded Genre Precision**, **Excluded Genre Recall**, and **Entity Intent Accuracy**.
 
 ### 3.2. Overall Results
 
+| Metric                   |      Score |
+|--------------------------|-----------:|
+| Exact Match Accuracy     | **0.9200** |
+| Excluded Genre Precision | **0.9595** |
+| Excluded Genre Recall    | **1.0000** |
+| Entity Intent Accuracy   | **0.9333** |
+
+The extractor produced a completely correct structured output for 92% of the evaluated users. Genre exclusion recall reached 1.0000, meaning that all labeled disliked genres were successfully identified in the evaluated cases. Genre precision and entity intent accuracy were also high, although some incorrect extractions still occurred.
+
 ### 3.3. Results by User Type
 
+| User Type      | Exact Match Accuracy | Excluded Genre Precision | Excluded Genre Recall | Entity Intent Accuracy |
+|----------------|---------------------:|-------------------------:|----------------------:|-----------------------:|
+| Vague          |           **1.0000** |                        — |                     — |                      — |
+| Disliked genre |               0.8500 |                   0.9250 |            **1.0000** |                      — |
+| Author         |               0.9000 |                        — |                     — |                 0.9500 |
+| Books          |               0.8500 |                        — |                     — |                 0.8500 |
+| Mixed          |           **1.0000** |               **1.0000** |            **1.0000** |             **1.0000** |
+
+The extractor handled vague and mixed users especially well, achieving perfect exact-match accuracy for both groups. Author intent classification also performed strongly at 0.9500. The book group had the lowest entity intent accuracy at 0.8500, while the disliked-genre group achieved perfect recall but slightly lower precision, indicating that some extra genre exclusions were produced.
+
+Metrics marked with **—** are not applicable to that user type. For example, genre precision and recall are not calculated when a user has no genre exclusions to evaluate.
+
 ### 3.4. Interpretation
+
+The results suggest that the current **Qwen3.5:9B** intent extraction pipeline performs well across all five user types in this benchmark. In particular, it successfully identified all labeled disliked genres and handled combinations of authors, books, and genre exclusions well.
+
+However, the benchmark does not test misspelled author or book names. Because entity matching currently relies on Regex against names stored in the database, a misspelled name may not be detected and therefore would never reach Qwen for intent classification. The current evaluation therefore does not demonstrate how well the full intent extraction pipeline handles spelling errors.
 
 
 ## 4. Limitations and Future Work
