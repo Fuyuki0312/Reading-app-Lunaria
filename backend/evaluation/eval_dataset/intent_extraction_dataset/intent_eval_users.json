@@ -101,7 +101,7 @@
   },
   {
     "id": 21,
-    "description": "I dislike mystery",
+    "description": "I dislike mystery and tragedy",
     "type": "disliked_genre"
   },
   {
@@ -111,22 +111,22 @@
   },
   {
     "id": 23,
-    "description": "I am not in the mood for comedy or romcom. Science fiction is okay",
+    "description": "I am not in the mood for comedy or romcom or horror. Science fiction is okay",
     "type": "disliked_genre"
   },
   {
     "id": 24,
-    "description": "I used to hate Romance, but now I enjoy it. I still cannot stand Psychological Thriller.",
+    "description": "I used to hate Romance and Detective, but now I enjoy it. I still cannot stand Psychological Thriller.",
     "type": "disliked_genre"
   },
   {
     "id": 25,
-    "description": "I don't dislike historical fiction; I just don't want drama",
+    "description": "I don't dislike historical fiction; I just don't want drama or tragedy",
     "type": "disliked_genre"
   },
   {
     "id": 26,
-    "description": "Please avoid Mystery.",
+    "description": "Please avoid Mystery and Supernatural.",
     "type": "disliked_genre"
   },
   {
@@ -136,7 +136,7 @@
   },
   {
     "id": 28,
-    "description": "No isekai, please; fantasy is still welcome.",
+    "description": "No isekai, please; fantasy and detective are still welcome.",
     "type": "disliked_genre"
   },
   {
@@ -146,7 +146,7 @@
   },
   {
     "id": 30,
-    "description": "Historical fiction used to bore me, but now I like it. I still avoid dark Fantasy.",
+    "description": "Historical fiction used to bore me, but now I like it. I still avoid dark Fantasy and steampunk.",
     "type": "disliked_genre"
   },
   {
@@ -161,7 +161,7 @@
   },
   {
     "id": 33,
-    "description": "I disliked science fiction years ago, but I'm enjoying it lately. Skip non-fiction instead.",
+    "description": "I disliked science fiction and biography years ago, but I'm enjoying it lately. Skip non-fiction instead.",
     "type": "disliked_genre"
   },
   {
@@ -176,7 +176,7 @@
   },
   {
     "id": 36,
-    "description": "Don't exclude mystery; exclude historical Fiction.",
+    "description": "Don't exclude mystery; exclude historical Fiction and Biography.",
     "type": "disliked_genre"
   },
   {
@@ -191,12 +191,12 @@
   },
   {
     "id": 39,
-    "description": "I hated Adventure as a kid, but now I enjoy it. I still won't read isekai.",
+    "description": "I hated Adventure and Crime as a kid, but now I enjoy them. I still won't read isekai.",
     "type": "disliked_genre"
   },
   {
     "id": 40,
-    "description": "I don't mind Romance, and Comedy is welcome. What I really refuse is drama.",
+    "description": "I don't mind Romance, and Comedy is welcome. What I really refuse is drama and memoir.",
     "type": "disliked_genre"
   },
   {
@@ -416,17 +416,17 @@
   },
   {
     "id": 84,
-    "description": "I used to avoid Science Fiction, but now I enjoy it. I do not want books by Lucien Vale, and I still dislike Drama.",
+    "description": "I used to avoid Science Fiction, but now I enjoy it. I do not want books by Lucien Vale, and I still dislike Drama and Thriller.",
     "type": "mixed"
   },
   {
     "id": 85,
-    "description": "I want books like The City the Maps Forgot, and I prefer Rowan Vale. Please skip comedy",
+    "description": "I want books like The City the Maps Forgot, and I prefer Rowan Vale. Please skip comedy and poetry",
     "type": "mixed"
   },
   {
     "id": 86,
-    "description": "I prefer Iris Vale, but please avoid comedy",
+    "description": "I prefer Iris Vale, but please avoid comedy and horror",
     "type": "mixed"
   },
   {
@@ -451,7 +451,7 @@
   },
   {
     "id": 91,
-    "description": "I love books by Eleanor Vane. Please avoid historical fiction, though",
+    "description": "I love books by Eleanor Vane. Please avoid historical fiction and biography, though",
     "type": "mixed"
   },
   {

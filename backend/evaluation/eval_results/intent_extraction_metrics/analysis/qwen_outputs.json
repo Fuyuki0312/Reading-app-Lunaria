@@ -202,12 +202,13 @@
     {
         "user_id": 21,
         "type": "disliked_genre",
-        "description": "I dislike mystery",
+        "description": "I dislike mystery and tragedy",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
             "excluded_genres": [
-                "Mystery"
+                "Mystery",
+                "Drama"
             ]
         }
     },
@@ -227,7 +228,7 @@
     {
         "user_id": 23,
         "type": "disliked_genre",
-        "description": "I am not in the mood for comedy or romcom. Science fiction is okay",
+        "description": "I am not in the mood for comedy or romcom or horror. Science fiction is okay",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -240,7 +241,7 @@
     {
         "user_id": 24,
         "type": "disliked_genre",
-        "description": "I used to hate Romance, but now I enjoy it. I still cannot stand Psychological Thriller.",
+        "description": "I used to hate Romance and Detective, but now I enjoy it. I still cannot stand Psychological Thriller.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -252,7 +253,7 @@
     {
         "user_id": 25,
         "type": "disliked_genre",
-        "description": "I don't dislike historical fiction; I just don't want drama",
+        "description": "I don't dislike historical fiction; I just don't want drama or tragedy",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -264,7 +265,7 @@
     {
         "user_id": 26,
         "type": "disliked_genre",
-        "description": "Please avoid Mystery.",
+        "description": "Please avoid Mystery and Supernatural.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -289,7 +290,7 @@
     {
         "user_id": 28,
         "type": "disliked_genre",
-        "description": "No isekai, please; fantasy is still welcome.",
+        "description": "No isekai, please; fantasy and detective are still welcome.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -313,12 +314,13 @@
     {
         "user_id": 30,
         "type": "disliked_genre",
-        "description": "Historical fiction used to bore me, but now I like it. I still avoid dark Fantasy.",
+        "description": "Historical fiction used to bore me, but now I like it. I still avoid dark Fantasy and steampunk.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
             "excluded_genres": [
-                "Dark Fantasy"
+                "Dark Fantasy",
+                "Fantasy"
             ]
         }
     },
@@ -350,7 +352,7 @@
     {
         "user_id": 33,
         "type": "disliked_genre",
-        "description": "I disliked science fiction years ago, but I'm enjoying it lately. Skip non-fiction instead.",
+        "description": "I disliked science fiction and biography years ago, but I'm enjoying it lately. Skip non-fiction instead.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -386,7 +388,7 @@
     {
         "user_id": 36,
         "type": "disliked_genre",
-        "description": "Don't exclude mystery; exclude historical Fiction.",
+        "description": "Don't exclude mystery; exclude historical Fiction and Biography.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -404,8 +406,8 @@
             "entities": [],
             "excluded_genres": [
                 "Non-fiction",
-                "Romcom",
-                "Self-help"
+                "Self-help",
+                "Romcom"
             ]
         }
     },
@@ -424,7 +426,7 @@
     {
         "user_id": 39,
         "type": "disliked_genre",
-        "description": "I hated Adventure as a kid, but now I enjoy it. I still won't read isekai.",
+        "description": "I hated Adventure and Crime as a kid, but now I enjoy them. I still won't read isekai.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
@@ -436,12 +438,13 @@
     {
         "user_id": 40,
         "type": "disliked_genre",
-        "description": "I don't mind Romance, and Comedy is welcome. What I really refuse is drama.",
+        "description": "I don't mind Romance, and Comedy is welcome. What I really refuse is drama and memoir.",
         "matched_entities": [],
         "qwen_output": {
             "entities": [],
             "excluded_genres": [
-                "Drama"
+                "Drama",
+                "Non-fiction"
             ]
         }
     },
@@ -520,7 +523,7 @@
                     "name": "Nora Vale",
                     "start": 16,
                     "end": 25,
-                    "intent": "neutral"
+                    "intent": "exclude"
                 },
                 {
                     "type": "author",
@@ -981,7 +984,7 @@
                     "name": "Lucien Vale",
                     "start": 38,
                     "end": 49,
-                    "intent": "exclude"
+                    "intent": "neutral"
                 }
             ],
             "excluded_genres": []
@@ -1271,7 +1274,7 @@
                     "name": "When the Winter Garden Blooms",
                     "start": 33,
                     "end": 62,
-                    "intent": "reference"
+                    "intent": "neutral"
                 }
             ],
             "excluded_genres": []
@@ -1296,7 +1299,7 @@
                     "name": "Make Tomorrow Easier",
                     "start": 12,
                     "end": 32,
-                    "intent": "reference"
+                    "intent": "prefer"
                 }
             ],
             "excluded_genres": []
@@ -1764,7 +1767,7 @@
     {
         "user_id": 84,
         "type": "mixed",
-        "description": "I used to avoid Science Fiction, but now I enjoy it. I do not want books by Lucien Vale, and I still dislike Drama.",
+        "description": "I used to avoid Science Fiction, but now I enjoy it. I do not want books by Lucien Vale, and I still dislike Drama and Thriller.",
         "matched_entities": [
             {
                 "type": "author",
@@ -1791,7 +1794,7 @@
     {
         "user_id": 85,
         "type": "mixed",
-        "description": "I want books like The City the Maps Forgot, and I prefer Rowan Vale. Please skip comedy",
+        "description": "I want books like The City the Maps Forgot, and I prefer Rowan Vale. Please skip comedy and poetry",
         "matched_entities": [
             {
                 "type": "book",
@@ -1831,7 +1834,7 @@
     {
         "user_id": 86,
         "type": "mixed",
-        "description": "I prefer Iris Vale, but please avoid comedy",
+        "description": "I prefer Iris Vale, but please avoid comedy and horror",
         "matched_entities": [
             {
                 "type": "author",
@@ -1988,7 +1991,7 @@
     {
         "user_id": 91,
         "type": "mixed",
-        "description": "I love books by Eleanor Vane. Please avoid historical fiction, though",
+        "description": "I love books by Eleanor Vane. Please avoid historical fiction and biography, though",
         "matched_entities": [
             {
                 "type": "author",
@@ -2152,7 +2155,9 @@
                     "intent": "exclude"
                 }
             ],
-            "excluded_genres": []
+            "excluded_genres": [
+                "Comedy"
+            ]
         }
     },
     {

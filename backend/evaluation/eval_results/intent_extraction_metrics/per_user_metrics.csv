@@ -19,7 +19,7 @@ user_id,type,exact_match_accuracy,excluded_genre_precision,excluded_genre_recall
 18,vague,1.0,,,
 19,vague,1.0,,,
 20,vague,1.0,,,
-21,disliked_genre,1.0,1.0,1.0,
+21,disliked_genre,0.0,0.5,1.0,
 22,disliked_genre,1.0,1.0,1.0,
 23,disliked_genre,1.0,1.0,1.0,
 24,disliked_genre,1.0,1.0,1.0,
@@ -28,7 +28,7 @@ user_id,type,exact_match_accuracy,excluded_genre_precision,excluded_genre_recall
 27,disliked_genre,1.0,1.0,1.0,
 28,disliked_genre,1.0,1.0,1.0,
 29,disliked_genre,1.0,1.0,1.0,
-30,disliked_genre,1.0,1.0,1.0,
+30,disliked_genre,0.0,0.5,1.0,
 31,disliked_genre,1.0,1.0,1.0,
 32,disliked_genre,1.0,1.0,1.0,
 33,disliked_genre,1.0,1.0,1.0,
@@ -38,10 +38,10 @@ user_id,type,exact_match_accuracy,excluded_genre_precision,excluded_genre_recall
 37,disliked_genre,1.0,1.0,1.0,
 38,disliked_genre,1.0,1.0,1.0,
 39,disliked_genre,1.0,1.0,1.0,
-40,disliked_genre,1.0,1.0,1.0,
+40,disliked_genre,0.0,0.5,1.0,
 41,author,1.0,,,1.0
 42,author,1.0,,,1.0
-43,author,1.0,,,1.0
+43,author,0.0,,,0.5
 44,author,1.0,,,1.0
 45,author,1.0,,,1.0
 46,author,1.0,,,1.0
@@ -55,7 +55,7 @@ user_id,type,exact_match_accuracy,excluded_genre_precision,excluded_genre_recall
 54,author,1.0,,,1.0
 55,author,1.0,,,1.0
 56,author,1.0,,,1.0
-57,author,1.0,,,1.0
+57,author,0.0,,,0.5
 58,author,1.0,,,1.0
 59,author,1.0,,,1.0
 60,author,1.0,,,1.0
@@ -64,8 +64,8 @@ user_id,type,exact_match_accuracy,excluded_genre_precision,excluded_genre_recall
 63,books,1.0,,,1.0
 64,books,1.0,,,1.0
 65,books,1.0,,,1.0
-66,books,1.0,,,1.0
-67,books,1.0,,,1.0
+66,books,0.0,,,0.0
+67,books,0.0,,,0.0
 68,books,1.0,,,1.0
 69,books,1.0,,,1.0
 70,books,1.0,,,1.0
@@ -93,7 +93,7 @@ user_id,type,exact_match_accuracy,excluded_genre_precision,excluded_genre_recall
 92,mixed,1.0,,,1.0
 93,mixed,1.0,1.0,1.0,1.0
 94,mixed,1.0,1.0,1.0,1.0
-95,mixed,0.0,,0.0,1.0
+95,mixed,1.0,1.0,1.0,1.0
 96,mixed,1.0,1.0,1.0,1.0
 97,mixed,1.0,1.0,1.0,1.0
 98,mixed,1.0,1.0,1.0,1.0

@@ -1,2 +1,2 @@
 exact_match_accuracy,excluded_genre_precision,excluded_genre_recall,entity_intent_accuracy
-0.98,1.0,0.973,0.9833
+0.92,0.9595,1.0,0.9333
