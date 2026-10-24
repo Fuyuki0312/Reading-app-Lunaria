@@ -16,7 +16,7 @@ from pathlib import Path
 # Priority bias and model name
 # ⚠️: Look at these 2 below Hyperparameters before run this file
 
-PRIORITY_BIAS = "genre_match_priority" # "genre_match_priority" or "text_description_priority"
+PRIORITY_BIAS = "text_description_priority" # "genre_match_priority" or "text_description_priority"
 MODEL_NAME_FOR_PATH = "gpt_5_nano" # take a look at app/config.py
 
 

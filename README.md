@@ -154,23 +154,23 @@ The benchmark contains 20 simulated users divided into four categories: **simple
 
 #### 2.2.1. Free-text-priority labels
 
-| Method | Mean nDCG | Mean Normalized Precision | Mean Violation Rate | Mean Latency per User Query (s) |
-| --- | ---: | ---: | ---: | ---: |
-| LLM-only | **0.9536** | **0.9425** | **0.0000** | 21.1281 |
-| RAG + LLM | 0.9049 | 0.8583 | **0.0000** | 19.5738 |
-| Baseline | 0.8625 | 0.8825 | 0.1100 | **0.00004** |
+| Method    |  Mean nDCG | Mean Normalized Precision | Mean Violation Rate | Mean Latency per User Query (s) |
+|-----------|-----------:|--------------------------:|--------------------:|--------------------------------:|
+| LLM-only  | **0.9491** |                **0.9300** |          **0.0000** |                         18.3350 |
+| RAG + LLM |     0.9062 |                    0.8833 |          **0.0000** |                         18.2837 |
+| Baseline  |     0.8509 |                    0.8425 |              0.1100 |                     **0.00002** |
 
 The LLM-only method achieved the strongest overall ranking performance, with the highest mean nDCG and normalized precision. RAG + LLM also achieved a higher nDCG than the baseline and avoided all labeled constraint violations, while being slightly faster than LLM-only. The baseline was by far the fastest method, but it produced more unwanted recommendations because it could not fully use negative preferences expressed in free text.
 
 #### 2.2.2. Genre-priority labels
 
-| Method | Mean nDCG | Mean Normalized Precision | Mean Violation Rate |
-| --- | ---: | ---: | ---: |
-| LLM-only | **0.9443** | **0.9225** | **0.0000** |
-| RAG + LLM | 0.8703 | 0.8092 | **0.0000** |
-| Baseline | 0.8625 | 0.8825 | 0.1100 |
+| Method    |  Mean nDCG | Mean Normalized Precision | Mean Violation Rate | Mean Latency per User Query (s) |
+|-----------|-----------:|--------------------------:|--------------------:|--------------------------------:|
+| LLM-only  | **0.9536** |                **0.9425** |          **0.0000** |                         21.1281 |
+| RAG + LLM |     0.9049 |                    0.8583 |          **0.0000** |                         19.5738 |
+| Baseline  |     0.8625 |                    0.8825 |              0.1100 |                     **0.00004** |
 
-Changing the labeling policy affected the scores as expected: the baseline improved when genre matching received more importance, while the LLM-based approaches decreased slightly. However, the overall result remained similar, with the LLM-only method achieving the strongest ranking performance across both labeling policies.
+Changing the labeling policy did not affect the scores significantly.
 
 ### 2.3. Results by User Type
 
