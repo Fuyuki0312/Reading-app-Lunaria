@@ -5,13 +5,14 @@
 # TODO depth:
 #  - Explore more LLM options
 #  - Test Lunaria with a large number of users
-#  - Help RAG handle users writting explicit names (author, book titles) in free-text description
+#  - (DONE) Help RAG handle users writting explicit names (author, book titles) in free-text description
 #  - (Optional) expand eval dataset or database
 #  LEGENDARY QUEST ✨: Continual Learning
 
 # TODO breadth:
 #  - (DONE) Enable users to actually read books
 #  - Hash users' password
+#  - Upload Lunaria to Cloud
 #  - Style: Decorate app with Lunaria style
 #  - Use something to do Semantic Search
 #  - Add settings: enable users to configure font size, background color (maybe I need something to store user's settings)

@@ -1,6 +1,3 @@
-# Problems:
-# - This module needs evaluation.
-
 import json
 
 import torch
