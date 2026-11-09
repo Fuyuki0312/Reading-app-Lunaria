@@ -33,7 +33,7 @@ def get_book_brief_info():
 
 
 @router.post("/recommend-books")
-def recommend(username: Username):
+async def recommend(username: Username):
 
     genre_preferences = user_services.get_genre_preferences_from_username(
         username=username.username
@@ -56,7 +56,7 @@ def recommend(username: Username):
         # if there are more than a certain number of books in database, RAG comes in
         if book_services.get_the_number_of_books_in_database() >= config.NUM_OF_BOOKS_THRESHOLD_TO_TRIGGER_RAG:
 
-            json_book_id_list = recommend_books_with_rag(
+            json_book_id_list = await recommend_books_with_rag(
                 user_genre_preference=genre_preferences,
                 user_preference_description=preference_description
             )
@@ -65,7 +65,7 @@ def recommend(username: Username):
         # Otherwise, give LLM all books in database without any retriever (LLM-only recommendation)
         else:
 
-            json_book_id_list = recommend_books_with_llm(
+            json_book_id_list = await recommend_books_with_llm(
                 user_genre_preference=genre_preferences,
                 user_preference_description=preference_description,
                 books=book_services.get_books_with_genres()

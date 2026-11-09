@@ -8,7 +8,7 @@ from langchain_core.messages import SystemMessage
 
 config = Config()
 
-def recommend_books_with_llm(
+async def recommend_books_with_llm(
         user_genre_preference: list[str],
         user_preference_description: str,
         books: list[dict]
@@ -31,7 +31,7 @@ def recommend_books_with_llm(
 
     chain = prompt | model
 
-    llm_response = chain.invoke({
+    llm_response = await chain.ainvoke({
         "user_genre_preference": user_genre_preference,
         "user_preference_description": user_preference_description
     })

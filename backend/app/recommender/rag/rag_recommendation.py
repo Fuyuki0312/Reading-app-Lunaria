@@ -8,7 +8,7 @@ from app.services.book_services import get_book_services
 
 book_services = get_book_services()
 
-def recommend_books_with_rag(
+async def recommend_books_with_rag(
         user_genre_preference: list[str],
         user_preference_description: str
 ) -> list[RecommendationForm]:
@@ -22,7 +22,7 @@ def recommend_books_with_rag(
     """
 
 
-    intents = extract_intents(
+    intents = await extract_intents(
         user_description=user_preference_description,
         entities=match_entities(user_preference_description)
     )
@@ -60,7 +60,7 @@ def recommend_books_with_rag(
         retrieved_books
     )
 
-    recommended_books = recommend_books_with_llm(
+    recommended_books = await recommend_books_with_llm(
         user_genre_preference=user_genre_preference,
         user_preference_description=user_preference_description,
         books=books_for_llm

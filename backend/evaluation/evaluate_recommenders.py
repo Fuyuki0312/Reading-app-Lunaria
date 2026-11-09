@@ -9,6 +9,7 @@ import torch
 import json
 import pandas as pd
 import time
+import asyncio
 
 from pathlib import Path
 
@@ -120,7 +121,7 @@ eval_results: list[dict[str, float]] = [
 all_recommendations_from_llm = []
 all_recommendations_from_rag = []
 
-def main():
+async def main():
 
     for user in eval_users:
 
@@ -168,7 +169,7 @@ def main():
         # Get recommendations from LLM
 
         start_time = time.perf_counter()
-        llm_recommeded_books = recommend_books_with_llm(
+        llm_recommeded_books = await recommend_books_with_llm(
             user_genre_preference=user["genre_preferences"],
             user_preference_description=user["genre_description"],
             books=book_services.get_books_with_genres()
@@ -203,7 +204,7 @@ def main():
         # Get recommendations from RAG
 
         start_time = time.perf_counter()
-        rag_recommeded_books = recommend_books_with_rag(
+        rag_recommeded_books = await recommend_books_with_rag(
             user_genre_preference=user["genre_preferences"],
             user_preference_description=user["genre_description"]
         )
@@ -379,4 +380,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

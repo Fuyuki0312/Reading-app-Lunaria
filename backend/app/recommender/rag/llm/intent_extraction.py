@@ -23,13 +23,13 @@ model = ChatOllama(
 config = Config()
 torch.manual_seed(config.TORCH_SEED)
 
-def extract_intents(
+async def extract_intents(
     user_description: str,
     entities: list[dict]
 ) -> dict[str, list]:
 
 
-    response = model.invoke([
+    response = await model.ainvoke([
         SystemMessage(content=config.get_prompt_for_llm_in_intent_extraction()),
 
         HumanMessage(content=json.dumps({
