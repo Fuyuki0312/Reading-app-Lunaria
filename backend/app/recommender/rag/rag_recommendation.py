@@ -61,11 +61,10 @@ async def recommend_books_with_rag(
 
     retrieved_books = await asyncio.to_thread(
         retrieve_books,
-        user_genre_preference,
-        user_preference_description,
-        Config().NUM_OF_BOOKS_RETURNED_FROM_RAG,
-        excluded_authors,
-        excluded_genres
+        preferred_genres=user_genre_preference,
+        user_description=user_preference_description,
+        excluded_genres=excluded_genres,
+        excluded_authors=excluded_authors
     )
 
     books_for_llm = book_services.index_books_with_id_list(
