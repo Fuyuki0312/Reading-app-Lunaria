@@ -42,6 +42,7 @@ async def recommend_books_with_rag(
     excluded_genres = None
     excluded_authors = []
 
+    # review intents and print WARNINGS (if any)
     if intents:
 
         for entity in intents["entities"]:
@@ -73,10 +74,14 @@ async def recommend_books_with_rag(
         retrieved_books
     )
 
+    step_start = perf_counter()
     recommended_books = await recommend_books_with_llm(
         user_genre_preference=user_genre_preference,
         user_preference_description=user_preference_description,
         books=books_for_llm
     )
+    
+    if timings is not None:
+        timings["llm_rerank_s"] = perf_counter() - step_start
 
     return recommended_books
