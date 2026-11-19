@@ -15,11 +15,16 @@ def retrieve_books(
     timings: dict[str, float] | None = None
 ) -> list[dict]:
 
+    step_start = perf_counter()
+
     # Embed query
     query_embedding = embed_query(
         preferred_genres,
         user_description
     )
+
+    if timings is not None:
+        timings["embedding_s"] = perf_counter() - step_start
 
     # Filter
     conditions = []

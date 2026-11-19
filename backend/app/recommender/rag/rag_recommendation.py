@@ -28,6 +28,8 @@ async def recommend_books_with_rag(
     pipeline_start = perf_counter() # for measuring latency
 
     step_start = perf_counter()
+
+    # Extract intents
     intents = await extract_intents(
         user_description=user_preference_description,
         entities=match_entities(user_preference_description)
