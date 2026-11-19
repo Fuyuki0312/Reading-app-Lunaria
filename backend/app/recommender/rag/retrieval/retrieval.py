@@ -48,7 +48,8 @@ def retrieve_books(
         where_filter = {"$and": conditions} # A book must satisfy all conditions, so "$and" should be used here
 
 
-    # Search based on cosine similarity
+    step_start = perf_counter()
+    # Search based on cosine similarity and constraints
     results = collection.query(
         query_embeddings=[
             query_embedding.tolist()
@@ -56,6 +57,9 @@ def retrieve_books(
         n_results=min(top_k, collection.count()),
         where=where_filter
     )
+
+    if timings is not None:
+        timings["chroma_query_s"] = perf_counter() - step_start
 
     retrieved_books = []
 
