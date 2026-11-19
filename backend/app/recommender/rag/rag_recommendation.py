@@ -80,8 +80,9 @@ async def recommend_books_with_rag(
         user_preference_description=user_preference_description,
         books=books_for_llm
     )
-    
+
     if timings is not None:
         timings["llm_rerank_s"] = perf_counter() - step_start
+        timings["pipeline_total_s"] = perf_counter() - pipeline_start
 
     return recommended_books
