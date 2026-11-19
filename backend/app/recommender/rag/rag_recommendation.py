@@ -1,6 +1,5 @@
 import asyncio
 
-from app.config import Config
 from app.model.llm_response import RecommendationForm
 from app.recommender.rag.llm.llm_recommendation import recommend_books_with_llm
 from app.recommender.rag.llm.intent_extraction import extract_intents
@@ -64,7 +63,8 @@ async def recommend_books_with_rag(
         preferred_genres=user_genre_preference,
         user_description=user_preference_description,
         excluded_genres=excluded_genres,
-        excluded_authors=excluded_authors
+        excluded_authors=excluded_authors,
+        timings=timings
     )
 
     books_for_llm = book_services.index_books_with_id_list(

@@ -1,7 +1,7 @@
 from app.recommender.rag.embedding.model import embed_query
 from app.recommender.rag.vector_store.chroma import get_chroma_collection
 from app.config import Config
-
+from time import perf_counter
 
 collection = get_chroma_collection()
 
@@ -11,7 +11,8 @@ def retrieve_books(
     user_description: str,
     top_k: int = Config().NUM_OF_BOOKS_RETURNED_FROM_RAG,
     excluded_authors: list[str] | None = None,
-    excluded_genres: list[str] | None = None
+    excluded_genres: list[str] | None = None,
+    timings: dict[str, float] | None = None
 ) -> list[dict]:
 
     # Embed query
