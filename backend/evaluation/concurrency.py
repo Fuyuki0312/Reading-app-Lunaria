@@ -1,8 +1,10 @@
 from time import perf_counter
 import json
 import asyncio
+from pprint import pprint
 from pathlib import Path
 
+from app.config import Config
 from app.recommender.rag import recommend_books_with_rag
 
 
@@ -38,11 +40,24 @@ async def main():
     with open(dataset_path, "r", encoding="utf-8") as file:
         users = json.load(file)
 
-    user = users[0] # TEST
+    selected_users = users[:3]
 
-    result = await benchmark_one_user(user)
+    batch_start = perf_counter()
 
-    print(result)
+    results = await asyncio.gather(
+        *[
+            benchmark_one_user(user)
+            for user in selected_users
+        ]
+    )
+
+    batch_total_s = round(perf_counter() - batch_start,
+                          Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
+
+    for result in results:
+        pprint(result)
+
+    print(f"Batch total: {batch_total_s}s")
 
 
 if __name__ == "__main__":

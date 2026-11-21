@@ -27,6 +27,7 @@ class Config:
         # Evaluation
         self.RELEVANCE_THRESHOLD = 2 # if a book's relevance score is higher than this value, the book will be seen as relevant to be recommended to the related user
         self.NUM_DIGITS_ROUNDED_FOR_METRICS = 4
+        self.NUM_DIGITS_ROUNDED_FOR_TIMINGS = 3
 
 
     def get_system_prompt_for_model(

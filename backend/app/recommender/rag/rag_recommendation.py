@@ -1,5 +1,6 @@
 import asyncio
 
+from app.config import Config
 from app.model.llm_response import RecommendationForm
 from app.recommender.rag.llm.llm_recommendation import recommend_books_with_llm
 from app.recommender.rag.llm.intent_extraction import extract_intents
@@ -36,7 +37,8 @@ async def recommend_books_with_rag(
     )
 
     if timings is not None:
-        timings["intent_extraction_s"] = perf_counter() - step_start
+        timings["intent_extraction_s"] = round(perf_counter() - step_start,
+                                               Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
 
 
     excluded_genres = None
@@ -82,7 +84,9 @@ async def recommend_books_with_rag(
     )
 
     if timings is not None:
-        timings["llm_rerank_s"] = perf_counter() - step_start
-        timings["pipeline_total_s"] = perf_counter() - pipeline_start
+        timings["llm_rerank_s"] = round(perf_counter() - step_start,
+                                        Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
+        timings["pipeline_total_s"] = round(perf_counter() - pipeline_start,
+                                            Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
 
     return recommended_books

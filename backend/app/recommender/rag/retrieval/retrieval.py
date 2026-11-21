@@ -24,7 +24,8 @@ def retrieve_books(
     )
 
     if timings is not None:
-        timings["embedding_s"] = perf_counter() - step_start
+        timings["embedding_s"] = round(perf_counter() - step_start,
+                                       Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
 
     # Filter
     conditions = []
@@ -59,7 +60,8 @@ def retrieve_books(
     )
 
     if timings is not None:
-        timings["chroma_query_s"] = perf_counter() - step_start
+        timings["chroma_query_s"] = round(perf_counter() - step_start,
+                                          Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
 
     retrieved_books = []
 
