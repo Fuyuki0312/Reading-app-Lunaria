@@ -58,13 +58,19 @@ async def benchmark_one_user(user: dict) -> dict:
 
     start = perf_counter()
 
-    await recommend_books_with_rag(
-        user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
-        user_preference_description=user["description"],
-        timings=timings
-    )
+    try:
+        await recommend_books_with_rag(
+            user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
+            user_preference_description=user["description"],
+            timings=timings
+        )
 
-    timings["user_total_s"] = perf_counter() - start
+    except Exception as exc:
+        print(f"WARNING: user {user['id']} catched an error during concurrency evaluation.")
+        print(f"{type(exc).__name__}: {exc}")
+
+    finally:
+        timings["user_total_s"] = perf_counter() - start
 
     return {
         "user_id": user["id"],
