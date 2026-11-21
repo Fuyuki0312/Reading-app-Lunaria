@@ -42,6 +42,9 @@ async def main():
 
     selected_users = users[:3]
 
+    await benchmark_one_user(selected_users[0]) # Warming up recommendation pipeline
+
+
     batch_start = perf_counter()
 
     results = await asyncio.gather(
@@ -54,6 +57,7 @@ async def main():
     batch_total_s = round(perf_counter() - batch_start,
                           Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
 
+    # print out results
     for result in results:
         pprint(result)
 
