@@ -40,12 +40,12 @@ async def main():
     with open(dataset_path, "r", encoding="utf-8") as file:
         users = json.load(file)
 
-    selected_users = users[:3]
+    selected_users = users[:10]
 
     # Warming up recommendation pipeline
     print("Warming up models...")
-    await benchmark_one_user(selected_users[0])
-    print("Warm-up completed!")
+    await benchmark_one_user(users[0])
+    print("Warm-up completed!\n")
 
 
     batch_start = perf_counter()
@@ -60,11 +60,23 @@ async def main():
     batch_total_s = round(perf_counter() - batch_start,
                           Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
 
-    # print out results
+    # Calculate mean latency for all users
+    mean_user_latency = (
+        sum(result["user_total_s"] for result in results)
+        / len(results)
+    )
+    mean_user_latency = round(
+        mean_user_latency,
+        Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS
+    )
+
+    # print out latency
     for result in results:
         pprint(result)
 
+    print()
     print(f"Batch total: {batch_total_s}s")
+    print(f"Mean user latency: {mean_user_latency:.3f}s")
 
 
 if __name__ == "__main__":
