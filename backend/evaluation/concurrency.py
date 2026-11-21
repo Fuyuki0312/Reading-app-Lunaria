@@ -15,7 +15,7 @@ async def benchmark_one_user(user: dict) -> dict:
     start = perf_counter()
 
     await recommend_books_with_rag(
-        user_genre_preference=["Fantasy"],
+        user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
         user_preference_description=user["description"],
         timings=timings
     )
@@ -42,7 +42,10 @@ async def main():
 
     selected_users = users[:3]
 
-    await benchmark_one_user(selected_users[0]) # Warming up recommendation pipeline
+    # Warming up recommendation pipeline
+    print("Warming up models...")
+    await benchmark_one_user(selected_users[0])
+    print("Warm-up completed!")
 
 
     batch_start = perf_counter()
