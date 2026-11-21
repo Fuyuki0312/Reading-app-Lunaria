@@ -36,10 +36,23 @@ def save_results(
     )
 
     # Calculate overall metrics
-    successful_df = df[df["status"] == "success"]
+    metric_columns = [
+        "intent_extraction_s",
+        "embedding_s",
+        "chroma_query_s",
+        "llm_rerank_s",
+        "pipeline_total_s"
+    ]
+
+    successful_df = (
+        df[df["status"] == "success"]
+        .reindex(columns=metric_columns)
+    )
 
     summary = {
         "num_users": len(results),
+        "num_successful": len(successful_df),
+        "num_failed": len(results) - len(successful_df),
         "batch_total_s": batch_total_s,
         "mean_user_latency_s": mean_user_latency,
         "mean_intent_extraction_s": successful_df["intent_extraction_s"].mean(),
