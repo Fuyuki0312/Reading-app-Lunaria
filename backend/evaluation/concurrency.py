@@ -58,6 +58,7 @@ async def benchmark_one_user(user: dict) -> dict:
 
     start = perf_counter()
 
+    error = None
     try:
         await recommend_books_with_rag(
             user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
@@ -66,8 +67,8 @@ async def benchmark_one_user(user: dict) -> dict:
         )
 
     except Exception as exc:
+        error = f"{type(exc).__name__}: {exc}"
         print(f"WARNING: user {user['id']} catched an error during concurrency evaluation.")
-        print(f"{type(exc).__name__}: {exc}")
 
     finally:
         timings["user_total_s"] = perf_counter() - start
@@ -75,6 +76,8 @@ async def benchmark_one_user(user: dict) -> dict:
     return {
         "user_id": user["id"],
         "type": user["type"],
+        "status": "success" if error is None else "failed",
+        "error": error,
         **timings
     }
 
@@ -90,12 +93,17 @@ async def main():
     with open(dataset_path, "r", encoding="utf-8") as file:
         users = json.load(file)
 
-    selected_users = users[:10]
 
     # Warming up recommendation pipeline
     print("Warming up models...")
-    await benchmark_one_user(users[0])
-    print("Warm-up completed!\n")
+    warmup_result = await benchmark_one_user(users[0])
+
+    if warmup_result["status"] == "failed":
+        raise RuntimeError(
+            f"Warm-up failed: {warmup_result['error']}"
+        )
+    del warmup_result
+    print("Warm-up completed!")
 
 
     batch_start = perf_counter()
@@ -103,7 +111,7 @@ async def main():
     results = await asyncio.gather(
         *[
             benchmark_one_user(user)
-            for user in selected_users
+            for user in users
         ]
     )
 
