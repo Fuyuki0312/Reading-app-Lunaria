@@ -36,15 +36,17 @@ def save_results(
     )
 
     # Calculate overall metrics
+    successful_df = df[df["status"] == "success"]
+
     summary = {
         "num_users": len(results),
         "batch_total_s": batch_total_s,
         "mean_user_latency_s": mean_user_latency,
-        "mean_intent_extraction_s": df["intent_extraction_s"].mean(),
-        "mean_embedding_s": df["embedding_s"].mean(),
-        "mean_chroma_query_s": df["chroma_query_s"].mean(),
-        "mean_llm_rerank_s": df["llm_rerank_s"].mean(),
-        "mean_pipeline_total_s": df["pipeline_total_s"].mean()
+        "mean_intent_extraction_s": successful_df["intent_extraction_s"].mean(),
+        "mean_embedding_s": successful_df["embedding_s"].mean(),
+        "mean_chroma_query_s": successful_df["chroma_query_s"].mean(),
+        "mean_llm_rerank_s": successful_df["llm_rerank_s"].mean(),
+        "mean_pipeline_total_s": successful_df["pipeline_total_s"].mean()
     }
 
     pd.DataFrame([summary]).round(digits).to_csv(
@@ -119,9 +121,17 @@ async def main():
                           Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
 
     # Calculate mean latency for all users
-    mean_user_latency = (
-        sum(result["user_total_s"] for result in results)
-        / len(results)
+    successful_results = [
+        result
+        for result in results
+        if result["status"] == "success"
+    ]
+
+    mean_user_latency = ( # Calculate mean latency with only successful users
+        sum(result["user_total_s"] for result in successful_results)
+        / len(successful_results)
+        if successful_results
+        else float("nan") # If there is no successful user, return NaN
     )
     mean_user_latency = round(
         mean_user_latency,
