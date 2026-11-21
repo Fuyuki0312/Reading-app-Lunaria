@@ -7,6 +7,50 @@ from pathlib import Path
 from app.config import Config
 from app.recommender.rag import recommend_books_with_rag
 
+import pandas as pd
+
+
+RESULTS_DIR = (
+    Path(__file__).resolve().parent
+    / "eval_results"
+    / "concurrent"
+    / "gpt_5_nano"
+)
+
+
+def save_results(
+    results: list[dict],
+    batch_total_s: float,
+    mean_user_latency: float
+):
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    digits = Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS
+
+    df = pd.DataFrame(results)
+
+    # Save each user's latency
+    df.round(digits).to_csv(
+        RESULTS_DIR / "per_user_metrics.csv",
+        index=False
+    )
+
+    # Calculate overall metrics
+    summary = {
+        "num_users": len(results),
+        "batch_total_s": batch_total_s,
+        "mean_user_latency_s": mean_user_latency,
+        "mean_intent_extraction_s": df["intent_extraction_s"].mean(),
+        "mean_embedding_s": df["embedding_s"].mean(),
+        "mean_chroma_query_s": df["chroma_query_s"].mean(),
+        "mean_llm_rerank_s": df["llm_rerank_s"].mean(),
+        "mean_pipeline_total_s": df["pipeline_total_s"].mean()
+    }
+
+    pd.DataFrame([summary]).round(digits).to_csv(
+        RESULTS_DIR / "mean_metrics.csv",
+        index=False
+    )
 
 async def benchmark_one_user(user: dict) -> dict:
 
@@ -76,7 +120,15 @@ async def main():
 
     print()
     print(f"Batch total: {batch_total_s}s")
-    print(f"Mean user latency: {mean_user_latency:.3f}s")
+    print(f"Mean user latency: {mean_user_latency}s")
+
+
+    # save metrics to a csv file
+    save_results(
+        results=results,
+        batch_total_s=batch_total_s,
+        mean_user_latency=mean_user_latency
+    )
 
 
 if __name__ == "__main__":
