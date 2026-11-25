@@ -5,7 +5,7 @@ This documentation shows what problems I faced and what solutions I implemented 
 
 ### 5. High RAG Latency Under Concurrent User Requests (Nov 2026)
 
-**Problem:** When processing 100 concurrent user requests, the RAG pipeline exhibited high latency, particularly in intent extraction using Qwen3.5:9B. GPT-5 nano's reranking latency was comparatively stable across the tested concurrency levels. Besides, my RTX 4060 Laptop GPU got overheated.
+**Problem:** When processing 100 concurrent user requests, the RAG pipeline exhibited high latency, particularly in intent extraction using Qwen3.5:9B. GPT-5 nano's reranking latency was comparatively stable across the tested concurrency levels. Additionally, my RTX 4060 Laptop GPU reached temperatures of up to 87°C.
 
 **Hypothesis about the cause:**
 
@@ -14,7 +14,7 @@ This documentation shows what problems I faced and what solutions I implemented 
 **Attempted Solutions:**
 
 - Used `asyncio` to enable concurrent execution and `asyncio.to_thread()` to reduce blocking operations in the event loop.
-- Implemented an `asyncio.Semaphore` to limit the number of concurrently running RAG pipelines to 10 in order to prevent my GPU to get overheated.
+- Implemented an `asyncio.Semaphore` to limit the number of concurrently running RAG pipelines to 10 in order to prevent my GPU from getting overheated.
 
 **Results:**
 
@@ -38,8 +38,8 @@ The semaphore reduced mean intent extraction latency by approximately 95.8% and 
 **Limitations:**
 
 - Only one benchmark run was conducted for each semaphore configuration.
-- The measured intent extraction latency includes waiting time and other processing overhead, not just model inference time.
 - The benchmark directly invoked the RAG pipeline rather than sending HTTP requests to the backend API.
+
 
 ### 4. LLM Intent Extractor Frequently Returned Incomplete Entity Intents (Oct 2026)
 
@@ -68,14 +68,14 @@ The semaphore reduced mean intent extraction latency by approximately 95.8% and 
 
 ### 3. RAG Failed to Reliably Retrieve Books by Author Names or Book Titles (Sep 2026)
 
-**Problem:** Entities such as author names and book titles were not processed. With users who say they love any specific authors, RAG usually did not retrieve books of the authors.
+**Problem:** Entities such as author names and book titles were not processed. When users expressed a preference for specific authors, RAG often failed to retrieve books written by those authors.
 
 **Causes:**
-- Cosine similarity does not ensure to retrieve books with exact word matches.
+- Cosine similarity does not guarantee the retrieval of books based on exact word matches.
 
 **Solutions:**
-- Implemented intent extractor using another LLM and Regex (regular expression). While build the extractor, there was problem #4
-- Implemented an eval dataset and the intent extractor which achieved an Exact Match Accuracy of 0.98 across all type of simulated user (not including misspelled author names or misspelled titles in user description). However, this is just an evaluation for intent extraction, not necessarily its performance with real users.
+- Implemented intent extractor using another LLM and Regex (regular expression). While developing of the intent extractor, I encountered the issue described in Section 4.
+- Implemented an eval dataset and the intent extractor which achieved an Exact Match Accuracy of 0.98 across all type of simulated user (not including misspelled author names or misspelled titles in user description). However, this evaluation only measures intent extraction accuracy on simulated users and does not necessarily reflect its performance with real users.
 
 **Limitaion:** The intent extractor cannot extract intents of misspelled author names or misspelled titles.
 
@@ -97,7 +97,7 @@ The semaphore reduced mean intent extraction latency by approximately 95.8% and 
 - Detected data leakage was caused by Baseline and fixed it, but doing this alone did not help LLM-based methods win Baseline.
 - Switched to a more capable LLM, which is GPT-5 nano costing some API credits.
 
-**Result:** LLM-based methods overshadowed Baseline for most of the users, but the LLM cost some API credits.
+**Result:** LLM-based methods outperformed Baseline for most of the users, but the LLM (GPT-5 nano) costs some API credits.
 
 
 ### 1. Lunaria's Release Build Crashed on Launch (Sep 2026)
