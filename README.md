@@ -270,14 +270,12 @@ However, the benchmark does not test misspelled author or book names. Because en
 
 ### 4.1. Current Limitations
 
-- Lunaria has not been tested with many users requesting recommendations at the same time, so its performance under high load is still unknown.
 - The evaluation dataset may not fully represent real Lunaria users. Therefore, the current results cannot guarantee the same recommendation quality in a real production environment.
 - Lunaria currently uses GPT-5 nano, which requires paid API calls for recommendation requests.
 - The current user interface is functional, but its visual design is still basic.
 
 ### 4.2. Future Work
 
-- Test and improve backend performance under a large number of simultaneous requests.
 - Evaluate the recommendation system with a larger and more diverse dataset, including real users if possible.
 - Explore cheaper LLMs that can still provide good book recommendations.
 - Improve the visual design of the user interface.  
