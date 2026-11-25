@@ -3,6 +3,44 @@
 This documentation shows what problems I faced and what solutions I implemented accordingly (including successful and failed ones) during the development of Lunaria.
 
 
+### 5. High RAG Latency Under Concurrent User Requests (Nov 2026)
+
+**Problem:** When processing 100 concurrent user requests, the RAG pipeline exhibited high latency, particularly in intent extraction using Qwen3.5:9B. GPT-5 nano's reranking latency was comparatively stable across the tested concurrency levels. Besides, my RTX 4060 Laptop GPU got overheated.
+
+**Hypothesis about the cause:**
+
+- The RTX 4060 Laptop GPU had limited computational resources for locally deployed Qwen3.5:9B, compared to the cloud infrastructure serving GPT-5 nano.
+
+**Attempted Solutions:**
+
+- Used `asyncio` to enable concurrent execution and `asyncio.to_thread()` to reduce blocking operations in the event loop.
+- Implemented an `asyncio.Semaphore` to limit the number of concurrently running RAG pipelines to 10 in order to prevent my GPU to get overheated.
+
+**Results:**
+
+| Metric                             |   Without Semaphore | Semaphore (10) |
+|------------------------------------|--------------------:|---------------:|
+| Successful Requests                |             100/100 |        100/100 |
+| Batch Total Time (s)               |             148.836 |        178.945 |
+| Mean User Latency (s)              |              72.638 |         93.248 |
+| Mean Intent Extraction Latency (s) |              55.464 |          2.317 |
+| Mean LLM Reranking Latency (s)     |              17.163 |         14.863 |
+| Mean Semaphore Waiting Time (s)    |                 N/A |         76.056 |
+| GPU temperature range              |           ~70-87 °C |      ~58-76 °C |
+
+The semaphore reduced mean intent extraction latency by approximately 95.8% and resulted in a lower GPU temperature range, while increasing overall mean user latency by 28.4%. Limiting the entire RAG pipeline introduced additional waiting time and unnecessarily restricted concurrency during GPT-5 nano reranking.
+
+**Next Steps:**
+
+- Apply the semaphore specifically to intent extraction instead of the entire RAG pipeline.
+- Evaluate different concurrency limits to find a better balance between latency and resource utilization.
+
+**Limitations:**
+
+- Only one benchmark run was conducted for each semaphore configuration.
+- The measured intent extraction latency includes waiting time and other processing overhead, not just model inference time.
+- The benchmark directly invoked the RAG pipeline rather than sending HTTP requests to the backend API.
+
 ### 4. LLM Intent Extractor Frequently Returned Incomplete Entity Intents (Oct 2026)
 
 **Problem:** Qwen3.5:4B frequently returned empty or incomplete entity intent lists, even when entities were provided. This caused the intent extractor to reject the entire response.
@@ -46,7 +84,7 @@ This documentation shows what problems I faced and what solutions I implemented 
 **Problem:** The simple baseline performed better than Qwen-2B LLM-only and RAG, even for complex user preferences.
 
 **Hypothesis about the cause:**
-- The eval dataset was biased for Baseline.
+- The eval dataset was biased toward Baseline.
 - The prompt for Qwen-2B was not sufficient.
 - There was data leakage.
 - Qwen-2B was not capable enough for this task.
