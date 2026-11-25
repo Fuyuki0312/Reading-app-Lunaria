@@ -6,6 +6,15 @@
 Lunaria is an AI-powered Android reading application that explores the use of large language models and retrieval-based techniques for personalized book recommendation. The system combines structured genre preferences and free-form user descriptions to generate recommendations, while comparing LLM-based, retrieval-augmented, and heuristic baseline approaches through ranking-based evaluation. The project is designed as an end-to-end AI engineering system, integrating mobile development, backend services, data storage, retrieval, model inference, and recommender evaluation.
 
 
+## Table of Contents
+
+- [1. System Overview](#1-system-overview)
+- [2. Recommendation Method Evaluation](#2-recommendation-method-evaluation)
+- [3. Intent Extraction Evaluation](#3-intent-extraction-evaluation)
+- [4. Limitations and Future Work](#4-limitations-and-future-work)
+- [Development History - Problems Faced and Solutions](#development-history---problems-faced-and-solutions)
+
+
 ## 1. System Overview
 
 ### 1.1. User Flow
@@ -273,6 +282,17 @@ However, the benchmark does not test misspelled author or book names. Because en
 - Explore cheaper LLMs that can still provide good book recommendations.
 - Improve the visual design of the user interface.  
 
+
+## Development History - Problems Faced and Solutions
+
+Throughout the development of Lunaria, various engineering
+challenges were encountered, investigated, and addressed.
+
+The following journal documents these problems, hypotheses,
+attempted solutions, and evaluation results, including both
+successful and unsuccessful approaches.
+
+[View the Problem-Solving Journal](development_history/problems-faced-and-solutions-implemented.md)
 
 ---
 <sub>*Note: All books in Lunaria's database are AI-generated, as the project is intended for learning, experimentation, and skill development rather than commercial use.*</sub>
