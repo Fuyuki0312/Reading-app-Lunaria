@@ -15,6 +15,7 @@ RESULTS_DIR = (
     / "eval_results"
     / "concurrent"
     / "gpt_5_nano"
+    / f"semaphore_{Config().MAX_CONCURRENT_USERS}"
 )
 
 
@@ -41,7 +42,8 @@ def save_results(
         "embedding_s",
         "chroma_query_s",
         "llm_rerank_s",
-        "pipeline_total_s"
+        "pipeline_total_s",
+        "queue_wait_s"
     ]
 
     successful_df = (
@@ -50,6 +52,7 @@ def save_results(
     )
 
     summary = {
+        "max_concurrent_users": Config().MAX_CONCURRENT_USERS,
         "num_users": len(results),
         "num_successful": len(successful_df),
         "num_failed": len(results) - len(successful_df),
@@ -59,7 +62,8 @@ def save_results(
         "mean_embedding_s": successful_df["embedding_s"].mean(),
         "mean_chroma_query_s": successful_df["chroma_query_s"].mean(),
         "mean_llm_rerank_s": successful_df["llm_rerank_s"].mean(),
-        "mean_pipeline_total_s": successful_df["pipeline_total_s"].mean()
+        "mean_pipeline_total_s": successful_df["pipeline_total_s"].mean(),
+        "mean_queue_wait_s": successful_df["queue_wait_s"].mean()
     }
 
     pd.DataFrame([summary]).round(digits).to_csv(
@@ -67,23 +71,29 @@ def save_results(
         index=False
     )
 
-async def benchmark_one_user(user: dict) -> dict:
+async def benchmark_one_user(
+        user: dict,
+        semaphore: asyncio.Semaphore
+) -> dict:
 
     timings = {}
-
     start = perf_counter()
-
     error = None
+
     try:
-        await recommend_books_with_rag(
-            user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
-            user_preference_description=user["description"],
-            timings=timings
-        )
+        async with semaphore:
+
+            timings["queue_wait_s"] = perf_counter() - start
+
+            await recommend_books_with_rag(
+                user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
+                user_preference_description=user["description"],
+                timings=timings
+            )
 
     except Exception as exc:
         error = f"{type(exc).__name__}: {exc}"
-        print(f"WARNING: user {user['id']} catched an error during concurrency evaluation.")
+        print(f"WARNING: user {user['id']} encountered an error during concurrency evaluation.")
 
     finally:
         timings["user_total_s"] = perf_counter() - start
@@ -108,10 +118,16 @@ async def main():
     with open(dataset_path, "r", encoding="utf-8") as file:
         users = json.load(file)
 
+    # Set semaphore, allowing only a certain number of concurrent query
+    semaphore = asyncio.Semaphore(
+        Config().MAX_CONCURRENT_USERS
+    )
 
     # Warming up recommendation pipeline
     print("Warming up models...")
-    warmup_result = await benchmark_one_user(users[0])
+    warmup_result = await benchmark_one_user(
+        users[0], semaphore
+    )
 
     if warmup_result["status"] == "failed":
         raise RuntimeError(
