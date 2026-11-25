@@ -141,7 +141,7 @@ async def main():
 
     results = await asyncio.gather(
         *[
-            benchmark_one_user(user)
+            benchmark_one_user(user, semaphore)
             for user in users
         ]
     )
