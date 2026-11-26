@@ -52,7 +52,7 @@ def save_results(
     )
 
     summary = {
-        "max_concurrent_intent_extrations": Config().MAX_CONCURRENT_INTENT_EXTRACTIONS,
+        "max_concurrent_intent_extractions": Config().MAX_CONCURRENT_INTENT_EXTRACTIONS,
         "num_users": len(results),
         "num_successful": len(successful_df),
         "num_failed": len(results) - len(successful_df),
