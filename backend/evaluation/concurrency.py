@@ -15,7 +15,7 @@ RESULTS_DIR = (
     / "eval_results"
     / "concurrent"
     / "gpt_5_nano"
-    / f"semaphore_{Config().MAX_CONCURRENT_USERS}"
+    / f"qwen_semaphore_{Config().MAX_CONCURRENT_INTENT_EXTRACTIONS}"
 )
 
 
@@ -52,7 +52,7 @@ def save_results(
     )
 
     summary = {
-        "max_concurrent_users": Config().MAX_CONCURRENT_USERS,
+        "max_concurrent_intent_extrations": Config().MAX_CONCURRENT_INTENT_EXTRACTIONS,
         "num_users": len(results),
         "num_successful": len(successful_df),
         "num_failed": len(results) - len(successful_df),
@@ -81,19 +81,18 @@ async def benchmark_one_user(
     error = None
 
     try:
-        async with semaphore:
 
-            timings["queue_wait_s"] = perf_counter() - start
-
-            await recommend_books_with_rag(
-                user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
-                user_preference_description=user["description"],
-                timings=timings
-            )
+        await recommend_books_with_rag(
+            user_genre_preference=["Fantasy"], # Default genres because there is no fav genres in intent extraction eval dataset
+            user_preference_description=user["description"],
+            timings=timings,
+            intent_semaphore=semaphore
+        )
 
     except Exception as exc:
         error = f"{type(exc).__name__}: {exc}"
-        print(f"WARNING: user {user['id']} encountered an error during concurrency evaluation.")
+        print(f"WARNING: user {user['id']} encountered an error "
+              f"during concurrency evaluation.")
 
     finally:
         timings["user_total_s"] = perf_counter() - start
@@ -120,7 +119,7 @@ async def main():
 
     # Set semaphore, allowing only a certain number of concurrent query
     semaphore = asyncio.Semaphore(
-        Config().MAX_CONCURRENT_USERS
+        Config().MAX_CONCURRENT_INTENT_EXTRACTIONS
     )
 
     # Warming up recommendation pipeline

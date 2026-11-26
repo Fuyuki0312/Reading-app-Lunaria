@@ -8,6 +8,7 @@ from app.recommender.rag.retrieval import retrieve_books
 from app.recommender.rag.retrieval import match_entities
 from app.services.book_services import get_book_services
 from time import perf_counter
+from contextlib import nullcontext
 
 
 book_services = get_book_services()
@@ -15,7 +16,8 @@ book_services = get_book_services()
 async def recommend_books_with_rag(
         user_genre_preference: list[str],
         user_preference_description: str,
-        timings: dict[str, float] | None = None # for measuring latency
+        timings: dict[str, float] | None = None, # for measuring latency
+        intent_semaphore: asyncio.Semaphore | None = None
 ) -> list[RecommendationForm]:
     """
     This function run in the below order:
@@ -26,19 +28,35 @@ async def recommend_books_with_rag(
     3. llm recommends books
     """
 
-    pipeline_start = perf_counter() # for measuring latency
 
-    step_start = perf_counter()
+
+    queue_start = perf_counter() # for measuring latency
 
     # Extract intents
-    intents = await extract_intents(
-        user_description=user_preference_description,
-        entities=match_entities(user_preference_description)
-    )
+    async with (
+        intent_semaphore
+        if intent_semaphore is not None
+        else nullcontext()
+    ):
+        if timings is not None:
+            timings["queue_wait_s"] = round(
+                perf_counter() - queue_start,
+                Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS
+            )
 
-    if timings is not None:
-        timings["intent_extraction_s"] = round(perf_counter() - step_start,
-                                               Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS)
+        pipeline_start = perf_counter()
+        step_start = perf_counter()
+
+        intents = await extract_intents(
+            user_description=user_preference_description,
+            entities=match_entities(user_preference_description)
+        )
+
+        if timings is not None:
+            timings["intent_extraction_s"] = round(
+                perf_counter() - step_start,
+                Config().NUM_DIGITS_ROUNDED_FOR_TIMINGS
+            )
 
 
     excluded_genres = None

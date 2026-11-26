@@ -28,7 +28,7 @@ class Config:
         self.RELEVANCE_THRESHOLD = 2 # if a book's relevance score is higher than this value, the book will be seen as relevant to be recommended to the related user
         self.NUM_DIGITS_ROUNDED_FOR_METRICS = 4
         self.NUM_DIGITS_ROUNDED_FOR_TIMINGS = 3
-        self.MAX_CONCURRENT_USERS = 10
+        self.MAX_CONCURRENT_INTENT_EXTRACTIONS = 10
 
 
     def get_system_prompt_for_model(
