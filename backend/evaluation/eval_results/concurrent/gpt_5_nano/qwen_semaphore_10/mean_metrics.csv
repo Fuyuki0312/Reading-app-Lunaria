@@ -1,0 +1,2 @@
+max_concurrent_intent_extrations,num_users,num_successful,num_failed,batch_total_s,mean_user_latency_s,mean_intent_extraction_s,mean_embedding_s,mean_chroma_query_s,mean_llm_rerank_s,mean_pipeline_total_s,mean_queue_wait_s
+10,100,100,0,302.071,145.434,27.673,0.064,0.008,12.013,39.766,105.665
