@@ -15,7 +15,7 @@ RESULTS_DIR = (
     / "eval_results"
     / "concurrent"
     / "gpt_5_nano"
-    / f"qwen_semaphore_{Config().MAX_CONCURRENT_INTENT_EXTRACTIONS}"
+    / f"ollama_set_semaphore_2"
 )
 
 
