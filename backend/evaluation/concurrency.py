@@ -15,7 +15,7 @@ RESULTS_DIR = (
     / "eval_results"
     / "concurrent"
     / "gpt_5_nano"
-    / f"ollama_set_semaphore_2"
+    / f"ollama_set_semaphore_{Config().OLLAMA_NUM_PARALLEL}"
 )
 
 
@@ -117,7 +117,8 @@ async def main():
     with open(dataset_path, "r", encoding="utf-8") as file:
         users = json.load(file)
 
-    # Set semaphore, allowing only a certain number of concurrent query
+    # Set semaphore for Python,
+    # allowing only a certain number of concurrent query
     semaphore = asyncio.Semaphore(
         Config().MAX_CONCURRENT_INTENT_EXTRACTIONS
     )
